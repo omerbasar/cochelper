@@ -31,10 +31,12 @@ public class CalculatorServlet extends HttpServlet {
    @Override
    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-      for (Cookie cookie : req.getCookies()) {
-         String name = cookie.getName();
-         if(name.startsWith(COOKIE_PREFIX)){
-            req.setAttribute(name.substring(COOKIE_PREFIX.length()), cookie.getValue().replaceAll("_", ","));
+      if(req.getCookies() != null){
+         for (Cookie cookie : req.getCookies()) {
+            String name = cookie.getName();
+            if(name.startsWith(COOKIE_PREFIX)){
+               req.setAttribute(name.substring(COOKIE_PREFIX.length()), cookie.getValue().replaceAll("_", ","));
+            }
          }
       }
 
@@ -70,11 +72,18 @@ public class CalculatorServlet extends HttpServlet {
       resp.addCookie(new Cookie(COOKIE_PREFIX + "xBows", xBows.replaceAll(",","_")));
 
       Village village = new Village(9, cannons, archerTowers, mortars, wizardTowers, airDefenses, hiddenTeslas, xBows);
-      village.calculateRemainings();
-      req.setAttribute("remainingBuildTime", village.getRemainingBuildTimeAsReadable());
-      req.setAttribute("goldRequired", village.getRemainingResourceAsReadable(Resource.GOLD));
-      req.setAttribute("elixirRequired", village.getRemainingResourceAsReadable(Resource.ELIXIR));
-      req.setAttribute("darkElixirRequired", village.getRemainingResourceAsReadable(Resource.DARK_ELIXIR));
+      village.calculate();
+      req.setAttribute("elapsedBuildTime", village.makeTimeReadable(village.getElapsedBuildTime()));
+      req.setAttribute("elapsedGold", village.makeResourceReadable(village.getElapsedResource(Resource.GOLD)));
+      req.setAttribute("elapsedElixir", village.makeResourceReadable(village.getElapsedResource(Resource.ELIXIR)));
+      req.setAttribute("elapsedDarkElixir", village.makeResourceReadable(village.getElapsedResource(Resource.DARK_ELIXIR)));
+
+      req.setAttribute("remainingBuildTime", village.makeTimeReadable(village.getRemainingBuildTime()));
+      req.setAttribute("goldRequired", village.makeResourceReadable(village.getRemainingResource(Resource.GOLD)));
+      req.setAttribute("elixirRequired", village.makeResourceReadable(village.getRemainingResource(Resource.ELIXIR)));
+      req.setAttribute("darkElixirRequired", village.makeResourceReadable(village.getRemainingResource(Resource.DARK_ELIXIR)));
+
+      req.setAttribute("village", village);
 
       RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
       dispatcher.forward(req, resp);

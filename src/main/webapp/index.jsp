@@ -1,3 +1,4 @@
+<%@ page import="ob.cochelper.Village" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
@@ -20,14 +21,27 @@ Aşağıdaki formda tüm seviyeleri virgüllerle ayırarak yazınız.
     <div><input type="submit" value="Hesapla"/></div>
 </form>
 
+<% Village village = (Village)request.getAttribute("village");
+   if(village != null){%>
 <br>
-Kalan inşaat süresi: <%= request.getAttribute("remainingBuildTime") == null ? "" : request.getAttribute("remainingBuildTime")%>
+Biten inşaat süresi : <%= request.getAttribute("elapsedBuildTime")%>    (% <%= village.getElapsedBuildTimePercentage()%>)
 <br>
-Altın ihtiyacı     : <%= request.getAttribute("goldRequired") == null ? "" : request.getAttribute("goldRequired")%>
+Altın harcanan      : <%= request.getAttribute("elapsedGold")%>
 <br>
-İksir ihtiyacı     : <%= request.getAttribute("elixirRequired") == null ? "" : request.getAttribute("elixirRequired") %>
+İksir harcanan      : <%= request.getAttribute("elapsedElixir") %>
 <br>
-Koyu iksir ihtiyacı : <%= request.getAttribute("darkElixirRequired") == null ? "" : request.getAttribute("darkElixirRequired")%>
+Koyu iksir harcanan : <%= request.getAttribute("elapsedDarkElixir")%>
 
+<hr>
+
+Kalan inşaat süresi: <%= request.getAttribute("remainingBuildTime")%>  (% <%= village.getRemainingBuildTimePercentage()%>)
+<br>
+Altın ihtiyacı     : <%= request.getAttribute("goldRequired")%>
+<br>
+İksir ihtiyacı     : <%= request.getAttribute("elixirRequired") %>
+<br>
+Koyu iksir ihtiyacı : <%= request.getAttribute("darkElixirRequired")%>
+
+<% } %>
 </body>
 </html>

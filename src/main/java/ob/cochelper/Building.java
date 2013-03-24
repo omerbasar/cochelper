@@ -53,6 +53,22 @@ public abstract class Building {
       return remainingResource;
    }
 
+   public Integer getElapsedBuildTime(){
+      Integer elapsedBuildTime = 0;
+      for(int i = 0 ; i < level; i ++){
+         elapsedBuildTime += getLevels().get(i).getBuildTime();
+      }
+      return elapsedBuildTime;
+   }
+
+   public Integer getElapsedResource(){
+      Integer elapsedResource = 0;
+      for(int i = 0 ; i < level; i ++){
+         elapsedResource += getLevels().get(i).getCost();
+      }
+      return elapsedResource;
+   }
+
    public List<? extends Level> getLevels(){
       return LevelHelper.getLevels(type);
    }

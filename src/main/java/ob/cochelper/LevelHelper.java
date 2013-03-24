@@ -16,8 +16,8 @@ public class LevelHelper {
    private static final List<GoldLevel> mortarLevels = new ArrayList<GoldLevel>(7);
    private static final List<GoldLevel> wizardTowerLevels = new ArrayList<GoldLevel>(7);
    private static final List<GoldLevel> airDefenseLevels = new ArrayList<GoldLevel>(7);
-   private static final List<GoldLevel> hiddenTeslaLevels = new ArrayList<GoldLevel>(7);
-   private static final List<GoldLevel> xBowLevels = new ArrayList<GoldLevel>(7);
+   private static final List<GoldLevel> hiddenTeslaLevels = new ArrayList<GoldLevel>(6);
+   private static final List<GoldLevel> xBowLevels = new ArrayList<GoldLevel>(3);
 
    static{
       cannonLevels.add(new GoldLevel(1, 250, 1));

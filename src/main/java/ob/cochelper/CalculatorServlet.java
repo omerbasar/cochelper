@@ -54,6 +54,22 @@ public class CalculatorServlet extends HttpServlet {
       String airDefenses = req.getParameter("airDefenses");
       String hiddenTeslas = req.getParameter("hiddenTeslas");
       String xBows = req.getParameter("xBows");
+      String elixirCollectors = req.getParameter("elixirCollectors");
+      String goldMines = req.getParameter("goldMines");
+      String darkElixirDrills = req.getParameter("darkElixirDrills");
+      String goldStorages = req.getParameter("goldStorages");
+      String elixirStorages = req.getParameter("elixirStorages");
+      String darkElixirStorages = req.getParameter("darkElixirStorages");
+      Integer builderCount = Integer.parseInt(req.getParameter("builderCount"));
+      String armyCamps = req.getParameter("armyCamps");
+      String barracks = req.getParameter("barracks");
+      String darkBarracks = req.getParameter("darkBarracks");
+      Integer laboratory = Integer.parseInt(req.getParameter("laboratory"));
+      Integer spellFactory = Integer.parseInt(req.getParameter("spellFactory"));
+      Integer townHall = Integer.parseInt(req.getParameter("townHall"));
+      Integer clanCastle = Integer.parseInt(req.getParameter("clanCastle"));
+      Integer barbarKing = Integer.parseInt(req.getParameter("barbarKing"));
+      Integer archerQueen = Integer.parseInt(req.getParameter("archerQueen"));
 
       req.setAttribute("cannons", cannons);
       req.setAttribute("archerTowers", archerTowers);
@@ -62,6 +78,22 @@ public class CalculatorServlet extends HttpServlet {
       req.setAttribute("airDefenses", airDefenses);
       req.setAttribute("hiddenTeslas", hiddenTeslas);
       req.setAttribute("xBows", xBows);
+      req.setAttribute("elixirCollectors", elixirCollectors);
+      req.setAttribute("goldMines", goldMines);
+      req.setAttribute("darkElixirDrills", darkElixirDrills);
+      req.setAttribute("goldStorages", goldStorages);
+      req.setAttribute("elixirStorages", elixirStorages);
+      req.setAttribute("darkElixirStorages", darkElixirStorages);
+      req.setAttribute("builderCount", builderCount);
+      req.setAttribute("armyCamps", armyCamps);
+      req.setAttribute("barracks", barracks);
+      req.setAttribute("darkBarracks", darkBarracks);
+      req.setAttribute("laboratory", laboratory);
+      req.setAttribute("spellFactory", spellFactory);
+      req.setAttribute("townHall", townHall);
+      req.setAttribute("clanCastle", clanCastle);
+      req.setAttribute("barbarKing", barbarKing);
+      req.setAttribute("archerQueen", archerQueen);
 
       resp.addCookie(new Cookie(COOKIE_PREFIX + "cannons", cannons.replaceAll(",", "_")));
       resp.addCookie(new Cookie(COOKIE_PREFIX + "archerTowers", archerTowers.replaceAll(",", "_")));
@@ -70,18 +102,31 @@ public class CalculatorServlet extends HttpServlet {
       resp.addCookie(new Cookie(COOKIE_PREFIX + "airDefenses", airDefenses.replaceAll(",", "_")));
       resp.addCookie(new Cookie(COOKIE_PREFIX + "hiddenTeslas", hiddenTeslas.replaceAll(",", "_")));
       resp.addCookie(new Cookie(COOKIE_PREFIX + "xBows", xBows.replaceAll(",","_")));
+      resp.addCookie(new Cookie(COOKIE_PREFIX + "elixirCollectors", elixirCollectors.replaceAll(",","_")));
+      resp.addCookie(new Cookie(COOKIE_PREFIX + "goldMines", goldMines.replaceAll(",","_")));
+      resp.addCookie(new Cookie(COOKIE_PREFIX + "darkElixirDrills", darkElixirDrills.replaceAll(",","_")));
+      resp.addCookie(new Cookie(COOKIE_PREFIX + "goldStorages", goldStorages.replaceAll(",","_")));
+      resp.addCookie(new Cookie(COOKIE_PREFIX + "elixirStorages", elixirStorages.replaceAll(",","_")));
+      resp.addCookie(new Cookie(COOKIE_PREFIX + "darkElixirStorages", darkElixirStorages.replaceAll(",","_")));
+      resp.addCookie(new Cookie(COOKIE_PREFIX + "builderCount", builderCount + ""));
+      resp.addCookie(new Cookie(COOKIE_PREFIX + "armyCamps", armyCamps.replaceAll(",","_")));
+      resp.addCookie(new Cookie(COOKIE_PREFIX + "barracks", barracks.replaceAll(",","_")));
+      resp.addCookie(new Cookie(COOKIE_PREFIX + "darkBarracks", darkBarracks.replaceAll(",","_")));
+      resp.addCookie(new Cookie(COOKIE_PREFIX + "laboratory", laboratory + ""));
+      resp.addCookie(new Cookie(COOKIE_PREFIX + "spellFactory", spellFactory + ""));
+      resp.addCookie(new Cookie(COOKIE_PREFIX + "townHall", townHall + ""));
+      resp.addCookie(new Cookie(COOKIE_PREFIX + "clanCastle", clanCastle + ""));
 
-      Village village = new Village(9, cannons, archerTowers, mortars, wizardTowers, airDefenses, hiddenTeslas, xBows);
+      resp.addCookie(new Cookie(COOKIE_PREFIX + "barbarKing", barbarKing + ""));
+      resp.addCookie(new Cookie(COOKIE_PREFIX + "archerQueen", archerQueen + ""));
+
+      Village village = new Village(townHall, cannons, archerTowers, mortars, wizardTowers, airDefenses, hiddenTeslas, xBows,
+              goldMines, elixirCollectors, darkElixirDrills,
+              goldStorages, elixirStorages, darkElixirStorages,
+              builderCount, armyCamps, barracks, darkBarracks,
+              laboratory, spellFactory, clanCastle,
+              barbarKing, archerQueen);
       village.calculate();
-      req.setAttribute("elapsedBuildTime", village.makeTimeReadable(village.getElapsedBuildTime()));
-      req.setAttribute("elapsedGold", village.makeResourceReadable(village.getElapsedResource(Resource.GOLD)));
-      req.setAttribute("elapsedElixir", village.makeResourceReadable(village.getElapsedResource(Resource.ELIXIR)));
-      req.setAttribute("elapsedDarkElixir", village.makeResourceReadable(village.getElapsedResource(Resource.DARK_ELIXIR)));
-
-      req.setAttribute("remainingBuildTime", village.makeTimeReadable(village.getRemainingBuildTime()));
-      req.setAttribute("goldRequired", village.makeResourceReadable(village.getRemainingResource(Resource.GOLD)));
-      req.setAttribute("elixirRequired", village.makeResourceReadable(village.getRemainingResource(Resource.ELIXIR)));
-      req.setAttribute("darkElixirRequired", village.makeResourceReadable(village.getRemainingResource(Resource.DARK_ELIXIR)));
 
       req.setAttribute("village", village);
 

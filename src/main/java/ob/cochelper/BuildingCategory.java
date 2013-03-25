@@ -9,5 +9,6 @@ public enum BuildingCategory {
    DEFENSE,
    RESOURCE,
    ARMY,
+   HERO,
    OTHER
 }

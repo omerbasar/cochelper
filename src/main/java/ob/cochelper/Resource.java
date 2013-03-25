@@ -8,5 +8,6 @@ package ob.cochelper;
 public enum Resource {
    GOLD,
    ELIXIR,
-   DARK_ELIXIR
+   DARK_ELIXIR,
+   GEM
 }

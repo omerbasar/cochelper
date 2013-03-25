@@ -7,22 +7,16 @@ import java.util.List;
  * Date: 3/24/13
  * Time: 7:16 PM
  */
-public abstract class Building {
+public class Building {
 
    private BuildingType type;
    private BuildingCategory category;
    private Integer level;
-   private Resource resource;
 
-   protected Building(BuildingType type, Resource resource, BuildingCategory category, Integer level) {
+   protected Building(BuildingType type, BuildingCategory category, Integer level) {
       this.type = type;
-      this.resource = resource;
       this.category = category;
       this.level = level;
-   }
-
-   public Resource getResource() {
-      return resource;
    }
 
    public Integer getLevel() {
@@ -37,32 +31,32 @@ public abstract class Building {
       return type;
    }
 
-   public Integer getRemainingBuildTime(){
-      Integer remainingBuildTime = 0;
+   public Long getRemainingBuildTime(){
+      Long remainingBuildTime = 0L;
       for(int i = level ; i < getLevels().size(); i ++){
          remainingBuildTime += getLevels().get(i).getBuildTime();
       }
       return remainingBuildTime;
    }
 
-   public Integer getRemainingResource(){
-      Integer remainingResource = 0;
+   public Long getRemainingResource(){
+      Long remainingResource = 0L;
       for(int i = level ; i < getLevels().size(); i ++){
          remainingResource += getLevels().get(i).getCost();
       }
       return remainingResource;
    }
 
-   public Integer getElapsedBuildTime(){
-      Integer elapsedBuildTime = 0;
+   public Long getElapsedBuildTime(){
+      Long elapsedBuildTime = 0L;
       for(int i = 0 ; i < level; i ++){
          elapsedBuildTime += getLevels().get(i).getBuildTime();
       }
       return elapsedBuildTime;
    }
 
-   public Integer getElapsedResource(){
-      Integer elapsedResource = 0;
+   public Long getElapsedResource(){
+      Long elapsedResource = 0L;
       for(int i = 0 ; i < level; i ++){
          elapsedResource += getLevels().get(i).getCost();
       }

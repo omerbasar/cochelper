@@ -14,9 +14,9 @@ public enum BuildingType {
    AIR_DEFENSE(Resource.GOLD),
    HIDDEN_TESLA(Resource.GOLD),
    XBOW(Resource.GOLD),
-   ELIXIR_COLLECTOR(Resource.GOLD),
-   GOLD_MINE(Resource.ELIXIR),
-   DARK_ELIXIR_DRILL(Resource.ELIXIR),
+   ELIXIR_COLLECTOR(Resource.GOLD, Resource.ELIXIR),
+   GOLD_MINE(Resource.ELIXIR, Resource.GOLD),
+   DARK_ELIXIR_DRILL(Resource.ELIXIR, Resource.DARK_ELIXIR),
    GOLD_STORAGE(Resource.ELIXIR),
    ELIXIR_STORAGE(Resource.GOLD),
    DARK_ELIXIR_STORAGE(Resource.ELIXIR),
@@ -28,16 +28,31 @@ public enum BuildingType {
    SPELL_FACTORY(Resource.ELIXIR),
    TOWN_HALL(Resource.GOLD),
    CLAN_CASTLE(Resource.GOLD),
+   WALL(Resource.GOLD),
    BARBAR_KING(Resource.DARK_ELIXIR),
    ARCHER_QUENN(Resource.DARK_ELIXIR);
 
    private Resource resource;
+   private Resource resourceProduced = null;
 
    private BuildingType(Resource resource) {
       this.resource = resource;
    }
 
+   private BuildingType(Resource resource, Resource resourceProduced) {
+      this.resource = resource;
+      this.resourceProduced = resourceProduced;
+   }
+
    public Resource getResource() {
       return resource;
+   }
+
+   public Resource getResourceProduced() {
+      return resourceProduced;
+   }
+
+   public Boolean isProductionBuilding(){
+      return resourceProduced != null;
    }
 }

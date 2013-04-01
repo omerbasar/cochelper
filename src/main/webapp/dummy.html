@@ -1,0 +1,78 @@
+<!doctype html>
+<html ng-app="HomePageModule" >
+<head>
+    <title>Facebook test</title>
+    <script src="http://code.angularjs.org/1.0.0rc2/angular-1.0.0rc2.min.js"></script>
+    <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+</head>
+<body>
+<div id="fb-root"></div>
+
+<script type="text/javascript">
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '624781694203062'
+        });
+    };
+
+    // Load the SDK Asynchronously
+    (function(d){
+        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement('script'); js.id = id; js.async = true;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        ref.parentNode.insertBefore(js, ref);
+    }(document));
+
+    angular.module('HomePageModule', []).service('facebookConnect', function($rootScope) {
+
+        $rootScope.name = null;
+
+        this.askFacebookForAuthentication = function(fail, success) {
+            FB.getLoginStatus(function(response) {
+                if (response.status === 'connected') {
+                    var uid = response.authResponse.userID;
+                    FB.api('/me', success);
+                } else if (response.status === 'not_authorized') {
+                    alert('not authorized');
+                } else {
+                    FB.login(function(response) {
+                        if (response.authResponse) {
+                            FB.api('/me', response);
+                        } else {
+                            $rootScope.$apply(function() {
+                                fail('User cancelled login or did not fully authorize.')
+                            });
+                        }
+                    });
+                }
+            });
+        }
+    });
+
+    function ConnectCtrl(facebookConnect, $scope, $resource) {
+        $scope.user = {};
+        $scope.error = null;
+
+        $scope.registerWithFacebook = function() {
+            facebookConnect.askFacebookForAuthentication(
+                    function(reason) { // fail
+                        alert('fail');
+                        $scope.error = reason;
+                    }, function(user) { // success
+                        $scope.user = user
+                    });
+        };
+    }
+
+    ConnectCtrl.$inject = ['facebookConnect', '$scope', '$resource'];
+
+</script>
+<div ng-controller="ConnectCtrl">
+    <h1>{{user.name}}</h1>
+    <br/>
+    <h1>{{error}}</h1>
+    <button ng-click="registerWithFacebook()">Find myself on facebook</button>
+</div>
+</body>
+</html>

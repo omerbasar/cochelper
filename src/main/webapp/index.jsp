@@ -4,9 +4,76 @@
 
 <html>
 <head>
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 
 <body>
+
+<div id="fb-root"></div>
+<button id="fb-logout" onclick="logout()">Log out</button>
+<script>
+   // Additional JS functions here
+   window.fbAsyncInit = function() {
+      FB.init({
+         appId      : '624781694203062', // App ID
+         channelUrl : '//www.cochelper.com:8080/channel.html', // Channel File
+         status     : true, // check login status
+         cookie     : true, // enable cookies to allow the server to access the session
+         xfbml      : true  // parse XFBML
+      });
+
+      // Additional init code here
+      FB.getLoginStatus(function(response) {
+         if (response.status === 'connected') {
+            // connected
+            createSession(response.authResponse.accessToken);
+            document.getElementById('fb-logout').style.display = 'block';
+         } else if (response.status === 'not_authorized') {
+            // not_authorized
+            login();
+         } else {
+            // not_logged_in
+            login();
+         }
+      });
+
+   };
+
+   function createSession(accessToken) {
+      $.ajax({
+         url: "fblogin?accessToken=" + accessToken,
+         error: function( data ) {
+            alert('Login error');
+         }
+      });
+   }
+
+   function login() {
+      FB.login(function(response) {
+         if (response.authResponse) {
+            createSession(response.authResponse.accessToken);
+         } else {
+            // cancelled
+         }
+      });
+   }
+
+   function logout() {
+      FB.logout(function(response) {
+         console.log('User is now logged out');
+      });
+   }
+
+   // Load the SDK Asynchronously
+   (function(d){
+      var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      ref.parentNode.insertBefore(js, ref);
+   }(document));
+</script>
+
 
 Aşağıdaki formda tüm bina seviyelerinizi virgüllerle ayırarak yazınız. Örneğin 3 tane cannon varsa, ve seviyeleri 3, 4 ve 6 ise. "Top seviyeleri:" yazan yere şöyle yazınız: 3,4,6
 <br>

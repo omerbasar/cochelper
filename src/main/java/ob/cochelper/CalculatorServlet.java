@@ -23,6 +23,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class CalculatorServlet extends HttpServlet {
 
@@ -70,6 +74,13 @@ public class CalculatorServlet extends HttpServlet {
       Integer clanCastle = Integer.parseInt(req.getParameter("clanCastle"));
       Integer barbarKing = Integer.parseInt(req.getParameter("barbarKing"));
       Integer archerQueen = Integer.parseInt(req.getParameter("archerQueen"));
+
+      // todo: arayüzden buildingCategorySet'ini al
+      Set<BuildingCategory> categories = new HashSet<BuildingCategory>();
+      categories.add(BuildingCategory.DEFENSE);
+
+      // todo: arayuzden duvarlari al
+      Map<Integer, Integer> wallMap = new HashMap<Integer, Integer>();
 
       req.setAttribute("cannons", cannons);
       req.setAttribute("archerTowers", archerTowers);
@@ -125,7 +136,7 @@ public class CalculatorServlet extends HttpServlet {
               goldStorages, elixirStorages, darkElixirStorages,
               builderCount, armyCamps, barracks, darkBarracks,
               laboratory, spellFactory, clanCastle,
-              barbarKing, archerQueen);
+              barbarKing, archerQueen, categories, wallMap);
       village.calculate();
 
       req.setAttribute("village", village);

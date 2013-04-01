@@ -32,6 +32,7 @@ public class LevelHelper {
    private static final List<Level> spellFactoryLevels = new ArrayList<Level>(4);
    private static final List<Level> townHallLevels = new ArrayList<Level>(9);
    private static final List<Level> clanCastleLevels = new ArrayList<Level>(4);
+   private static final List<Level> wallLevels = new ArrayList<Level>(10);
 
    private static final List<Level> barbarKingLevels = new ArrayList<Level>(30);
    private static final List<Level> archerQueenLevels = new ArrayList<Level>(30);
@@ -215,6 +216,17 @@ public class LevelHelper {
       clanCastleLevels.add(new Level( 3, 800000, 1440));
       clanCastleLevels.add(new Level( 4, 1800000, 2 * 1440));
 
+      wallLevels.add(new Level(1, 200, 0));
+      wallLevels.add(new Level(2, 1000, 0));
+      wallLevels.add(new Level(3, 5000, 0));
+      wallLevels.add(new Level(4, 10000, 0));
+      wallLevels.add(new Level(5, 30000, 0));
+      wallLevels.add(new Level(6, 75000, 0));
+      wallLevels.add(new Level(7, 200000, 0));
+      wallLevels.add(new Level(8, 500000, 0));
+      wallLevels.add(new Level(9, 1000000, 0));
+      wallLevels.add(new Level(10, 3000000, 0));
+
       barbarKingLevels.add(new Level( 1, 10000, 0));
       barbarKingLevels.add(new Level( 2, 12500, 12 * 60));
       barbarKingLevels.add(new Level( 3, 15000, 2 * 12 * 60));
@@ -303,6 +315,7 @@ public class LevelHelper {
                case SPELL_FACTORY: return 1;
                case TOWN_HALL: return 1;
                case CLAN_CASTLE: return 1;
+               case WALL: return 250;
                case BARBAR_KING: return 1;
                case ARCHER_QUENN: return 1;
                default : throw new IllegalArgumentException(type + " tipinde bozukluk var.");
@@ -334,6 +347,7 @@ public class LevelHelper {
          case SPELL_FACTORY: return spellFactoryLevels;
          case TOWN_HALL: return townHallLevels;
          case CLAN_CASTLE: return clanCastleLevels;
+         case WALL: return wallLevels;
          case BARBAR_KING: return barbarKingLevels;
          case ARCHER_QUENN: return archerQueenLevels;
          default : throw new IllegalArgumentException(type + " tipinde bozukluk var.");

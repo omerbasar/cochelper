@@ -10,5 +10,6 @@ public enum BuildingCategory {
    RESOURCE,
    ARMY,
    HERO,
+   WALL,
    OTHER
 }

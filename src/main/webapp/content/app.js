@@ -32,13 +32,13 @@ angular.module('myApp', ['mobile-navigate'])
 })
 .config(function($routeProvider) {
   $routeProvider
-    .when("/building/:category", {
+    .when("/category/:category", {
+    templateUrl: "content/category.html",
+    controller: CategoryController,
+    transition: "modal" //this is overwritten by the go() in home.html
+  }).when("/building/:type", {
     templateUrl: "content/building.html",
     controller: BuildingController,
-    transition: "modal" //this is overwritten by the go() in home.html
-  }).when("/type/:type", {
-    templateUrl: "content/type.html",
-    controller: TypeController,
     transition: "modal" //this is overwritten by the go() in home.html
   }).when("/wall", {
     templateUrl: "content/wall.html",
@@ -133,11 +133,11 @@ function MainCtrl($scope, $navigate, facebookConnect, categories) {
     };
 }
 
-function BuildingController($scope, $routeParams, categories){
+function CategoryController($scope, $routeParams, categories){
     $scope.category = categories[$routeParams.category];
 }
 
-function TypeController($scope, $routeParams, levels, types){
+function BuildingController($scope, $routeParams, levels, types){
     $scope.type = types[$routeParams.type];
     $scope.levels = levels[$routeParams.type];
 

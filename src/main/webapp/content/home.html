@@ -14,7 +14,7 @@
     <span>{{error}}</span>
 
   <ul>
-    <li ng-repeat="category in categories"><a ng-tap="$navigate.go('/building/{{category.key}}', 'slide')">{{category.name}}</a></li>
+    <li ng-repeat="category in categories"><a ng-tap="$navigate.go('/category/{{category.key}}', 'slide')">{{category.name}}</a></li>
     <li><a ng-tap="$navigate.go('/wall', 'slide')">Duvarlar</a></li>
   </ul>
 

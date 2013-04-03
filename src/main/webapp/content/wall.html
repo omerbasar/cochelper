@@ -9,13 +9,15 @@
     <br>
     <br>
 
+    <span style="color: red;">{{error}}</span>
+    <br>
     Kullanılmamış: {{unassigned}}
     <div ng-repeat="n in [] | range:type.maxLevel">
         {{n}} seviye
         <select ng-model="wallCountsPerLevel[n]"
                 ng-options="j for j in [] | range:type.maxAvailable"
-                ng-change="updateLevel()">
+                ng-change="updateLevel(n-1)">
             <option value="">Yok</option>
-                </select>
+        </select>
     </div>
 </div>

@@ -63,7 +63,8 @@ angular.module('myApp', ['mobile-navigate'])
 .value('wallCountsPerLevel', {
     2 : 20,
     3 : 20,
-    4 : 30
+    4 : 30,
+   10 : 170
 })
 .value('types', {
     'cannon' : {name : 'Topçu', description : 'Topçu ilk üretilen binadır.', maxAvailable : 5, maxLevel : 11},
@@ -148,13 +149,31 @@ function TypeController($scope, $routeParams, levels, types){
 function WallController($scope, levels, types, wallCountsPerLevel){
     $scope.type = types['wall'];
     $scope.wallCountsPerLevel = wallCountsPerLevel;
-    $scope.unassigned = $scope.type.maxAvailable;
+    $scope.error = '';
 
-    $scope.updateLevel = function(){
-        levels['wall'] = $scope.levels;
+    $scope.updateLevel = function(index){
+        var count = $scope.getWallCount();
+        if(count > $scope.type.maxAvailable){
+            $scope.wallCountsPerLevel[index+1] = 0;
+            $scope.error = 'Toplam duvar sayısı ' + $scope.type.maxAvailable + " değerinden fazla olamaz.";
+        }else{
+            $scope.error = '';
+        }
+        levels['wall'] = $scope.wallCountsPerLevel;
+        $scope.calculateUnassigned();
     };
 
-    for(var index in wallCountsPerLevel){
-        $scope.unassigned -= wallCountsPerLevel[index];
-    }
+    $scope.getWallCount = function(){
+        var c = 0;
+        for(var index in $scope.wallCountsPerLevel){
+            c += $scope.wallCountsPerLevel[index];
+        }
+        return c;
+    };
+
+    $scope.calculateUnassigned = function(){
+        $scope.unassigned = $scope.type.maxAvailable - $scope.getWallCount();
+    };
+
+    $scope.calculateUnassigned();
 }

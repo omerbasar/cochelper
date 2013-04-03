@@ -25,18 +25,14 @@ angular.module('myApp', ['mobile-navigate'])
 .filter('range', function() {
     return function(input, total) {
         total = parseInt(total);
-        for (var i=0; i<total; i++)
+        for (var i=1; i<total + 1; i++)
             input.push(i);
         return input;
     };
 })
 .config(function($routeProvider) {
-  $routeProvider.when("/one", {
-    templateUrl: "content/page1.html"
-  }).when("/two", {
-    templateUrl: "content/page2.html",
-    transition: "modal" //this is overwritten by the go() in home.html
-  }).when("/building/:category", {
+  $routeProvider
+    .when("/building/:category", {
     templateUrl: "content/building.html",
     controller: BuildingController,
     transition: "modal" //this is overwritten by the go() in home.html
@@ -44,14 +40,10 @@ angular.module('myApp', ['mobile-navigate'])
     templateUrl: "content/type.html",
     controller: TypeController,
     transition: "modal" //this is overwritten by the go() in home.html
-  }).when("/popup", {
-    templateUrl: "content/popup.html",
-    transition: "modal"
-  }).when("/monkey", {
-    templateUrl: "content/monkey.html"
-  }).when("/backwards", {
-    templateUrl: "content/backwards.html",
-    reverse: true
+  }).when("/wall", {
+    templateUrl: "content/wall.html",
+    controller: WallController,
+    transition: "modal" //this is overwritten by the go() in home.html
   }).when("/", {
     templateUrl: "content/home.html"
   }).otherwise({
@@ -59,10 +51,38 @@ angular.module('myApp', ['mobile-navigate'])
   });
 })
 .value('levels', {
-        'cannon' : [1,3,3],
-        'archerTower' : [1,2],
-        'mortar' : [2,2]
-    })
+    'cannon' : [1,3,3,0,0],
+    'archerTower' : [1,2,1,2,3,4],
+    'mortar' : [2,2,0],
+    'goldMine' : [10,11,11,10,9,11],
+    'elixirCollector' : [11,11,10,10,9,1],
+    'townHall' : [7],
+    'archerQueen' : [2],
+    'barrack' : [10,8,7]
+})
+.value('wallCountsPerLevel', {
+    2 : 20,
+    3 : 20,
+    4 : 30
+})
+.value('types', {
+    'cannon' : {name : 'Topçu', description : 'Topçu ilk üretilen binadır.', maxAvailable : 5, maxLevel : 11},
+    'archerTower' : {name : 'Okçu Kulesi', description : 'Uzun menzilli atış yapar.', maxAvailable : 6, maxLevel : 11},
+    'mortar' : {name : 'Havan', description : '4x4 lük bir alana etki eder.', maxAvailable : 3, maxLevel : 7},
+    'goldMine' : {name : 'Altın Madeni', description : 'Altın toplar. En fazla saatte 3000 üretim yapar.', maxAvailable : 6, maxLevel : 11},
+    'elixirCollector' : {name : 'İksir Toplayıcı', description : 'Eliksir toplar. En fazla saatte 3000 üretim yapar.', maxAvailable : 6, maxLevel : 11},
+    'townHall' : {name : 'Köy Binası', description : 'Ana şehir. Herşeyin başı :) ', maxAvailable : 1, maxLevel : 9},
+    'archerQueen' : {name : 'Okçu Kraliçe', description : 'Okçu kraliçe. Başka söze gerek var mı', maxAvailable : 1, maxLevel : 30},
+    'barrack' : {name : 'Kışla', description : 'Savaşçılar burada üretilir.', maxAvailable : 4, maxLevel : 10},
+    'wall' : {name : 'Duvar', description : 'Efsane duvarlarla şehrinin savunmasını kuvvetlendirebilirsin. Burada gruplama yapmamız gerekiyor. 6 seviye 10, 7 seviye 25, 10 seviye 200 duvar var gibi....', maxAvailable : 250, maxLevel : 10}
+})
+.value('categories', {
+    'other' : {key : 'other', name : 'Ana Binalar', types : ['townHall']},
+    'defense' : {key : 'defense', name : 'Savunma', types : ['cannon', 'archerTower', 'mortar']},
+    'resource' : {key : 'resource', name : 'Kaynak', types : ['goldMine', 'elixirCollector']},
+    'army' : {key : 'army', name : 'Ordu', types : ['barrack']},
+    'hero' : {key : 'hero', name : 'Kahramanlar', types : ['archerQueen']}
+})
 .run(function($route, $http, $templateCache) {
   angular.forEach($route.routes, function(r) {
     if (r.templateUrl) { 
@@ -88,10 +108,11 @@ angular.module('myApp', ['mobile-navigate'])
   };
 });
 
-function MainCtrl($scope, $navigate, facebookConnect) {
+function MainCtrl($scope, $navigate, facebookConnect, categories) {
     $scope.$navigate = $navigate;
     $scope.user = {};
     $scope.error = null;
+    $scope.categories = categories;
 
     $scope.registerWithFacebook = function() {
         facebookConnect.askFacebookForAuthentication(
@@ -111,29 +132,29 @@ function MainCtrl($scope, $navigate, facebookConnect) {
     };
 }
 
-MainCtrl.$inject = ['$scope', '$navigate', 'facebookConnect'];
-
-function BuildingController($scope, $routeParams){
-    $scope.category = $routeParams.category;
-
-    if($scope.category == 'defensive'){
-        $scope.types = ['cannon', 'archerTower', 'mortar'];
-    }else if($scope.category == 'resource'){
-        $scope.types = ['goldMine', 'elixirCollector'];
-    }
+function BuildingController($scope, $routeParams, categories){
+    $scope.category = categories[$routeParams.category];
 }
 
-function TypeController($scope, $routeParams, $rootScope, levels){
-    var types = [];
-    types['cannon'] = {name : 'Topçu', description : 'Topçu ilk üretilen binadır.', maxAvailable : 5};
-    types['archerTower'] = {name : 'Okçu Kulesi', description : 'Uzun menzilli atış yapar.', maxAvailable : 6};
-    types['mortar'] = {name : 'Havan', description : '4x4 lük bir alana etki eder.', maxAvailable : 3};
+function TypeController($scope, $routeParams, levels, types){
+    $scope.type = types[$routeParams.type];
+    $scope.levels = levels[$routeParams.type];
 
-    $rootScope.type = types[$routeParams.type];
-    $rootScope.type.levels = levels[$routeParams.type];
-
-    $scope.updateLevel = function(index){
-        alert('newValue[' + index + "] = " + $rootScope.type.levels[index]);
-        levels[$routeParams.type] = $rootScope.type.levels;
+    $scope.updateLevel = function(){
+        levels[$routeParams.type] = $scope.levels;
     };
+}
+
+function WallController($scope, levels, types, wallCountsPerLevel){
+    $scope.type = types['wall'];
+    $scope.wallCountsPerLevel = wallCountsPerLevel;
+    $scope.unassigned = $scope.type.maxAvailable;
+
+    $scope.updateLevel = function(){
+        levels['wall'] = $scope.levels;
+    };
+
+    for(var index in wallCountsPerLevel){
+        $scope.unassigned -= wallCountsPerLevel[index];
+    }
 }

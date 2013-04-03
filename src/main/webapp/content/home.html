@@ -1,5 +1,5 @@
 <div class="toolbar">
-  <h1 id="pageTitle">Home</h1>
+  <h1 id="pageTitle">CoC Helper</h1>
 </div>
 <div class="content panel">
 
@@ -14,9 +14,8 @@
     <span>{{error}}</span>
 
   <ul>
-    <li><a ng-tap="$navigate.go('/building/other', 'slide')">Ana Binalar</a></li>
-    <li><a ng-tap="$navigate.go('/building/defensive', 'slide')">Savunma binaları</a></li>
-    <li><a ng-tap="$navigate.go('/building/resource', 'slide')">Kaynak binaları</a></li>
+    <li ng-repeat="category in categories"><a ng-tap="$navigate.go('/building/{{category.key}}', 'slide')">{{category.name}}</a></li>
+    <li><a ng-tap="$navigate.go('/wall', 'slide')">Duvarlar</a></li>
   </ul>
 
 </div>

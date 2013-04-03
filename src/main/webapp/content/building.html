@@ -1,10 +1,9 @@
 <div class="toolbar">
-    <h1 id="pageTitle">{{category}}</h1>
+    <h1 id="pageTitle">{{category.name}}</h1>
         <a id="backButton" class="button" ng-tap="$navigate.back()">Back</a>
 </div>
 <div class="content panel">
     <ul>
-        <li ng-repeat="type in types"><a ng-tap="$navigate.go('/type/{{type}}', 'slide')">{{type}}</a></li>
+        <li ng-repeat="type in category.types"><a ng-tap="$navigate.go('/type/{{type}}', 'slide')">{{type}}</a></li>
     </ul>
 </div>
-

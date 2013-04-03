@@ -1,0 +1,19 @@
+<div class="toolbar">
+    <h1 id="pageTitle">{{type.name}}</h1>
+        <a id="backButton" class="button" ng-tap="$navigate.back()">Back</a>
+</div>
+<div class="content panel">
+
+    <h3>{{type.name}}</h3>
+    {{type.description}}
+    <br>
+    <br>
+
+    <select ng-repeat="n in [] | range:type.maxAvailable" ng-model="type.levels[n]" ng-change="updateLevel($index)">
+        <option value="0">Yok</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+</div>
+

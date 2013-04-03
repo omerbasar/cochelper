@@ -12,8 +12,26 @@
     <script src="content/app.js"></script>
     <script src="mobile-nav.js"></script>
     <link rel="stylesheet" href="mobile-nav.css">
+
+    <script type="text/javascript">
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '624781694203062'
+            });
+        };
+
+        // Load the SDK Asynchronously
+        (function(d){
+            var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement('script'); js.id = id; js.async = true;
+            js.src = "//connect.facebook.net/en_US/all.js";
+            ref.parentNode.insertBefore(js, ref);
+        }(document));
+
+    </script>
   </head>
-  
+
   <body ng-controller="MainCtrl">
     <mobile-view></mobile-view>
   </body>

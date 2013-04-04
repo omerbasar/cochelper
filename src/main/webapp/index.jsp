@@ -16,7 +16,6 @@
    window.fbAsyncInit = function() {
       FB.init({
          appId      : '624781694203062', // App ID
-         channelUrl : '//www.cochelper.com:8080/channel.html', // Channel File
          status     : true, // check login status
          cookie     : true, // enable cookies to allow the server to access the session
          xfbml      : true  // parse XFBML

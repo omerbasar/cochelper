@@ -44,6 +44,15 @@ angular.module('myApp', ['mobile-navigate'])
     templateUrl: "content/wall.html",
     controller: WallController,
     transition: "modal" //this is overwritten by the go() in home.html
+  }).when("/strategy", {
+    templateUrl: "content/strategy.html",
+    transition: "modal" //this is overwritten by the go() in home.html
+  }).when("/strategy/production", {
+    templateUrl: "content/production.html",
+    transition: "modal" //this is overwritten by the go() in home.html
+  }).when("/strategy/projection", {
+    templateUrl: "content/projection.html",
+    transition: "modal" //this is overwritten by the go() in home.html
   }).when("/", {
     templateUrl: "content/home.html"
   }).otherwise({
@@ -67,15 +76,15 @@ angular.module('myApp', ['mobile-navigate'])
    10 : 170
 })
 .value('types', {
-    'cannon' : {name : 'Topçu', description : 'Topçu ilk üretilen binadır.', maxAvailable : 5, maxLevel : 11},
-    'archerTower' : {name : 'Okçu Kulesi', description : 'Uzun menzilli atış yapar.', maxAvailable : 6, maxLevel : 11},
-    'mortar' : {name : 'Havan', description : '4x4 lük bir alana etki eder.', maxAvailable : 3, maxLevel : 7},
-    'goldMine' : {name : 'Altın Madeni', description : 'Altın toplar. En fazla saatte 3000 üretim yapar.', maxAvailable : 6, maxLevel : 11},
-    'elixirCollector' : {name : 'İksir Toplayıcı', description : 'Eliksir toplar. En fazla saatte 3000 üretim yapar.', maxAvailable : 6, maxLevel : 11},
-    'townHall' : {name : 'Köy Binası', description : 'Ana şehir. Herşeyin başı :) ', maxAvailable : 1, maxLevel : 9},
-    'archerQueen' : {name : 'Okçu Kraliçe', description : 'Okçu kraliçe. Başka söze gerek var mı', maxAvailable : 1, maxLevel : 30},
-    'barrack' : {name : 'Kışla', description : 'Savaşçılar burada üretilir.', maxAvailable : 4, maxLevel : 10},
-    'wall' : {name : 'Duvar', description : 'Efsane duvarlarla şehrinin savunmasını kuvvetlendirebilirsin. Burada gruplama yapmamız gerekiyor. 6 seviye 10, 7 seviye 25, 10 seviye 200 duvar var gibi....', maxAvailable : 250, maxLevel : 10}
+    'cannon' : {key: 'cannon', name : 'Topçu', description : 'Topçu ilk üretilen binadır.', maxAvailable : 5, maxLevel : 11},
+    'archerTower' : {key: 'archer_tower', name : 'Okçu Kulesi', description : 'Uzun menzilli atış yapar.', maxAvailable : 6, maxLevel : 11},
+    'mortar' : {key: 'mortar', name : 'Havan', description : '4x4 lük bir alana etki eder.', maxAvailable : 3, maxLevel : 7},
+    'goldMine' : {key: 'gold_mine', name : 'Altın Madeni', description : 'Altın toplar. En fazla saatte 3000 üretim yapar.', maxAvailable : 6, maxLevel : 11},
+    'elixirCollector' : {key: 'elixir_collector', name : 'İksir Toplayıcı', description : 'Eliksir toplar. En fazla saatte 3000 üretim yapar.', maxAvailable : 6, maxLevel : 11},
+    'townHall' : {key: 'town_hall', name : 'Köy Binası', description : 'Ana şehir. Herşeyin başı :) ', maxAvailable : 1, maxLevel : 9},
+    'archerQueen' : {key: 'archer_queen', name : 'Okçu Kraliçe', description : 'Okçu kraliçe. Başka söze gerek var mı', maxAvailable : 1, maxLevel : 30},
+    'barrack' : {key: 'barrack', name : 'Kışla', description : 'Savaşçılar burada üretilir.', maxAvailable : 4, maxLevel : 10},
+    'wall' : {key: 'wall', name : 'Duvar', description : 'Efsane duvarlarla şehrinin savunmasını kuvvetlendirebilirsin. Burada gruplama yapmamız gerekiyor. 6 seviye 10, 7 seviye 25, 10 seviye 200 duvar var gibi....', maxAvailable : 250, maxLevel : 10}
 })
 .value('categories', {
     'other' : {key : 'other', name : 'Ana Binalar', types : ['townHall']},

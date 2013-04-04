@@ -66,4 +66,9 @@ public class Building {
    public List<? extends Level> getLevels(){
       return LevelHelper.getLevels(type);
    }
+
+   public static void main(String[] args) {
+      int a = (int) 10L;
+      System.out.println("a = " + a);
+   }
 }

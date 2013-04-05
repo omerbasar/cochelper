@@ -49,9 +49,11 @@ angular.module('myApp', ['mobile-navigate'])
     transition: "modal" //this is overwritten by the go() in home.html
   }).when("/strategy/production", {
     templateUrl: "content/production.html",
+    controller: ProductionController,
     transition: "modal" //this is overwritten by the go() in home.html
   }).when("/strategy/projection", {
     templateUrl: "content/projection.html",
+    controller: ProjectionController,
     transition: "modal" //this is overwritten by the go() in home.html
   }).when("/", {
     templateUrl: "content/home.html"
@@ -59,6 +61,12 @@ angular.module('myApp', ['mobile-navigate'])
     redirectTo: "/"
   });
 })
+/* Saatlik uretim */
+.value('productions', [
+    {type: 'gold', rate : 12000, percentage: 15.67},
+    {type: 'elixir', rate : 15000, percentage: 63.67},
+    {type: 'dark_elixir', rate : 100, percentage: 29.00}]
+)
 .value('levels', {
     'cannon' : [1,3,3,0,0],
     'archerTower' : [1,2,1,2,3,4],
@@ -185,4 +193,12 @@ function WallController($scope, levels, types, wallCountsPerLevel){
     };
 
     $scope.calculateUnassigned();
+}
+
+function ProductionController($scope, productions){
+    $scope.productions = productions;
+}
+
+function ProjectionController(){
+
 }

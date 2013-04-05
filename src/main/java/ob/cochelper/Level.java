@@ -8,28 +8,40 @@ package ob.cochelper;
 public class Level {
 
    private Integer index;
+   private Integer hitPoint;
    private Integer cost;
-
    /**
     * dakika tipinde
     */
-   private Integer buildTime;
+   private Integer upgradeTime;
 
-   protected Level(Integer index, Integer cost, Integer buildTime) {
+   private Integer townHallLevelRequired;
+
+   protected Level(Integer index, Integer hitPoint, Integer cost, Integer upgradeTime, Integer townHallLevelRequired) {
       this.index = index;
+      this.hitPoint = hitPoint;
       this.cost = cost;
-      this.buildTime = buildTime;
+      this.upgradeTime = upgradeTime;
+      this.townHallLevelRequired = townHallLevelRequired;
    }
 
    public Integer getIndex() {
       return index;
    }
 
+   public Integer getHitPoint() {
+      return hitPoint;
+   }
+
    public Integer getCost() {
       return cost;
    }
 
-   public Integer getBuildTime() {
-      return buildTime;
+   public Integer getUpgradeTime() {
+      return upgradeTime;
+   }
+
+   public Integer getTownHallLevelRequired() {
+      return townHallLevelRequired;
    }
 }

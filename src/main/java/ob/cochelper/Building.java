@@ -34,7 +34,7 @@ public class Building {
    public Long getRemainingBuildTime(){
       Long remainingBuildTime = 0L;
       for(int i = level ; i < getLevels().size(); i ++){
-         remainingBuildTime += getLevels().get(i).getBuildTime();
+         remainingBuildTime += getLevels().get(i).getUpgradeTime();
       }
       return remainingBuildTime;
    }
@@ -50,7 +50,7 @@ public class Building {
    public Long getElapsedBuildTime(){
       Long elapsedBuildTime = 0L;
       for(int i = 0 ; i < level; i ++){
-         elapsedBuildTime += getLevels().get(i).getBuildTime();
+         elapsedBuildTime += getLevels().get(i).getUpgradeTime();
       }
       return elapsedBuildTime;
    }

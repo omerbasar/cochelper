@@ -65,8 +65,12 @@ angular.module('myApp', ['mobile-navigate'])
 .value('productions', [
     {type: 'gold', rate : 12000, percentage: 15.67},
     {type: 'elixir', rate : 15000, percentage: 63.67},
-    {type: 'dark_elixir', rate : 100, percentage: 29.00}]
-)
+    {type: 'dark_elixir', rate : 100, percentage: 29.00}
+])
+.value('projections', [
+    {type: 'time', elapsed: '14 gün 4 saat', remaining: '12 gün 6 saat', total: '26 gün 10 saat', percentage: '46.65'},
+    {type: 'gold', elapsed: '10 000 000', remaining: '2 000 000', total: '12 000 000', percentage: '23.97'}
+])
 .value('levels', {
     'cannon' : [1,3,3,0,0],
     'archerTower' : [1,2,1,2,3,4],
@@ -199,6 +203,7 @@ function ProductionController($scope, productions){
     $scope.productions = productions;
 }
 
-function ProjectionController(){
-
+function ProjectionController($scope, projections){
+    $scope.projections = projections;
+    $scope.purpose = 1;
 }

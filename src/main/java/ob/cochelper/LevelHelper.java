@@ -16,7 +16,7 @@ public class LevelHelper {
    private static final List<Level> mortarLevels = new ArrayList<Level>(7);
    private static final List<Level> wizardTowerLevels = new ArrayList<Level>(7);
    private static final List<Level> airDefenseLevels = new ArrayList<Level>(7);
-   private static final List<Level> hiddenTeslaLevels = new ArrayList<Level>(6);
+   private static final List<Level> hiddenTeslaLevels = new ArrayList<Level>(7);
    private static final List<Level> xBowLevels = new ArrayList<Level>(3);
 
    private static final List<ResourceLevel> elixirCollectorLevels = new ArrayList<ResourceLevel>(11);
@@ -28,11 +28,11 @@ public class LevelHelper {
    private static final List<Level> buildersHutLevels = new ArrayList<Level>(1);
    private static final List<Level> armyCampLevels = new ArrayList<Level>(7);
    private static final List<Level> barrackLevels = new ArrayList<Level>(10);
-   private static final List<Level> darkBarrackLevels = new ArrayList<Level>(3);
+   private static final List<Level> darkBarrackLevels = new ArrayList<Level>(4);
    private static final List<Level> laboratoryLevels = new ArrayList<Level>(7);
    private static final List<Level> spellFactoryLevels = new ArrayList<Level>(4);
    private static final List<Level> townHallLevels = new ArrayList<Level>(9);
-   private static final List<Level> clanCastleLevels = new ArrayList<Level>(4);
+   private static final List<Level> clanCastleLevels = new ArrayList<Level>(5);
    private static final List<Level> wallLevels = new ArrayList<Level>(10);
 
    private static final List<Level> barbarKingLevels = new ArrayList<Level>(30);
@@ -93,6 +93,7 @@ public class LevelHelper {
       hiddenTeslaLevels.add(new Level(4, 690, 2000000, 8 * 1440, 8));
       hiddenTeslaLevels.add(new Level(5, 730, 2500000, 10 * 1440, 8));
       hiddenTeslaLevels.add(new Level(6, 770, 3000000, 12 * 1440, 8));
+      hiddenTeslaLevels.add(new Level(7, 810, 3500000, 14 * 1440, 9));
 
       xBowLevels.add(new Level(1, 1500, 3000000, 7 * 1440, 9));
       xBowLevels.add(new Level(1, 1900, 6000000, 10 * 1440, 9));
@@ -187,7 +188,8 @@ public class LevelHelper {
 
       darkBarrackLevels.add(new Level(1, 250, 750000, 3 * 1440, 7));
       darkBarrackLevels.add(new Level(2, 300, 1500000, 5 * 1440, 7));
-      darkBarrackLevels.add(new Level(2, 350, 3000000, 7 * 1440, 8));
+      darkBarrackLevels.add(new Level(3, 350, 3000000, 6 * 1440, 8));
+      darkBarrackLevels.add(new Level(4, 400, 4000000, 7 * 1440, 8));
 
       laboratoryLevels.add(new Level(1, 250, 25000, 30, 3));
       laboratoryLevels.add(new Level(2, 271, 50000, 5 * 60, 4));
@@ -216,6 +218,7 @@ public class LevelHelper {
       clanCastleLevels.add(new Level(2, 1400, 100000, 6 * 60, 4));
       clanCastleLevels.add(new Level(3, 2000, 800000, 1440, 6));
       clanCastleLevels.add(new Level(4, 2600, 1800000, 2 * 1440, 8));
+      clanCastleLevels.add(new Level(5, 3000, 7000000, 7 * 1440, 9));
 
       wallLevels.add(new Level(1, 300, 200, 0, 2));
       wallLevels.add(new Level(2, 500, 1000, 0, 2));
@@ -298,8 +301,8 @@ public class LevelHelper {
                case CANNON: return 5;
                case ARCHER_TOWER: return 6;
                case MORTAR: return 3;
-               case WIZARD_TOWER: return 3;
-               case AIR_DEFENSE: return 3;
+               case WIZARD_TOWER: return 4;
+               case AIR_DEFENSE: return 4;
                case HIDDEN_TESLA: return 4;
                case XBOW: return 2;
                case ELIXIR_COLLECTOR: return 6;

@@ -1,19 +1,3 @@
-/**
- * Copyright 2012 Google Inc. All Rights Reserved. 
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package ob.cochelper;
 
 import javax.servlet.RequestDispatcher;
@@ -75,10 +59,16 @@ public class CalculatorServlet extends HttpServlet {
       Integer clanCastle = Integer.parseInt(req.getParameter("clanCastle"));
       Integer barbarKing = Integer.parseInt(req.getParameter("barbarKing"));
       Integer archerQueen = Integer.parseInt(req.getParameter("archerQueen"));
+      String spellLevels = req.getParameter("spellLevels");
+      String elixirTroopLevels = req.getParameter("elixirTroopLevels");
+      String darkElixirTroopLevels = req.getParameter("darkElixirTroopLevels");
 
       // todo: arayüzden buildingCategorySet'ini al
       Set<BuildingCategory> categories = new HashSet<BuildingCategory>();
       categories.add(BuildingCategory.DEFENSE);
+
+      Set<UpgradeCategory> upgradeCategories = new HashSet<UpgradeCategory>();
+      upgradeCategories.add(UpgradeCategory.SPELL);
 
       // todo: arayuzden duvarlari al
       Map<Integer, Integer> wallMap = new HashMap<Integer, Integer>();
@@ -107,6 +97,9 @@ public class CalculatorServlet extends HttpServlet {
       req.setAttribute("clanCastle", clanCastle);
       req.setAttribute("barbarKing", barbarKing);
       req.setAttribute("archerQueen", archerQueen);
+      req.setAttribute("spellLevels", spellLevels);
+      req.setAttribute("elixirTroopLevels", elixirTroopLevels);
+      req.setAttribute("darkElixirTroopLevels", darkElixirTroopLevels);
 
       resp.addCookie(new Cookie(COOKIE_PREFIX + "cannons", cannons.replaceAll(",", "_")));
       resp.addCookie(new Cookie(COOKIE_PREFIX + "archerTowers", archerTowers.replaceAll(",", "_")));
@@ -134,12 +127,17 @@ public class CalculatorServlet extends HttpServlet {
       resp.addCookie(new Cookie(COOKIE_PREFIX + "barbarKing", barbarKing + ""));
       resp.addCookie(new Cookie(COOKIE_PREFIX + "archerQueen", archerQueen + ""));
 
+      resp.addCookie(new Cookie(COOKIE_PREFIX + "spellLevels", spellLevels + ""));
+      resp.addCookie(new Cookie(COOKIE_PREFIX + "elixirTroopLevels", elixirTroopLevels+ ""));
+      resp.addCookie(new Cookie(COOKIE_PREFIX + "darkElixirTroopLevels", darkElixirTroopLevels + ""));
+
       Village village = new Village(townHall, cannons, archerTowers, mortars, wizardTowers, airDefenses, hiddenTeslas, xBows, infernoTowers,
               goldMines, elixirCollectors, darkElixirDrills,
               goldStorages, elixirStorages, darkElixirStorages,
               builderCount, armyCamps, barracks, darkBarracks,
               laboratory, spellFactory, clanCastle,
-              barbarKing, archerQueen, categories, wallMap);
+              barbarKing, archerQueen, categories, upgradeCategories, wallMap, spellLevels, elixirTroopLevels, darkElixirTroopLevels);
+
       village.calculate(10);
 
       req.setAttribute("village", village);

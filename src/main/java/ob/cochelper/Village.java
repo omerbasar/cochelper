@@ -12,8 +12,11 @@ public class Village {
    private Integer level;
    private Integer builderCount;
    private List<Building> buildings = new ArrayList<Building>();
+   private List<Upgrade> upgrades = new ArrayList<Upgrade>();
    private ProductionStat productionStat = new ProductionStat();
+   private ProductionStat upgradeStat = new ProductionStat();
    private Set<BuildingCategory> categories;
+   private Set<UpgradeCategory> upgradeCategories;
 
    /**
     * Her bir kaynak icin gunluk uretim rakamlari
@@ -25,11 +28,14 @@ public class Village {
                   String goldStorages, String elixirStorages, String darkElixirStorages,
                   Integer builderCount, String armyCamps, String barracks, String darkBarracks,
                   Integer laboratory, Integer spellFactory, Integer clanCastle,
-                  Integer barbarKing, Integer archerQuenn, Set<BuildingCategory> categories, Map<Integer, Integer> wallMap) {
+                  Integer barbarKing, Integer archerQuenn, Set<BuildingCategory> categories, Set<UpgradeCategory> upgradeCategories, Map<Integer, Integer> wallMap,
+                  String spellLevels, String elixirTroopLevels, String darkElixirTroopLevels
+                  ) {
 
       this.level = townHall;
       this.builderCount = builderCount;
       this.categories = categories;
+      this.upgradeCategories = upgradeCategories;
 
       create(BuildingType.TOWN_HALL, BuildingCategory.OTHER, townHall);
       create(BuildingType.CLAN_CASTLE, BuildingCategory.OTHER, clanCastle);
@@ -61,6 +67,34 @@ public class Village {
       create(BuildingType.ARCHER_QUENN, BuildingCategory.HERO, archerQuenn);
 
       create(BuildingType.WALL, BuildingCategory.WALL, wallMapToCommaSeparated(wallMap));
+
+      String[] elixirTroopLevelArray = elixirTroopLevels.split(",");
+
+      create(UpgradeType.BARBARIAN, UpgradeCategory.ELIXIR_TROOP, Integer.parseInt(elixirTroopLevelArray[0]));
+      create(UpgradeType.ARCHER, UpgradeCategory.ELIXIR_TROOP, Integer.parseInt(elixirTroopLevelArray[1]));
+      create(UpgradeType.GOBLIN, UpgradeCategory.ELIXIR_TROOP, Integer.parseInt(elixirTroopLevelArray[2]));
+      create(UpgradeType.GIANT, UpgradeCategory.ELIXIR_TROOP, Integer.parseInt(elixirTroopLevelArray[3]));
+      create(UpgradeType.WALL_BREAKER, UpgradeCategory.ELIXIR_TROOP, Integer.parseInt(elixirTroopLevelArray[4]));
+      create(UpgradeType.BALLOON, UpgradeCategory.ELIXIR_TROOP, Integer.parseInt(elixirTroopLevelArray[5]));
+      create(UpgradeType.WIZARD, UpgradeCategory.ELIXIR_TROOP, Integer.parseInt(elixirTroopLevelArray[6]));
+      create(UpgradeType.HEALER, UpgradeCategory.ELIXIR_TROOP, Integer.parseInt(elixirTroopLevelArray[7]));
+      create(UpgradeType.DRAGON, UpgradeCategory.ELIXIR_TROOP, Integer.parseInt(elixirTroopLevelArray[8]));
+      create(UpgradeType.PEKKA, UpgradeCategory.ELIXIR_TROOP, Integer.parseInt(elixirTroopLevelArray[9]));
+
+      String[] darkElixirTroopLevelArray = darkElixirTroopLevels.split(",");
+
+      create(UpgradeType.MINION, UpgradeCategory.DARK_ELIXIR_TROOP, Integer.parseInt(darkElixirTroopLevelArray[0]));
+      create(UpgradeType.HOG_RIDER, UpgradeCategory.DARK_ELIXIR_TROOP, Integer.parseInt(darkElixirTroopLevelArray[1]));
+      create(UpgradeType.VALKYRIE, UpgradeCategory.DARK_ELIXIR_TROOP, Integer.parseInt(darkElixirTroopLevelArray[2]));
+      create(UpgradeType.GOLEM, UpgradeCategory.DARK_ELIXIR_TROOP, Integer.parseInt(darkElixirTroopLevelArray[3]));
+
+      String[] spellLevelArray = spellLevels.split(",");
+
+      create(UpgradeType.LIGHTENING_SPELL, UpgradeCategory.SPELL, Integer.parseInt(spellLevelArray[0]));
+      create(UpgradeType.HEALING_SPELL, UpgradeCategory.SPELL, Integer.parseInt(spellLevelArray[1]));
+      create(UpgradeType.RAGE_SPELL, UpgradeCategory.SPELL, Integer.parseInt(spellLevelArray[2]));
+      create(UpgradeType.JUMP_SPELL, UpgradeCategory.SPELL, Integer.parseInt(spellLevelArray[3]));
+      create(UpgradeType.SANTAS_SURPRISE_SPELL, UpgradeCategory.SPELL, Integer.parseInt(spellLevelArray[4]));
 
       // uretimleri hesapla
       for (Resource resource : Resource.values()) {
@@ -112,6 +146,10 @@ public class Village {
       }
    }
 
+   private void create(UpgradeType type, UpgradeCategory category, Integer level) {
+      upgrades.add(new Upgrade(type, category, level));
+   }
+
    public void calculate(int untilTownHallLevel){
       for (Building building : buildings) {
          if(categories.contains(building.getCategory())){
@@ -133,8 +171,33 @@ public class Village {
       productionStat.setBuildTimeStat(buildTimeStat);
    }
 
+   // todo: aslinda untilLaboratoryLevel townHallLevel'den hesaplana bilir. Bu constructor'a alindiginda calculate'de parametresiz hale getirilecek
+   public void calculateUpgrade(int untilLaboratoryLevel){
+      for (Upgrade upgrade: upgrades) {
+         if(upgradeCategories.contains(upgrade.getCategory())){
+
+            upgradeStat.incrementBuildTimeElapsed(upgrade.getElapsedBuildTime());
+            upgradeStat.incrementBuildTimeRemaining(upgrade.getRemainingBuildTime(untilLaboratoryLevel));
+
+            Resource resource = upgrade.getType().getResource();
+
+            upgradeStat.incrementResourceElapsed(resource, upgrade.getElapsedResource());
+            upgradeStat.incrementResourceRemaining(resource, upgrade.getRemainingResource(untilLaboratoryLevel));
+         }
+      }
+
+      SingleStat buildTimeStat = upgradeStat.getBuildTimeStat();
+      buildTimeStat.setElapsed(buildTimeStat.getElapsed());
+      buildTimeStat.setRemaining(buildTimeStat.getRemaining());
+      upgradeStat.setBuildTimeStat(buildTimeStat);
+   }
+
    public ProductionStat getProductionStat() {
       return productionStat;
+   }
+
+   public ProductionStat getUpgradeStat() {
+      return upgradeStat;
    }
 
    public Map<Resource, Long> getDailyProduction() {

@@ -10,6 +10,7 @@ public class VillageHelper {
       Set<BuildingCategory> categories = new HashSet<BuildingCategory>();
       //categories.add(BuildingCategory.DEFENSE);
 
+      /*
       for (BuildingCategory buildingCategory : BuildingCategory.values()) {
          if(buildingCategory.equals(BuildingCategory.WALL)){
             continue;
@@ -18,6 +19,12 @@ public class VillageHelper {
          }
          categories.add(buildingCategory);
       }
+      */
+
+      Set<UpgradeCategory> upgradeCategories = new HashSet<UpgradeCategory>();
+      upgradeCategories.add(UpgradeCategory.ELIXIR_TROOP);
+      upgradeCategories.add(UpgradeCategory.SPELL);
+      upgradeCategories.add(UpgradeCategory.DARK_ELIXIR_TROOP);
 
       Map<Integer, Integer> wallMap = new TreeMap<Integer, Integer>();
 
@@ -46,34 +53,33 @@ public class VillageHelper {
       int clanCastle = 4;
       int barbarKing = 11;
       int archerQuenn = 3;
+      int townHall = 9;
+
+      String spellLevels = "5,3,3,1,1";
+      String elixirTroopLevels = "6,6,5,5,5,3,2,1,3,3";
+      String darkElixirTroopLevels = "1,1,1,0";
 
       wallMap.put(5, 13);
       wallMap.put(6, 167);
       wallMap.put(7, 68);
       wallMap.put(8, 2);
 
-      return new Village(9, cannonCS, archersCS, mortars, wizardTowers, airDefenses, hiddenTeslas, xBows, infernoTowers,
+      return new Village(townHall, cannonCS, archersCS, mortars, wizardTowers, airDefenses, hiddenTeslas, xBows, infernoTowers,
               goldMines, elixirCollectors, darkElixirDrills,
               goldStorages, elixirStorages, darkElixirStorages, builders, armyCamps, barracks, darkBarracks, laboratory, spellFactory,
-              clanCastle, barbarKing, archerQuenn, categories, wallMap);
+              clanCastle, barbarKing, archerQuenn, categories, upgradeCategories, wallMap, spellLevels, elixirTroopLevels, darkElixirTroopLevels);
    }
 
    public static void main(String[] args) {
 
       int untilTownHallLevel = 9;
+      int untilLaboratoryLevel = 7;
 
       Village village = VillageHelper.getVillageOfOmer();
       village.calculate(untilTownHallLevel);
+      village.calculateUpgrade(untilLaboratoryLevel);
 
-      ProductionStat productionStat = village.getProductionStat();
-      System.out.println("Build time = " + StringUtil.makeTimeReadable(productionStat.getBuildTimeStat().getElapsed()));
-      System.out.println("Remaining build time = " + StringUtil.makeTimeReadable(productionStat.getBuildTimeStat().getRemaining()));
-      System.out.println("Total build time = " + StringUtil.makeTimeReadable(productionStat.getBuildTimeStat().getTotal()));
-      for (Resource resource : Resource.values()) {
-         System.out.println(resource +" used = " + StringUtil.makeResourceReadable(productionStat.getResourceSingleStat(resource).getElapsed()));
-         System.out.println(resource +" should be collected =  " + StringUtil.makeResourceReadable(productionStat.getResourceSingleStat(resource).getRemaining()));
-         System.out.println(resource +" total = " + StringUtil.makeResourceReadable(productionStat.getResourceSingleStat(resource).getTotal()));
-      }
+      village.getProductionStat().print();
 
       System.out.println("-----------------------------------");
       Map<Resource, Long> prod = village.getDailyProduction();
@@ -86,5 +92,12 @@ public class VillageHelper {
       System.out.println("--------------------------");
 
       village.printRemainingLevels(untilTownHallLevel);
+
+      System.out.println("--------------------------");
+      System.out.println("-----   laboratory -------");
+      System.out.println("--------------------------");
+
+      village.getUpgradeStat().print();
    }
+
 }

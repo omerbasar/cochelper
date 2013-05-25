@@ -49,4 +49,15 @@ public class ProductionStat {
    public void setBuildTimeStat(SingleStat buildTimeStat) {
       this.buildTimeStat = buildTimeStat;
    }
+
+   public void print() {
+      System.out.println("Build time = " + StringUtil.makeTimeReadable(getBuildTimeStat().getElapsed()));
+      System.out.println("Remaining build time = " + StringUtil.makeTimeReadable(getBuildTimeStat().getRemaining()));
+      System.out.println("Total build time = " + StringUtil.makeTimeReadable(getBuildTimeStat().getTotal()));
+      for (Resource resource : Resource.values()) {
+         System.out.println(resource +" used = " + StringUtil.makeResourceReadable(getResourceSingleStat(resource).getElapsed()));
+         System.out.println(resource +" should be collected =  " + StringUtil.makeResourceReadable(getResourceSingleStat(resource).getRemaining()));
+         System.out.println(resource +" total = " + StringUtil.makeResourceReadable(getResourceSingleStat(resource).getTotal()));
+      }
+   }
 }

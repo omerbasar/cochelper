@@ -44,4 +44,11 @@ public class Level {
    public Integer getTownHallLevelRequired() {
       return townHallLevelRequired;
    }
+
+   @Override
+   public String toString() {
+      return "Level{" +
+              "index=" + index +
+              '}';
+   }
 }

@@ -140,7 +140,7 @@ public class CalculatorServlet extends HttpServlet {
               builderCount, armyCamps, barracks, darkBarracks,
               laboratory, spellFactory, clanCastle,
               barbarKing, archerQueen, categories, wallMap);
-      village.calculate();
+      village.calculate(10);
 
       req.setAttribute("village", village);
 

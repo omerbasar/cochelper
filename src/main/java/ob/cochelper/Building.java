@@ -1,5 +1,6 @@
 package ob.cochelper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -31,34 +32,51 @@ public class Building {
       return type;
    }
 
-   public Long getRemainingBuildTime(){
+   public List<Level> getRemainingLevels(int untilTownHallLevel){
+      List<Level> levels = new ArrayList<Level>();
+      for (Level currentLevel : getLevels()) {
+         if(level < currentLevel.getIndex() && currentLevel.getTownHallLevelRequired() <= untilTownHallLevel){
+            levels.add(currentLevel);
+         }
+      }
+      return levels;
+   }
+
+   public Long getRemainingBuildTime(int untilTownHallLevel){
       Long remainingBuildTime = 0L;
-      for(int i = level ; i < getLevels().size(); i ++){
-         remainingBuildTime += getLevels().get(i).getUpgradeTime();
+
+      for (Level currentLevel : getRemainingLevels(untilTownHallLevel)) {
+         remainingBuildTime += currentLevel.getUpgradeTime();
       }
       return remainingBuildTime;
    }
 
-   public Long getRemainingResource(){
+   public Long getRemainingResource(int untilTownHallLevel){
       Long remainingResource = 0L;
-      for(int i = level ; i < getLevels().size(); i ++){
-         remainingResource += getLevels().get(i).getCost();
+      for (Level currentLevel : getLevels()) {
+         if(level < currentLevel.getIndex() && currentLevel.getTownHallLevelRequired() <= untilTownHallLevel){
+            remainingResource += currentLevel.getCost();
+         }
       }
       return remainingResource;
    }
 
    public Long getElapsedBuildTime(){
       Long elapsedBuildTime = 0L;
-      for(int i = 0 ; i < level; i ++){
-         elapsedBuildTime += getLevels().get(i).getUpgradeTime();
+      for (Level currentLevel : getLevels()) {
+         if(currentLevel.getIndex() <= level ){
+            elapsedBuildTime += currentLevel.getUpgradeTime();
+         }
       }
       return elapsedBuildTime;
    }
 
    public Long getElapsedResource(){
       Long elapsedResource = 0L;
-      for(int i = 0 ; i < level; i ++){
-         elapsedResource += getLevels().get(i).getCost();
+      for (Level currentLevel : getLevels()) {
+         if(currentLevel.getIndex() < level ){
+            elapsedResource += currentLevel.getCost();
+         }
       }
       return elapsedResource;
    }
@@ -67,8 +85,8 @@ public class Building {
       return LevelHelper.getLevels(type);
    }
 
-   public static void main(String[] args) {
-      int a = (int) 10L;
-      System.out.println("a = " + a);
+   @Override
+   public String toString() {
+      return type + "(" + level + ")";
    }
 }

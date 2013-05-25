@@ -112,16 +112,17 @@ public class Village {
       }
    }
 
-   public void calculate(){
+   public void calculate(int untilTownHallLevel){
       for (Building building : buildings) {
          if(categories.contains(building.getCategory())){
+
             productionStat.incrementBuildTimeElapsed(building.getElapsedBuildTime());
-            productionStat.incrementBuildTimeRemaining(building.getRemainingBuildTime());
+            productionStat.incrementBuildTimeRemaining(building.getRemainingBuildTime(untilTownHallLevel));
 
             Resource resource = building.getType().getResource();
 
             productionStat.incrementResourceElapsed(resource, building.getElapsedResource());
-            productionStat.incrementResourceRemaining(resource, building.getRemainingResource());
+            productionStat.incrementResourceRemaining(resource, building.getRemainingResource(untilTownHallLevel));
          }
       }
 
@@ -138,5 +139,18 @@ public class Village {
 
    public Map<Resource, Long> getDailyProduction() {
       return dailyProduction;
+   }
+
+   public void printRemainingLevels(int untilTownHallLevel) {
+      for (Building building : buildings) {
+         if(categories.contains(building.getCategory())){
+            List<Level> remainingLevels = building.getRemainingLevels(untilTownHallLevel);
+            if(!remainingLevels.isEmpty()){
+               for (Level remainingLevel : remainingLevels) {
+                  System.out.println("remainingLevel for building "+ building + " : " + remainingLevel);
+               }
+            }
+         }
+      }
    }
 }

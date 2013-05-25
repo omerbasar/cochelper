@@ -98,11 +98,11 @@ public class LevelHelper {
       hiddenTeslaLevels.add(new Level(7, 810, 3500000, (int)TimeUnit.DAYS.toMinutes(14), 9));
 
       xBowLevels.add(new Level(1, 1500, 3000000, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      xBowLevels.add(new Level(1, 1900, 6000000, (int)TimeUnit.DAYS.toMinutes(10), 9));
-      xBowLevels.add(new Level(2, 2400, 8000000, (int)TimeUnit.DAYS.toMinutes(14), 9));
+      xBowLevels.add(new Level(2, 1900, 6000000, (int)TimeUnit.DAYS.toMinutes(10), 9));
+      xBowLevels.add(new Level(3, 2400, 8000000, (int)TimeUnit.DAYS.toMinutes(14), 10));
 
       infernoTowerLevels.add(new Level(1, 1500, 5000000, (int)TimeUnit.DAYS.toMinutes(7), 10));
-      infernoTowerLevels.add(new Level(1, 1900, 8000000, (int)TimeUnit.DAYS.toMinutes(10), 10));
+      infernoTowerLevels.add(new Level(2, 1900, 8000000, (int)TimeUnit.DAYS.toMinutes(10), 10));
 
       elixirCollectorLevels.add(new ResourceLevel(1, 400, 150, 1, 1, 500, 200));
       elixirCollectorLevels.add(new ResourceLevel(2, 450, 300, 5, 1, 1000, 400));
@@ -203,7 +203,7 @@ public class LevelHelper {
       laboratoryLevels.add(new Level(5, 310, 500000, (int)TimeUnit.DAYS.toMinutes(2), 7));
       laboratoryLevels.add(new Level(6, 330, 1000000, (int)TimeUnit.DAYS.toMinutes(4), 8));
       laboratoryLevels.add(new Level(7, 350, 2500000, (int)TimeUnit.DAYS.toMinutes(5), 9));
-      laboratoryLevels.add(new Level(8, 370, 4000000, (int)TimeUnit.DAYS.toMinutes(6), 9));
+      laboratoryLevels.add(new Level(8, 370, 4000000, (int)TimeUnit.DAYS.toMinutes(6), 10));
 
       spellFactoryLevels.add(new Level(1, 200, 200000, (int)TimeUnit.DAYS.toMinutes(1), 5));
       spellFactoryLevels.add(new Level(2, 300, 400000, (int)TimeUnit.DAYS.toMinutes(2), 6));

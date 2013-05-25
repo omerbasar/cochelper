@@ -1,9 +1,6 @@
 package ob.cochelper;
 
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * @author omer
@@ -64,9 +61,10 @@ public class VillageHelper {
 
    public static void main(String[] args) {
 
-      Village village = VillageHelper.getVillageOfOmer();
+      int untilTownHallLevel = 9;
 
-      village.calculate();
+      Village village = VillageHelper.getVillageOfOmer();
+      village.calculate(untilTownHallLevel);
 
       ProductionStat productionStat = village.getProductionStat();
       System.out.println("Build time = " + StringUtil.makeTimeReadable(productionStat.getBuildTimeStat().getElapsed()));
@@ -83,5 +81,11 @@ public class VillageHelper {
       for (Resource resource : prod.keySet()) {
          System.out.println(resource+" production per day = " + StringUtil.makeResourceReadable(prod.get(resource)));
       }
+
+      System.out.println("--------------------------");
+      System.out.println("--- remaining levels -----");
+      System.out.println("--------------------------");
+
+      village.printRemainingLevels(untilTownHallLevel);
    }
 }

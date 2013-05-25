@@ -14,6 +14,7 @@ public enum BuildingType {
    AIR_DEFENSE(Resource.GOLD),
    HIDDEN_TESLA(Resource.GOLD),
    XBOW(Resource.GOLD),
+   INFERNO_TOWER(Resource.GOLD),
    ELIXIR_COLLECTOR(Resource.GOLD, Resource.ELIXIR),
    GOLD_MINE(Resource.ELIXIR, Resource.GOLD),
    DARK_ELIXIR_DRILL(Resource.ELIXIR, Resource.DARK_ELIXIR),

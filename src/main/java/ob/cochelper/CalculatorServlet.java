@@ -58,6 +58,7 @@ public class CalculatorServlet extends HttpServlet {
       String airDefenses = req.getParameter("airDefenses");
       String hiddenTeslas = req.getParameter("hiddenTeslas");
       String xBows = req.getParameter("xBows");
+      String infernoTowers = req.getParameter("infernoTowers");
       String elixirCollectors = req.getParameter("elixirCollectors");
       String goldMines = req.getParameter("goldMines");
       String darkElixirDrills = req.getParameter("darkElixirDrills");
@@ -89,6 +90,7 @@ public class CalculatorServlet extends HttpServlet {
       req.setAttribute("airDefenses", airDefenses);
       req.setAttribute("hiddenTeslas", hiddenTeslas);
       req.setAttribute("xBows", xBows);
+      req.setAttribute("infernoTowers", infernoTowers);
       req.setAttribute("elixirCollectors", elixirCollectors);
       req.setAttribute("goldMines", goldMines);
       req.setAttribute("darkElixirDrills", darkElixirDrills);
@@ -113,6 +115,7 @@ public class CalculatorServlet extends HttpServlet {
       resp.addCookie(new Cookie(COOKIE_PREFIX + "airDefenses", airDefenses.replaceAll(",", "_")));
       resp.addCookie(new Cookie(COOKIE_PREFIX + "hiddenTeslas", hiddenTeslas.replaceAll(",", "_")));
       resp.addCookie(new Cookie(COOKIE_PREFIX + "xBows", xBows.replaceAll(",","_")));
+      resp.addCookie(new Cookie(COOKIE_PREFIX + "infernoTowers", infernoTowers.replaceAll(",","_")));
       resp.addCookie(new Cookie(COOKIE_PREFIX + "elixirCollectors", elixirCollectors.replaceAll(",","_")));
       resp.addCookie(new Cookie(COOKIE_PREFIX + "goldMines", goldMines.replaceAll(",","_")));
       resp.addCookie(new Cookie(COOKIE_PREFIX + "darkElixirDrills", darkElixirDrills.replaceAll(",","_")));
@@ -131,7 +134,7 @@ public class CalculatorServlet extends HttpServlet {
       resp.addCookie(new Cookie(COOKIE_PREFIX + "barbarKing", barbarKing + ""));
       resp.addCookie(new Cookie(COOKIE_PREFIX + "archerQueen", archerQueen + ""));
 
-      Village village = new Village(townHall, cannons, archerTowers, mortars, wizardTowers, airDefenses, hiddenTeslas, xBows,
+      Village village = new Village(townHall, cannons, archerTowers, mortars, wizardTowers, airDefenses, hiddenTeslas, xBows, infernoTowers,
               goldMines, elixirCollectors, darkElixirDrills,
               goldStorages, elixirStorages, darkElixirStorages,
               builderCount, armyCamps, barracks, darkBarracks,

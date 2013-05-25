@@ -20,7 +20,7 @@ public class Village {
     */
    private Map<Resource, Long> dailyProduction = new HashMap<Resource, Long>();
 
-   public Village(Integer townHall, String cannonCS, String archersCS, String mortars, String wizardTowers, String airDefenses, String hiddenTeslas, String xBows,
+   public Village(Integer townHall, String cannonCS, String archersCS, String mortars, String wizardTowers, String airDefenses, String hiddenTeslas, String xBows, String infernoTowers,
                   String goldMines, String elixirCollectors, String darkElixirDrills,
                   String goldStorages, String elixirStorages, String darkElixirStorages,
                   Integer builderCount, String armyCamps, String barracks, String darkBarracks,
@@ -41,6 +41,7 @@ public class Village {
       create(BuildingType.AIR_DEFENSE, BuildingCategory.DEFENSE, airDefenses);
       create(BuildingType.HIDDEN_TESLA, BuildingCategory.DEFENSE, hiddenTeslas);
       create(BuildingType.XBOW, BuildingCategory.DEFENSE, xBows);
+      create(BuildingType.INFERNO_TOWER, BuildingCategory.DEFENSE, infernoTowers);
 
       create(BuildingType.GOLD_MINE, BuildingCategory.RESOURCE, goldMines);
       create(BuildingType.ELIXIR_COLLECTOR, BuildingCategory.RESOURCE, elixirCollectors);
@@ -137,74 +138,5 @@ public class Village {
 
    public Map<Resource, Long> getDailyProduction() {
       return dailyProduction;
-   }
-
-   public static void main(String[] args) {
-
-      Set<BuildingCategory> categories = new HashSet<BuildingCategory>();
-      //categories.add(BuildingCategory.DEFENSE);
-
-      for (BuildingCategory buildingCategory : BuildingCategory.values()) {
-         if(buildingCategory.equals(BuildingCategory.WALL)){
-            continue;
-         }else if(buildingCategory.equals(BuildingCategory.HERO)){
-            continue;
-         }
-         categories.add(buildingCategory);
-      }
-
-      Map<Integer, Integer> wallMap = new TreeMap<Integer, Integer>();
-
-      String cannonCS = "11,11,10,10,9";
-      String archersCS = "10,10,9,9,9,9";
-      String mortars = "7,7,7";
-      String wizardTowers = "6,6,6,2";
-      String airDefenses = "6,6,5,2";
-      String hiddenTeslas = "6,6,5,3";
-      String xBows = "2,1";
-      String goldMines = "11,11,11,11,11,11";
-      String elixirCollectors = "11,11,11,11,11,11";
-      String darkElixirDrills = "5,4";
-      String goldStorages = "11,11,11,11";
-      String elixirStorages = "11,11,11,11";
-      String darkElixirStorages = "6";
-      int builders = 5;
-      String armyCamps = "7,7,7,7";
-      String barracks = "10,8,8,8";
-      String darkBarracks = "2,2";
-      int laboratory = 7;
-      int spellFactory = 4;
-      int clanCastle = 4;
-      int barbarKing = 8;
-      int archerQuenn = 1;
-
-      wallMap.put(1, 1);
-      wallMap.put(5, 18);
-      wallMap.put(6, 161);
-      wallMap.put(7, 68);
-      wallMap.put(8, 2);
-
-      Village village = new Village(9, cannonCS,
-              archersCS, mortars, wizardTowers, airDefenses, hiddenTeslas, xBows, goldMines, elixirCollectors, darkElixirDrills,
-              goldStorages, elixirStorages, darkElixirStorages, builders, armyCamps, barracks, darkBarracks, laboratory, spellFactory,
-              clanCastle, barbarKing, archerQuenn, categories, wallMap);
-
-      village.calculate();
-
-      ProductionStat productionStat = village.getProductionStat();
-      System.out.println("Build time = " + StringUtil.makeTimeReadable(productionStat.getBuildTimeStat().getElapsed()));
-      System.out.println("Remaining build time = " + StringUtil.makeTimeReadable(productionStat.getBuildTimeStat().getRemaining()));
-      System.out.println("Total build time = " + StringUtil.makeTimeReadable(productionStat.getBuildTimeStat().getTotal()));
-      for (Resource resource : Resource.values()) {
-         System.out.println(resource +" used = " + StringUtil.makeResourceReadable(productionStat.getResourceSingleStat(resource).getElapsed()));
-         System.out.println(resource +" should be collected =  " + StringUtil.makeResourceReadable(productionStat.getResourceSingleStat(resource).getRemaining()));
-         System.out.println(resource +" total = " + StringUtil.makeResourceReadable(productionStat.getResourceSingleStat(resource).getTotal()));
-      }
-
-      System.out.println("-----------------------------------");
-      Map<Resource, Long> prod = village.getDailyProduction();
-      for (Resource resource : prod.keySet()) {
-         System.out.println(resource+" production per day = " + StringUtil.makeResourceReadable(prod.get(resource)));
-      }
    }
 }

@@ -129,11 +129,11 @@ public class LevelHelper {
       goldMineLevels.add(new ResourceLevel(11, 750, 168000, (int)TimeUnit.DAYS.toMinutes(5), 7, 150000, 3000));
 
       darkElixirDrillLevels.add(new ResourceLevel(1, 400, 1000000, (int)TimeUnit.DAYS.toMinutes(1), 8, 120, 20));
-      darkElixirDrillLevels.add(new ResourceLevel(2, 480, 2000000, (int)TimeUnit.DAYS.toMinutes(2), 8, 240, 30));
-      darkElixirDrillLevels.add(new ResourceLevel(3, 580, 3000000, (int)TimeUnit.DAYS.toMinutes(3), 8, 450, 45));
-      darkElixirDrillLevels.add(new ResourceLevel(4, 690, 4000000, (int)TimeUnit.DAYS.toMinutes(4), 9, 720, 60));
-      darkElixirDrillLevels.add(new ResourceLevel(5, 830, 6000000, (int)TimeUnit.DAYS.toMinutes(6), 9, 1120, 80));
-      darkElixirDrillLevels.add(new ResourceLevel(6, 1000, 8000000, (int)TimeUnit.DAYS.toMinutes(8), 9, 1600, 100));
+      darkElixirDrillLevels.add(new ResourceLevel(2, 480, 1500000, (int)TimeUnit.DAYS.toMinutes(2), 8, 240, 30));
+      darkElixirDrillLevels.add(new ResourceLevel(3, 580, 2000000, (int)TimeUnit.DAYS.toMinutes(3), 8, 450, 45));
+      darkElixirDrillLevels.add(new ResourceLevel(4, 690, 3000000, (int)TimeUnit.DAYS.toMinutes(4), 9, 720, 60));
+      darkElixirDrillLevels.add(new ResourceLevel(5, 830, 4000000, (int)TimeUnit.DAYS.toMinutes(6), 9, 1120, 80));
+      darkElixirDrillLevels.add(new ResourceLevel(6, 1000, 5000000, (int)TimeUnit.DAYS.toMinutes(8), 9, 1600, 100));
 
       goldStorageLevels.add(new ResourceLevel(1, 400, 300, 151, 1, 1500, 0));
       goldStorageLevels.add(new ResourceLevel(2, 600, 750, 30, 2, 3000, 0));

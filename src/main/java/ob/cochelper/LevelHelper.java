@@ -98,8 +98,9 @@ public class LevelHelper {
       hiddenTeslaLevels.add(new Level(7, 810, 3500000, (int)TimeUnit.DAYS.toMinutes(14), 9));
 
       xBowLevels.add(new Level(1, 1500, 3000000, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      xBowLevels.add(new Level(2, 1900, 6000000, (int)TimeUnit.DAYS.toMinutes(10), 9));
-      xBowLevels.add(new Level(3, 2400, 8000000, (int)TimeUnit.DAYS.toMinutes(14), 10));
+      xBowLevels.add(new Level(2, 1900, 5000000, (int)TimeUnit.DAYS.toMinutes(10), 9));
+      xBowLevels.add(new Level(3, 2400, 7000000, (int)TimeUnit.DAYS.toMinutes(14), 9));
+      xBowLevels.add(new Level(4, 2800, 8000000, (int)TimeUnit.DAYS.toMinutes(14), 10));
 
       infernoTowerLevels.add(new Level(1, 1500, 5000000, (int)TimeUnit.DAYS.toMinutes(7), 10));
       infernoTowerLevels.add(new Level(2, 1900, 8000000, (int)TimeUnit.DAYS.toMinutes(10), 10));

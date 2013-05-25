@@ -26,7 +26,7 @@ public class VillageHelper {
       String mortars = "7,7,7";
       String wizardTowers = "6,6,6,6";
       String airDefenses = "6,6,6,6";
-      String hiddenTeslas = "7,7,6,5";
+      String hiddenTeslas = "7,7,7,5";
       String xBows = "2,1";
       String infernoTowers = "0";
 
@@ -47,9 +47,8 @@ public class VillageHelper {
       int barbarKing = 11;
       int archerQuenn = 3;
 
-      wallMap.put(1, 1);
-      wallMap.put(5, 18);
-      wallMap.put(6, 161);
+      wallMap.put(5, 13);
+      wallMap.put(6, 167);
       wallMap.put(7, 68);
       wallMap.put(8, 2);
 

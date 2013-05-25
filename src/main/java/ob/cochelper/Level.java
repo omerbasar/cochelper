@@ -48,7 +48,7 @@ public class Level {
    @Override
    public String toString() {
       return "Level{" +
-              "index=" + index +
+              "index=" + index + ",cost=" + (cost >= 1000000  ? cost / 1000000d + "M" : cost / 1000 + "K") +
               '}';
    }
 }

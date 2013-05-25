@@ -42,9 +42,18 @@ public class Building {
       return levels;
    }
 
+   public List<Level> getElapsedLevels(){
+      List<Level> levels = new ArrayList<Level>();
+      for (Level currentLevel : getLevels()) {
+         if(currentLevel.getIndex() <= level ){
+            levels.add(currentLevel);
+         }
+      }
+      return levels;
+   }
+
    public Long getRemainingBuildTime(int untilTownHallLevel){
       Long remainingBuildTime = 0L;
-
       for (Level currentLevel : getRemainingLevels(untilTownHallLevel)) {
          remainingBuildTime += currentLevel.getUpgradeTime();
       }
@@ -53,30 +62,25 @@ public class Building {
 
    public Long getRemainingResource(int untilTownHallLevel){
       Long remainingResource = 0L;
-      for (Level currentLevel : getLevels()) {
-         if(level < currentLevel.getIndex() && currentLevel.getTownHallLevelRequired() <= untilTownHallLevel){
-            remainingResource += currentLevel.getCost();
-         }
+
+      for (Level currentLevel : getRemainingLevels(untilTownHallLevel)) {
+         remainingResource += currentLevel.getCost();
       }
       return remainingResource;
    }
 
    public Long getElapsedBuildTime(){
       Long elapsedBuildTime = 0L;
-      for (Level currentLevel : getLevels()) {
-         if(currentLevel.getIndex() <= level ){
-            elapsedBuildTime += currentLevel.getUpgradeTime();
-         }
+      for (Level currentLevel : getElapsedLevels()) {
+         elapsedBuildTime += currentLevel.getUpgradeTime();
       }
       return elapsedBuildTime;
    }
 
    public Long getElapsedResource(){
       Long elapsedResource = 0L;
-      for (Level currentLevel : getLevels()) {
-         if(currentLevel.getIndex() < level ){
-            elapsedResource += currentLevel.getCost();
-         }
+      for (Level currentLevel : getElapsedLevels()) {
+         elapsedResource += currentLevel.getCost();
       }
       return elapsedResource;
    }

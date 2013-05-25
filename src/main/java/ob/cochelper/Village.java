@@ -204,6 +204,14 @@ public class Village {
       return dailyProduction;
    }
 
+   public ProductionStat getTotalStat(){
+      ProductionStat stat = new ProductionStat();
+      stat.add(productionStat);
+      stat.add(upgradeStat);
+
+      return stat;
+   }
+
    public void printRemainingLevels(int untilTownHallLevel) {
       for (Building building : buildings) {
          if(categories.contains(building.getCategory())){
@@ -211,6 +219,19 @@ public class Village {
             if(!remainingLevels.isEmpty()){
                for (Level remainingLevel : remainingLevels) {
                   System.out.println("remainingLevel for building "+ building + " : " + remainingLevel);
+               }
+            }
+         }
+      }
+   }
+
+   public void printRemainingUpgradeLevels(int untilLaboratoryLevel) {
+      for (Upgrade upgrade : upgrades) {
+         if(upgradeCategories.contains(upgrade.getCategory())){
+            List<Level> remainingLevels = upgrade.getRemainingLevels(untilLaboratoryLevel);
+            if(!remainingLevels.isEmpty()){
+               for (Level remainingLevel : remainingLevels) {
+                  System.out.println("remainingLevel for upgrade "+ upgrade + " : " + remainingLevel);
                }
             }
          }

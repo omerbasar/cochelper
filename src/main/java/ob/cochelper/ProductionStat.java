@@ -60,4 +60,11 @@ public class ProductionStat {
          System.out.println(resource +" total = " + StringUtil.makeResourceReadable(getResourceSingleStat(resource).getTotal()));
       }
    }
+
+   public void add(ProductionStat productionStat) {
+      getBuildTimeStat().add(productionStat.getBuildTimeStat());
+      for (Resource resource : Resource.values()) {
+         getResourceSingleStat(resource).add(productionStat.getResourceSingleStat(resource));
+      }
+   }
 }

@@ -10,7 +10,6 @@ public class VillageHelper {
       Set<BuildingCategory> categories = new HashSet<BuildingCategory>();
       //categories.add(BuildingCategory.DEFENSE);
 
-      /*
       for (BuildingCategory buildingCategory : BuildingCategory.values()) {
          if(buildingCategory.equals(BuildingCategory.WALL)){
             continue;
@@ -19,7 +18,6 @@ public class VillageHelper {
          }
          categories.add(buildingCategory);
       }
-      */
 
       Set<UpgradeCategory> upgradeCategories = new HashSet<UpgradeCategory>();
       upgradeCategories.add(UpgradeCategory.ELIXIR_TROOP);
@@ -32,8 +30,8 @@ public class VillageHelper {
       String archersCS = "10,10,9,9,9,9";
       String mortars = "7,7,7";
       String wizardTowers = "6,6,6,6";
-      String airDefenses = "6,6,6,6";
-      String hiddenTeslas = "7,7,7,5";
+      String airDefenses = "7,6,6,6";
+      String hiddenTeslas = "7,7,6,5";
       String xBows = "2,1";
       String infernoTowers = "0";
 
@@ -79,25 +77,25 @@ public class VillageHelper {
       village.calculate(untilTownHallLevel);
       village.calculateUpgrade(untilLaboratoryLevel);
 
-      village.getProductionStat().print();
-
-      System.out.println("-----------------------------------");
+      System.out.println("\n---- daily production ------\n");
       Map<Resource, Long> prod = village.getDailyProduction();
       for (Resource resource : prod.keySet()) {
          System.out.println(resource+" production per day = " + StringUtil.makeResourceReadable(prod.get(resource)));
       }
 
-      System.out.println("--------------------------");
-      System.out.println("--- remaining levels -----");
-      System.out.println("--------------------------");
+      System.out.println("\n-----  buildings -------\n");
+      village.getProductionStat().print();
 
+      System.out.println("\n-----  upgrades -------\n");
+      village.getUpgradeStat().print();
+
+      System.out.println("\n-----  total -------\n");
+      village.getTotalStat().print();
+
+      System.out.println("\n--- remaining levels -----\n");
       village.printRemainingLevels(untilTownHallLevel);
 
-      System.out.println("--------------------------");
-      System.out.println("-----   laboratory -------");
-      System.out.println("--------------------------");
-
-      village.getUpgradeStat().print();
+      System.out.println("\n--- remaining upgrades -----\n");
+      village.printRemainingUpgradeLevels(untilLaboratoryLevel);
    }
-
 }

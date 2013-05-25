@@ -12,6 +12,11 @@ public class SingleStat {
       return this;
    }
 
+   public void add(SingleStat singleStat){
+      elapsed += singleStat.elapsed;
+      remaining += singleStat.remaining;
+   }
+
    public SingleStat incrementRemaining(Long increment){
       remaining += increment;
       return this;

@@ -7,6 +7,10 @@ import java.util.*;
  */
 public class VillageHelper {
    public static Village getVillageOfOmer() {
+
+      int untilTownHallLevel = 10;
+      int untilLaboratoryLevel = 8;
+
       Set<BuildingCategory> categories = new HashSet<BuildingCategory>();
       //categories.add(BuildingCategory.DEFENSE);
 
@@ -37,7 +41,7 @@ public class VillageHelper {
 
       String goldMines = "11,11,11,11,11,11";
       String elixirCollectors = "11,11,11,11,11,11";
-      String darkElixirDrills = "6,5";
+      String darkElixirDrills = "6,6";
 
       String goldStorages = "11,11,11,11";
       String elixirStorages = "11,11,11,11";
@@ -65,17 +69,16 @@ public class VillageHelper {
       return new Village(townHall, cannonCS, archersCS, mortars, wizardTowers, airDefenses, hiddenTeslas, xBows, infernoTowers,
               goldMines, elixirCollectors, darkElixirDrills,
               goldStorages, elixirStorages, darkElixirStorages, builders, armyCamps, barracks, darkBarracks, laboratory, spellFactory,
-              clanCastle, barbarKing, archerQuenn, categories, upgradeCategories, wallMap, spellLevels, elixirTroopLevels, darkElixirTroopLevels);
+              clanCastle, barbarKing, archerQuenn, categories, upgradeCategories, wallMap, spellLevels, elixirTroopLevels, darkElixirTroopLevels,
+              untilTownHallLevel, untilLaboratoryLevel
+              );
    }
 
    public static void main(String[] args) {
 
-      int untilTownHallLevel = 9;
-      int untilLaboratoryLevel = 7;
-
       Village village = VillageHelper.getVillageOfOmer();
-      village.calculate(untilTownHallLevel);
-      village.calculateUpgrade(untilLaboratoryLevel);
+      village.calculate();
+      village.calculateUpgrade();
 
       System.out.println("\n---- daily production ------\n");
       Map<Resource, Long> prod = village.getDailyProduction();
@@ -93,9 +96,10 @@ public class VillageHelper {
       village.getTotalStat().print();
 
       System.out.println("\n--- remaining levels -----\n");
-      village.printRemainingLevels(untilTownHallLevel);
+      village.printRemainingLevels();
 
       System.out.println("\n--- remaining upgrades -----\n");
-      village.printRemainingUpgradeLevels(untilLaboratoryLevel);
+      village.printRemainingUpgradeLevels();
+
    }
 }

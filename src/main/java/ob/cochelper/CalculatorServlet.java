@@ -136,9 +136,11 @@ public class CalculatorServlet extends HttpServlet {
               goldStorages, elixirStorages, darkElixirStorages,
               builderCount, armyCamps, barracks, darkBarracks,
               laboratory, spellFactory, clanCastle,
-              barbarKing, archerQueen, categories, upgradeCategories, wallMap, spellLevels, elixirTroopLevels, darkElixirTroopLevels);
+              barbarKing, archerQueen, categories, upgradeCategories, wallMap, spellLevels, elixirTroopLevels, darkElixirTroopLevels,
+              10, 8);
 
-      village.calculate(10);
+      village.calculate();
+      village.calculateUpgrade();
 
       req.setAttribute("village", village);
 

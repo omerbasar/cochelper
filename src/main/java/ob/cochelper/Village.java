@@ -18,6 +18,9 @@ public class Village {
    private Set<BuildingCategory> categories;
    private Set<UpgradeCategory> upgradeCategories;
 
+   private int untilTownHallLevel;
+   private int untilLaboratoryLevel;
+
    /**
     * Her bir kaynak icin gunluk uretim rakamlari
     */
@@ -29,13 +32,16 @@ public class Village {
                   Integer builderCount, String armyCamps, String barracks, String darkBarracks,
                   Integer laboratory, Integer spellFactory, Integer clanCastle,
                   Integer barbarKing, Integer archerQuenn, Set<BuildingCategory> categories, Set<UpgradeCategory> upgradeCategories, Map<Integer, Integer> wallMap,
-                  String spellLevels, String elixirTroopLevels, String darkElixirTroopLevels
+                  String spellLevels, String elixirTroopLevels, String darkElixirTroopLevels,
+                  int untilTownHallLevel, int untilLaboratoryLevel
                   ) {
 
       this.level = townHall;
       this.builderCount = builderCount;
       this.categories = categories;
       this.upgradeCategories = upgradeCategories;
+      this.untilTownHallLevel = untilTownHallLevel;
+      this.untilLaboratoryLevel = untilLaboratoryLevel;
 
       create(BuildingType.TOWN_HALL, BuildingCategory.OTHER, townHall);
       create(BuildingType.CLAN_CASTLE, BuildingCategory.OTHER, clanCastle);
@@ -102,7 +108,7 @@ public class Village {
       }
 
       for (Building building : buildings) {
-         if(building.getType().isProductionBuilding()){
+         if(building.getType().isProductionBuilding() && building.getLevel() > 0){
             Map.Entry<Resource, Integer> entry = ProductionHelper.getProductionPerDay(building.getType(), building.getLevel());
             if(entry.getKey() != null){
                dailyProduction.put(entry.getKey(), dailyProduction.get(entry.getKey()) + entry.getValue());
@@ -122,7 +128,7 @@ public class Village {
          }
       }
 
-      for(int i = totalWallCount ; i < LevelHelper.getMaxAvailable(BuildingType.WALL, level) ; i ++){
+      for(int i = totalWallCount ; i < LevelHelper.getMaxAvailable(BuildingType.WALL, untilTownHallLevel) ; i ++){
          builder.append(0).append(",");
       }
 
@@ -138,7 +144,7 @@ public class Village {
       ArrayList<String> parts = new ArrayList<String>();
       Collections.addAll(parts, commaSeparated.split(","));
 
-      for(int i = parts.size() ; i < LevelHelper.getMaxAvailable(type, level); i ++){
+      for(int i = parts.size() ; i < LevelHelper.getMaxAvailable(type, untilTownHallLevel); i ++){
          parts.add("0");
       }
       for (String level : parts) {
@@ -150,7 +156,7 @@ public class Village {
       upgrades.add(new Upgrade(type, category, level));
    }
 
-   public void calculate(int untilTownHallLevel){
+   public void calculate(){
       for (Building building : buildings) {
          if(categories.contains(building.getCategory())){
 
@@ -172,7 +178,7 @@ public class Village {
    }
 
    // todo: aslinda untilLaboratoryLevel townHallLevel'den hesaplana bilir. Bu constructor'a alindiginda calculate'de parametresiz hale getirilecek
-   public void calculateUpgrade(int untilLaboratoryLevel){
+   public void calculateUpgrade(){
       for (Upgrade upgrade: upgrades) {
          if(upgradeCategories.contains(upgrade.getCategory())){
 
@@ -212,7 +218,7 @@ public class Village {
       return stat;
    }
 
-   public void printRemainingLevels(int untilTownHallLevel) {
+   public void printRemainingLevels() {
       for (Building building : buildings) {
          if(categories.contains(building.getCategory())){
             List<Level> remainingLevels = building.getRemainingLevels(untilTownHallLevel);
@@ -225,7 +231,7 @@ public class Village {
       }
    }
 
-   public void printRemainingUpgradeLevels(int untilLaboratoryLevel) {
+   public void printRemainingUpgradeLevels() {
       for (Upgrade upgrade : upgrades) {
          if(upgradeCategories.contains(upgrade.getCategory())){
             List<Level> remainingLevels = upgrade.getRemainingLevels(untilLaboratoryLevel);

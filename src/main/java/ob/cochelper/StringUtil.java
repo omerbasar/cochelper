@@ -35,7 +35,7 @@ public class StringUtil {
 
       Long minute = value;
 
-      return (day > 0 ? day + " gün " : "") + (hour > 0 ? hour + " saat " : "") + (minute > 0 ? minute + " dakika " : "");
+      return (day > 0 ? day + " gün " : "") + (hour > 0 ? hour + " saat " : "") + (minute > 0 ? minute + " dakika" : "");
    }
 
 }

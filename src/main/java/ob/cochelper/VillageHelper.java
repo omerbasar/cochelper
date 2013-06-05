@@ -8,8 +8,8 @@ import java.util.*;
 public class VillageHelper {
    public static Village getVillageOfOmer() {
 
-      int untilTownHallLevel = 10;
-      int untilLaboratoryLevel = 8;
+      int untilTownHallLevel = 9;
+      int untilLaboratoryLevel = 7;
 
       Set<BuildingCategory> categories = new HashSet<BuildingCategory>();
       //categories.add(BuildingCategory.DEFENSE);
@@ -17,16 +17,12 @@ public class VillageHelper {
       for (BuildingCategory buildingCategory : BuildingCategory.values()) {
          if(buildingCategory.equals(BuildingCategory.WALL)){
             continue;
-         }else if(buildingCategory.equals(BuildingCategory.HERO)){
-            continue;
          }
          categories.add(buildingCategory);
       }
 
       Set<UpgradeCategory> upgradeCategories = new HashSet<UpgradeCategory>();
-      upgradeCategories.add(UpgradeCategory.ELIXIR_TROOP);
-      upgradeCategories.add(UpgradeCategory.SPELL);
-      upgradeCategories.add(UpgradeCategory.DARK_ELIXIR_TROOP);
+      Collections.addAll(upgradeCategories, UpgradeCategory.values());
 
       Map<Integer, Integer> wallMap = new TreeMap<Integer, Integer>();
 
@@ -36,7 +32,7 @@ public class VillageHelper {
       String wizardTowers = "6,6,6,6";
       String airDefenses = "7,6,6,6";
       String hiddenTeslas = "7,7,6,5";
-      String xBows = "2,1";
+      String xBows = "3,2";
       String infernoTowers = "0";
 
       String goldMines = "11,11,11,11,11,11";
@@ -49,7 +45,7 @@ public class VillageHelper {
       int builders = 5;
       String armyCamps = "7,7,7,7";
       String barracks = "10,10,9,8";
-      String darkBarracks = "3,2";
+      String darkBarracks = "4,3";
       int laboratory = 7;
       int spellFactory = 4;
       int clanCastle = 4;
@@ -58,7 +54,7 @@ public class VillageHelper {
       int townHall = 9;
 
       String spellLevels = "5,3,3,1,1";
-      String elixirTroopLevels = "6,6,5,5,5,3,2,1,3,3";
+      String elixirTroopLevels = "6,6,5,5,5,3,5,1,3,3";
       String darkElixirTroopLevels = "1,1,1,0";
 
       wallMap.put(5, 13);
@@ -83,7 +79,7 @@ public class VillageHelper {
       System.out.println("\n---- daily production ------\n");
       Map<Resource, Long> prod = village.getDailyProduction();
       for (Resource resource : prod.keySet()) {
-         System.out.println(resource+" production per day = " + StringUtil.makeResourceReadable(prod.get(resource)));
+         System.out.println(resource + " production per day = " + StringUtil.makeResourceReadable(prod.get(resource)));
       }
 
       System.out.println("\n-----  buildings -------\n");

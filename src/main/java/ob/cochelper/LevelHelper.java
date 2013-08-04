@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class LevelHelper {
    
-   private static final List<Level> cannonLevels = new ArrayList<Level>(11);
+   private static final List<Level> cannonLevels = new ArrayList<Level>(12);
    private static final List<Level> archerTowerLevels = new ArrayList<Level>(11);
    private static final List<Level> mortarLevels = new ArrayList<Level>(7);
    private static final List<Level> wizardTowerLevels = new ArrayList<Level>(7);
@@ -27,14 +27,14 @@ public class LevelHelper {
    private static final List<Level> elixirStorageLevels = new ArrayList<Level>(11);
    private static final List<Level> darkElixirStorageLevels = new ArrayList<Level>(6);
    private static final List<Level> buildersHutLevels = new ArrayList<Level>(1);
-   private static final List<Level> armyCampLevels = new ArrayList<Level>(7);
+   private static final List<Level> armyCampLevels = new ArrayList<Level>(8);
    private static final List<Level> barrackLevels = new ArrayList<Level>(10);
    private static final List<Level> darkBarrackLevels = new ArrayList<Level>(4);
    private static final List<Level> laboratoryLevels = new ArrayList<Level>(8);
-   private static final List<Level> spellFactoryLevels = new ArrayList<Level>(4);
+   private static final List<Level> spellFactoryLevels = new ArrayList<Level>(5);
    private static final List<Level> townHallLevels = new ArrayList<Level>(10);
    private static final List<Level> clanCastleLevels = new ArrayList<Level>(5);
-   private static final List<Level> wallLevels = new ArrayList<Level>(10);
+   private static final List<Level> wallLevels = new ArrayList<Level>(11);
 
    private static final List<Level> barbarKingLevels = new ArrayList<Level>(40);
    private static final List<Level> archerQueenLevels = new ArrayList<Level>(40);
@@ -55,11 +55,13 @@ public class LevelHelper {
    private static final List<Level> rageSpellLevels = new ArrayList<Level>(5);
    private static final List<Level> jumpSpellLevels = new ArrayList<Level>(2);
    private static final List<Level> santasSupriseSpellLevels = new ArrayList<Level>(1);
+   private static final List<Level> freezeSpellLevels = new ArrayList<Level>(2);
 
    private static final List<Level> minionLevels = new ArrayList<Level>(5);
    private static final List<Level> hogRiderLevels = new ArrayList<Level>(5);
    private static final List<Level> valkyrieLevels = new ArrayList<Level>(4);
    private static final List<Level> golemLevels = new ArrayList<Level>(5);
+   private static final List<Level> witchLevels = new ArrayList<Level>(2);
 
    static{
       cannonLevels.add(Level.createNewBuildingLevel(1, 400, 250, 1, 1));
@@ -73,6 +75,7 @@ public class LevelHelper {
       cannonLevels.add(Level.createNewBuildingLevel(9, 690, 800000, (int)TimeUnit.DAYS.toMinutes(3), 8));
       cannonLevels.add(Level.createNewBuildingLevel(10, 750, 1600000, (int)TimeUnit.DAYS.toMinutes(4), 8));
       cannonLevels.add(Level.createNewBuildingLevel(11, 900, 3200000, (int)TimeUnit.DAYS.toMinutes(5), 9));
+      cannonLevels.add(Level.createNewBuildingLevel(12, 1080, 6400000, (int)TimeUnit.DAYS.toMinutes(6), 10));
 
       archerTowerLevels.add(Level.createNewBuildingLevel(1, 400, 1000, 15, 2));
       archerTowerLevels.add(Level.createNewBuildingLevel(2, 450, 2000, 30, 2));
@@ -202,6 +205,7 @@ public class LevelHelper {
       armyCampLevels.add(Level.createNewBuildingLevel(5, 800, 250000, (int)TimeUnit.DAYS.toMinutes(1), 5));
       armyCampLevels.add(Level.createNewBuildingLevel(6, 1000, 750000, (int)TimeUnit.DAYS.toMinutes(3), 6));
       armyCampLevels.add(Level.createNewBuildingLevel(7, 1200, 2250000, (int)TimeUnit.DAYS.toMinutes(5), 9));
+      armyCampLevels.add(Level.createNewBuildingLevel(8, 1400, 6750000, (int)TimeUnit.DAYS.toMinutes(10), 10));
 
       barrackLevels.add(Level.createNewBuildingLevel(1, 250, 200, 1, 1));
       barrackLevels.add(Level.createNewBuildingLevel(2, 270, 1000, 15, 1));
@@ -215,9 +219,10 @@ public class LevelHelper {
       barrackLevels.add(Level.createNewBuildingLevel(10, 420, 2000000, (int)TimeUnit.DAYS.toMinutes(6), 8));
 
       darkBarrackLevels.add(Level.createNewBuildingLevel(1, 250, 750000, (int)TimeUnit.DAYS.toMinutes(3), 7));
-      darkBarrackLevels.add(Level.createNewBuildingLevel(2, 300, 1500000, (int)TimeUnit.DAYS.toMinutes(5), 7));
-      darkBarrackLevels.add(Level.createNewBuildingLevel(3, 350, 3000000, (int)TimeUnit.DAYS.toMinutes(6), 8));
-      darkBarrackLevels.add(Level.createNewBuildingLevel(4, 400, 4000000, (int)TimeUnit.DAYS.toMinutes(7), 8));
+      darkBarrackLevels.add(Level.createNewBuildingLevel(2, 300, 1250000, (int)TimeUnit.DAYS.toMinutes(5), 7));
+      darkBarrackLevels.add(Level.createNewBuildingLevel(3, 350, 1750000, (int)TimeUnit.DAYS.toMinutes(6), 8));
+      darkBarrackLevels.add(Level.createNewBuildingLevel(4, 400, 2250000, (int)TimeUnit.DAYS.toMinutes(7), 8));
+      darkBarrackLevels.add(Level.createNewBuildingLevel(5, 400, 2750000, (int)TimeUnit.DAYS.toMinutes(8), 9));
 
       laboratoryLevels.add(Level.createNewBuildingLevel(1, 250, 25000, 30, 3));
       laboratoryLevels.add(Level.createNewBuildingLevel(2, 271, 50000, 5 * 60, 4));
@@ -232,6 +237,7 @@ public class LevelHelper {
       spellFactoryLevels.add(Level.createNewBuildingLevel(2, 300, 400000, (int)TimeUnit.DAYS.toMinutes(2), 6));
       spellFactoryLevels.add(Level.createNewBuildingLevel(3, 400, 800000, (int)TimeUnit.DAYS.toMinutes(4), 7));
       spellFactoryLevels.add(Level.createNewBuildingLevel(4, 500, 1600000, (int)TimeUnit.DAYS.toMinutes(5), 9));
+      spellFactoryLevels.add(Level.createNewBuildingLevel(5, 600, 3200000, (int)TimeUnit.DAYS.toMinutes(6), 10));
 
       townHallLevels.add(Level.createNewBuildingLevel(1, 1500, 0, 0, 0));
       townHallLevels.add(Level.createNewBuildingLevel(2, 1600, 1000, 5, 1));
@@ -260,6 +266,7 @@ public class LevelHelper {
       wallLevels.add(Level.createNewBuildingLevel(8, 3000, 500000, 0, 8));
       wallLevels.add(Level.createNewBuildingLevel(9, 4000, 1000000, 0, 9));
       wallLevels.add(Level.createNewBuildingLevel(10, 5500, 3000000, 0, 9));
+      wallLevels.add(Level.createNewBuildingLevel(11, 7000, 4000000, 0, 10));
 
       barbarKingLevels.add(Level.createNewBuildingLevel(1, 1500, 10000, 0, 7));
       barbarKingLevels.add(Level.createNewBuildingLevel(2, 1560, 12500, 12 * 60, 7));
@@ -281,26 +288,26 @@ public class LevelHelper {
       barbarKingLevels.add(Level.createNewBuildingLevel(18, 2922, 80000, (int)TimeUnit.DAYS.toMinutes(7), 9));
       barbarKingLevels.add(Level.createNewBuildingLevel(19, 3039, 85000, (int)TimeUnit.DAYS.toMinutes(7), 9));
       barbarKingLevels.add(Level.createNewBuildingLevel(20, 3160, 90000, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      barbarKingLevels.add(Level.createNewBuildingLevel(21, 3287, 100000, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      barbarKingLevels.add(Level.createNewBuildingLevel(22, 3418, 110000, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      barbarKingLevels.add(Level.createNewBuildingLevel(23, 3555, 115000, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      barbarKingLevels.add(Level.createNewBuildingLevel(24, 3697, 120000, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      barbarKingLevels.add(Level.createNewBuildingLevel(25, 3845, 125000, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      barbarKingLevels.add(Level.createNewBuildingLevel(26, 3999, 130000, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      barbarKingLevels.add(Level.createNewBuildingLevel(27, 4159, 135000, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      barbarKingLevels.add(Level.createNewBuildingLevel(28, 4325, 140000, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      barbarKingLevels.add(Level.createNewBuildingLevel(29, 4498, 145000, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      barbarKingLevels.add(Level.createNewBuildingLevel(30, 4000, 150000, (int)TimeUnit.DAYS.toMinutes(7), 10));
-      barbarKingLevels.add(Level.createNewBuildingLevel(31, 4000, 155000, (int)TimeUnit.DAYS.toMinutes(7), 10));
-      barbarKingLevels.add(Level.createNewBuildingLevel(32, 4000, 160000, (int)TimeUnit.DAYS.toMinutes(7), 10));
-      barbarKingLevels.add(Level.createNewBuildingLevel(33, 4000, 165000, (int)TimeUnit.DAYS.toMinutes(7), 10));
-      barbarKingLevels.add(Level.createNewBuildingLevel(34, 4000, 170000, (int)TimeUnit.DAYS.toMinutes(7), 10));
-      barbarKingLevels.add(Level.createNewBuildingLevel(35, 4000, 175000, (int)TimeUnit.DAYS.toMinutes(7), 10));
-      barbarKingLevels.add(Level.createNewBuildingLevel(36, 4000, 180000, (int)TimeUnit.DAYS.toMinutes(7), 10));
-      barbarKingLevels.add(Level.createNewBuildingLevel(37, 4000, 185000, (int)TimeUnit.DAYS.toMinutes(7), 10));
-      barbarKingLevels.add(Level.createNewBuildingLevel(38, 4000, 190000, (int)TimeUnit.DAYS.toMinutes(7), 10));
-      barbarKingLevels.add(Level.createNewBuildingLevel(39, 4000, 195000, (int)TimeUnit.DAYS.toMinutes(7), 10));
-      barbarKingLevels.add(Level.createNewBuildingLevel(40, 4000, 200000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      barbarKingLevels.add(Level.createNewBuildingLevel(21, 3287, 95000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      barbarKingLevels.add(Level.createNewBuildingLevel(22, 3418, 100000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      barbarKingLevels.add(Level.createNewBuildingLevel(23, 3555, 105000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      barbarKingLevels.add(Level.createNewBuildingLevel(24, 3697, 110000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      barbarKingLevels.add(Level.createNewBuildingLevel(25, 3845, 115000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      barbarKingLevels.add(Level.createNewBuildingLevel(26, 3999, 120000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      barbarKingLevels.add(Level.createNewBuildingLevel(27, 4159, 125000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      barbarKingLevels.add(Level.createNewBuildingLevel(28, 4325, 130000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      barbarKingLevels.add(Level.createNewBuildingLevel(29, 4498, 135000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      barbarKingLevels.add(Level.createNewBuildingLevel(30, 4000, 140000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      barbarKingLevels.add(Level.createNewBuildingLevel(31, 4000, 145000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      barbarKingLevels.add(Level.createNewBuildingLevel(32, 4000, 150000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      barbarKingLevels.add(Level.createNewBuildingLevel(33, 4000, 155000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      barbarKingLevels.add(Level.createNewBuildingLevel(34, 4000, 160000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      barbarKingLevels.add(Level.createNewBuildingLevel(35, 4000, 165000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      barbarKingLevels.add(Level.createNewBuildingLevel(36, 4000, 170000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      barbarKingLevels.add(Level.createNewBuildingLevel(37, 4000, 175000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      barbarKingLevels.add(Level.createNewBuildingLevel(38, 4000, 180000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      barbarKingLevels.add(Level.createNewBuildingLevel(39, 4000, 185000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      barbarKingLevels.add(Level.createNewBuildingLevel(40, 4000, 190000, (int)TimeUnit.DAYS.toMinutes(7), 10));
 
       archerQueenLevels.add(Level.createNewBuildingLevel(1, 675, 40000, 0, 9));
       archerQueenLevels.add(Level.createNewBuildingLevel(2, 702, 22500, 12 * 60, 9));
@@ -309,39 +316,39 @@ public class LevelHelper {
       archerQueenLevels.add(Level.createNewBuildingLevel(5, 790, 30000, 4 * 12 * 60, 9));
       archerQueenLevels.add(Level.createNewBuildingLevel(6, 821, 32500, 5 * 12 * 60, 9));
       archerQueenLevels.add(Level.createNewBuildingLevel(7, 854, 35000, 6 * 12 * 60, 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(8, 888, 37500, 7 * 12 * 60, 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(9, 924, 40000, 8 * 12 * 60, 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(10, 961, 42500, 9 * 12 * 60, 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(11, 999, 45000, 10 * 12 * 60, 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(12, 1039, 47500, 11 * 12 * 60, 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(13, 1081, 50000, 12 * 12 * 60, 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(14, 1124, 52500, 13 * 12 * 60, 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(15, 1169, 55000, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(16, 1215, 57500, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(17, 1264, 60000, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(18, 1315, 62500, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(19, 1368, 65000, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(20, 1422, 67500, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(21, 1479, 70000, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(22, 1538, 72500, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(23, 1600, 75000, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(24, 1664, 77500, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(25, 1730, 80000, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(26, 1800, 82500, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(27, 1872, 85000, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(28, 1946, 87500, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(29, 2024, 90000, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(30, 2105, 95000, (int)TimeUnit.DAYS.toMinutes(7), 9));
-      archerQueenLevels.add(Level.createNewBuildingLevel(31, 2000, 100000, (int)TimeUnit.DAYS.toMinutes(7), 10));
-      archerQueenLevels.add(Level.createNewBuildingLevel(32, 2000, 110000, (int)TimeUnit.DAYS.toMinutes(7), 10));
-      archerQueenLevels.add(Level.createNewBuildingLevel(33, 2000, 120000, (int)TimeUnit.DAYS.toMinutes(7), 10));
-      archerQueenLevels.add(Level.createNewBuildingLevel(34, 2000, 130000, (int)TimeUnit.DAYS.toMinutes(7), 10));
-      archerQueenLevels.add(Level.createNewBuildingLevel(35, 2000, 140000, (int)TimeUnit.DAYS.toMinutes(7), 10));
-      archerQueenLevels.add(Level.createNewBuildingLevel(36, 2000, 150000, (int)TimeUnit.DAYS.toMinutes(7), 10));
-      archerQueenLevels.add(Level.createNewBuildingLevel(37, 2000, 160000, (int)TimeUnit.DAYS.toMinutes(7), 10));
-      archerQueenLevels.add(Level.createNewBuildingLevel(38, 2000, 170000, (int)TimeUnit.DAYS.toMinutes(7), 10));
-      archerQueenLevels.add(Level.createNewBuildingLevel(39, 2000, 180000, (int)TimeUnit.DAYS.toMinutes(7), 10));
-      archerQueenLevels.add(Level.createNewBuildingLevel(40, 2000, 190000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      archerQueenLevels.add(Level.createNewBuildingLevel(8, 888, 40000, 7 * 12 * 60, 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(9, 924, 45000, 8 * 12 * 60, 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(10, 961, 50000, 9 * 12 * 60, 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(11, 999, 55000, 10 * 12 * 60, 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(12, 1039, 60000, 11 * 12 * 60, 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(13, 1081, 65000, 12 * 12 * 60, 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(14, 1124, 70000, 13 * 12 * 60, 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(15, 1169, 75000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(16, 1215, 80000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(17, 1264, 85000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(18, 1315, 90000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(19, 1368, 95000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(20, 1422, 100000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(21, 1479, 105000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(22, 1538, 110000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(23, 1600, 115000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(24, 1664, 120000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(25, 1730, 125000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(26, 1800, 130000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(27, 1872, 135000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(28, 1946, 140000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(29, 2024, 145000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(30, 2105, 150000, (int)TimeUnit.DAYS.toMinutes(7), 9));
+      archerQueenLevels.add(Level.createNewBuildingLevel(31, 2000, 155000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      archerQueenLevels.add(Level.createNewBuildingLevel(32, 2000, 160000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      archerQueenLevels.add(Level.createNewBuildingLevel(33, 2000, 165000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      archerQueenLevels.add(Level.createNewBuildingLevel(34, 2000, 170000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      archerQueenLevels.add(Level.createNewBuildingLevel(35, 2000, 175000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      archerQueenLevels.add(Level.createNewBuildingLevel(36, 2000, 180000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      archerQueenLevels.add(Level.createNewBuildingLevel(37, 2000, 185000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      archerQueenLevels.add(Level.createNewBuildingLevel(38, 2000, 190000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      archerQueenLevels.add(Level.createNewBuildingLevel(39, 2000, 195000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      archerQueenLevels.add(Level.createNewBuildingLevel(40, 2000, 200000, (int)TimeUnit.DAYS.toMinutes(7), 10));
    }
 
    static{
@@ -377,6 +384,7 @@ public class LevelHelper {
       wallBreakerLevels.add(Level.createNewTroopLevel(3, 29, 250000, (int)TimeUnit.DAYS.toMinutes(2), 4));
       wallBreakerLevels.add(Level.createNewTroopLevel(4, 35, 750000, (int)TimeUnit.DAYS.toMinutes(3), 5));
       wallBreakerLevels.add(Level.createNewTroopLevel(5, 42, 2250000, (int)TimeUnit.DAYS.toMinutes(5), 6));
+      wallBreakerLevels.add(Level.createNewTroopLevel(6, 54, 6750000, (int)TimeUnit.DAYS.toMinutes(10), 8));
 
       balloonLevels.add(Level.createNewTroopLevel(1, 150, 0, 0, 0));
       balloonLevels.add(Level.createNewTroopLevel(2, 180, 150000, (int)TimeUnit.DAYS.toMinutes(1), 2));
@@ -429,6 +437,10 @@ public class LevelHelper {
       jumpSpellLevels.add(Level.createNewSpellLevel(2, 4000000, (int)TimeUnit.DAYS.toMinutes(5), 6));
 
       santasSupriseSpellLevels.add(Level.createNewSpellLevel(1, 0, 0, 0));
+
+      freezeSpellLevels.add(Level.createNewSpellLevel(1, 0, 0, 0));
+      freezeSpellLevels.add(Level.createNewSpellLevel(2, 4000000, (int)TimeUnit.DAYS.toMinutes(5), 7));
+      freezeSpellLevels.add(Level.createNewSpellLevel(3, 8000000, (int)TimeUnit.DAYS.toMinutes(10), 8));
    }
 
    static{
@@ -454,6 +466,9 @@ public class LevelHelper {
       golemLevels.add(Level.createNewTroopLevel(3, 5500, 70000, (int)TimeUnit.DAYS.toMinutes(12), 7));
       golemLevels.add(Level.createNewTroopLevel(4, 6000, 80000, (int)TimeUnit.DAYS.toMinutes(14), 7));
       golemLevels.add(Level.createNewTroopLevel(5, 6300, 90000, (int)TimeUnit.DAYS.toMinutes(14), 8));
+
+      witchLevels.add(Level.createNewTroopLevel(1, 75, 0, 0, 0));
+      witchLevels.add(Level.createNewTroopLevel(2, 100, 75000, (int)TimeUnit.DAYS.toMinutes(10), 7));
    }
 
    public static Integer getMaxAvailable(BuildingType type, Integer villageLevel){
@@ -474,7 +489,7 @@ public class LevelHelper {
                case GOLD_STORAGE: return 4;
                case ELIXIR_STORAGE: return 4;
                case DARK_ELIXIR_STORAGE: return 1;
-               case BUILDERS_HUT: return 1;
+               case BUILDERS_HUT: return 5;
                case ARMY_CAMP: return 4;
                case BARRACK: return 4;
                case DARK_BARRACK: return 2;
@@ -489,21 +504,21 @@ public class LevelHelper {
             }
          case 10:
             switch (type){
-               case CANNON: return 6;
-               case ARCHER_TOWER: return 7;
+               case CANNON: return 7;
+               case ARCHER_TOWER: return 8;
                case MORTAR: return 3;
                case WIZARD_TOWER: return 4;
                case AIR_DEFENSE: return 4;
                case HIDDEN_TESLA: return 4;
-               case XBOW: return 2;
-               case INFERNO_TOWER: return 1;
-               case ELIXIR_COLLECTOR: return 6;
-               case GOLD_MINE: return 6;
+               case XBOW: return 3;
+               case INFERNO_TOWER: return 2;
+               case ELIXIR_COLLECTOR: return 7;
+               case GOLD_MINE: return 7;
                case DARK_ELIXIR_DRILL: return 3;
                case GOLD_STORAGE: return 4;
                case ELIXIR_STORAGE: return 4;
                case DARK_ELIXIR_STORAGE: return 1;
-               case BUILDERS_HUT: return 1;
+               case BUILDERS_HUT: return 5;
                case ARMY_CAMP: return 4;
                case BARRACK: return 4;
                case DARK_BARRACK: return 2;
@@ -568,10 +583,12 @@ public class LevelHelper {
          case RAGE_SPELL: return rageSpellLevels;
          case JUMP_SPELL: return jumpSpellLevels;
          case SANTAS_SURPRISE_SPELL: return santasSupriseSpellLevels;
+         case FREEZE_SPELL: return freezeSpellLevels;
          case MINION: return minionLevels;
          case HOG_RIDER: return hogRiderLevels;
          case VALKYRIE: return valkyrieLevels;
          case GOLEM: return golemLevels;
+         case WITCH: return witchLevels;
          default : throw new IllegalArgumentException(type + " tipinde bozukluk var.");
       }
    }

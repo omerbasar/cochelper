@@ -26,18 +26,18 @@ public class VillageHelper {
 
       Map<Integer, Integer> wallMap = new TreeMap<Integer, Integer>();
 
-      String cannonCS = "11,11,11,11,11,4";
-      String archersCS = "10,10,10,10,10,10,5";
+      String cannonCS = "11,11,11,11,11,9";
+      String archersCS = "10,10,10,10,10,10,9";
       String mortars = "7,7,7";
       String wizardTowers = "6,6,6,6";
-      String airDefenses = "7,7,6,6";
+      String airDefenses = "7,7,7,6";
       String hiddenTeslas = "7,7,7,7";
-      String xBows = "3,2,0";
-      String infernoTowers = "0,0";
+      String xBows = "3,2,1";
+      String infernoTowers = "1,0";
 
-      String goldMines = "11,11,11,11,11,11,6";
-      String elixirCollectors = "11,11,11,11,11,11,6";
-      String darkElixirDrills = "6,6,2";
+      String goldMines = "11,11,11,11,11,11,11";
+      String elixirCollectors = "11,11,11,11,11,11,11";
+      String darkElixirDrills = "6,6,5";
 
       String goldStorages = "11,11,11,11";
       String elixirStorages = "11,11,11,11";
@@ -49,17 +49,16 @@ public class VillageHelper {
       int laboratory = 7;
       int spellFactory = 4;
       int clanCastle = 4;
-      int barbarKing = 13;
-      int archerQuenn = 9;
+      int barbarKing = 14;
+      int archerQuenn = 11;
       int townHall = 10;
 
+      String elixirTroopLevels = "6,6,5,6,5,5,5,4,3,3";
       String spellLevels = "5,4,4,2,1";
-      String elixirTroopLevels = "6,6,5,6,5,5,5,3,3,3";
       String darkElixirTroopLevels = "1,1,1,1,1";
 
-      wallMap.put(5, 12);
-      wallMap.put(6, 168);
-      wallMap.put(7, 68);
+      wallMap.put(6, 170);
+      wallMap.put(7, 78);
       wallMap.put(8, 2);
 
       return new Village(townHall, cannonCS, archersCS, mortars, wizardTowers, airDefenses, hiddenTeslas, xBows, infernoTowers,

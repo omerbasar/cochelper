@@ -507,8 +507,8 @@ public class LevelHelper {
             }
          case 10:
             switch (type){
-               case CANNON: return 7;
-               case ARCHER_TOWER: return 8;
+               case CANNON: return 6;
+               case ARCHER_TOWER: return 7;
                case MORTAR: return 3;
                case WIZARD_TOWER: return 4;
                case AIR_DEFENSE: return 4;

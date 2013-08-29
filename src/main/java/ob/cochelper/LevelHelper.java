@@ -14,7 +14,7 @@ public class LevelHelper {
    private static final List<Level> cannonLevels = new ArrayList<Level>(12);
    private static final List<Level> archerTowerLevels = new ArrayList<Level>(11);
    private static final List<Level> mortarLevels = new ArrayList<Level>(7);
-   private static final List<Level> wizardTowerLevels = new ArrayList<Level>(7);
+   private static final List<Level> wizardTowerLevels = new ArrayList<Level>(8);
    private static final List<Level> airDefenseLevels = new ArrayList<Level>(8);
    private static final List<Level> hiddenTeslaLevels = new ArrayList<Level>(7);
    private static final List<Level> xBowLevels = new ArrayList<Level>(4);
@@ -45,7 +45,7 @@ public class LevelHelper {
    private static final List<Level> giantLevels = new ArrayList<Level>(6);
    private static final List<Level> wallBreakerLevels = new ArrayList<Level>(5);
    private static final List<Level> balloonLevels = new ArrayList<Level>(6);
-   private static final List<Level> wizardLevels = new ArrayList<Level>(5);
+   private static final List<Level> wizardLevels = new ArrayList<Level>(6);
    private static final List<Level> healerLevels = new ArrayList<Level>(4);
    private static final List<Level> dragonLevels = new ArrayList<Level>(4);
    private static final List<Level> pekkaLevels = new ArrayList<Level>(3);
@@ -55,7 +55,7 @@ public class LevelHelper {
    private static final List<Level> rageSpellLevels = new ArrayList<Level>(5);
    private static final List<Level> jumpSpellLevels = new ArrayList<Level>(2);
    private static final List<Level> santasSupriseSpellLevels = new ArrayList<Level>(1);
-   private static final List<Level> freezeSpellLevels = new ArrayList<Level>(2);
+   private static final List<Level> freezeSpellLevels = new ArrayList<Level>(4);
 
    private static final List<Level> minionLevels = new ArrayList<Level>(5);
    private static final List<Level> hogRiderLevels = new ArrayList<Level>(5);
@@ -104,6 +104,7 @@ public class LevelHelper {
       wizardTowerLevels.add(Level.createNewBuildingLevel(5, 760, 1960000, (int)TimeUnit.DAYS.toMinutes(6), 8));
       wizardTowerLevels.add(Level.createNewBuildingLevel(6, 800, 2680000, (int)TimeUnit.DAYS.toMinutes(8), 8));
       wizardTowerLevels.add(Level.createNewBuildingLevel(7, 840, 5360000, (int)TimeUnit.DAYS.toMinutes(10), 9));
+      wizardTowerLevels.add(Level.createNewBuildingLevel(8, 880, 6400000, (int)TimeUnit.DAYS.toMinutes(14), 10));
 
       airDefenseLevels.add(Level.createNewBuildingLevel(1, 800, 22500, 5 * 60, 4));
       airDefenseLevels.add(Level.createNewBuildingLevel(2, 860, 90000, (int)TimeUnit.DAYS.toMinutes(1), 4));
@@ -398,6 +399,7 @@ public class LevelHelper {
       wizardLevels.add(Level.createNewTroopLevel(3, 108, 450000, (int)TimeUnit.DAYS.toMinutes(2), 4));
       wizardLevels.add(Level.createNewTroopLevel(4, 130, 1350000, (int)TimeUnit.DAYS.toMinutes(3), 5));
       wizardLevels.add(Level.createNewTroopLevel(5, 156, 2500000, (int)TimeUnit.DAYS.toMinutes(5), 6));
+      wizardLevels.add(Level.createNewTroopLevel(6, 180, 7500000, (int)TimeUnit.DAYS.toMinutes(8), 8));
 
       healerLevels.add(Level.createNewTroopLevel(1, 500, 0, 0, 0));
       healerLevels.add(Level.createNewTroopLevel(2, 600, 750000, (int)TimeUnit.DAYS.toMinutes(3), 5));
@@ -439,8 +441,9 @@ public class LevelHelper {
       santasSupriseSpellLevels.add(Level.createNewSpellLevel(1, 0, 0, 0));
 
       freezeSpellLevels.add(Level.createNewSpellLevel(1, 0, 0, 0));
-      freezeSpellLevels.add(Level.createNewSpellLevel(2, 4000000, (int)TimeUnit.DAYS.toMinutes(5), 7));
-      freezeSpellLevels.add(Level.createNewSpellLevel(3, 8000000, (int)TimeUnit.DAYS.toMinutes(10), 8));
+      freezeSpellLevels.add(Level.createNewSpellLevel(2, 4000000, (int)TimeUnit.DAYS.toMinutes(5), 8));
+      freezeSpellLevels.add(Level.createNewSpellLevel(3, 6000000, (int)TimeUnit.DAYS.toMinutes(10), 8));
+      freezeSpellLevels.add(Level.createNewSpellLevel(4, 8000000, (int)TimeUnit.DAYS.toMinutes(14), 8));
    }
 
    static{

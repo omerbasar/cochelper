@@ -9,7 +9,6 @@ import java.util.*;
  */
 public class Village {
 
-   private Integer level;
    private Integer builderCount;
    private List<Building> buildings = new ArrayList<Building>();
    private List<Upgrade> upgrades = new ArrayList<Upgrade>();
@@ -27,6 +26,7 @@ public class Village {
    private Map<Resource, Long> dailyProduction = new HashMap<Resource, Long>();
 
    public Village(Integer townHall, String cannonCS, String archersCS, String mortars, String wizardTowers, String airDefenses, String hiddenTeslas, String xBows, String infernoTowers,
+                  String bombs, String giantBombs, String airBombs, String seekingAirMines,
                   String goldMines, String elixirCollectors, String darkElixirDrills,
                   String goldStorages, String elixirStorages, String darkElixirStorages,
                   Integer builderCount, String armyCamps, String barracks, String darkBarracks,
@@ -36,7 +36,6 @@ public class Village {
                   int untilTownHallLevel, int untilLaboratoryLevel
                   ) {
 
-      this.level = townHall;
       this.builderCount = builderCount;
       this.categories = categories;
       this.upgradeCategories = upgradeCategories;
@@ -54,6 +53,11 @@ public class Village {
       create(BuildingType.HIDDEN_TESLA, BuildingCategory.DEFENSE, hiddenTeslas);
       create(BuildingType.XBOW, BuildingCategory.DEFENSE, xBows);
       create(BuildingType.INFERNO_TOWER, BuildingCategory.DEFENSE, infernoTowers);
+
+      create(BuildingType.BOMB, BuildingCategory.DEFENSE, bombs);
+      create(BuildingType.GIANT_BOMB, BuildingCategory.DEFENSE, giantBombs);
+      create(BuildingType.AIR_BOMB, BuildingCategory.DEFENSE, airBombs);
+      create(BuildingType.SEEKING_AIR_MINE, BuildingCategory.DEFENSE, seekingAirMines);
 
       create(BuildingType.GOLD_MINE, BuildingCategory.RESOURCE, goldMines);
       create(BuildingType.ELIXIR_COLLECTOR, BuildingCategory.RESOURCE, elixirCollectors);

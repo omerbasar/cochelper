@@ -132,6 +132,7 @@ public class CalculatorServlet extends HttpServlet {
       resp.addCookie(new Cookie(COOKIE_PREFIX + "darkElixirTroopLevels", darkElixirTroopLevels + ""));
 
       Village village = new Village(townHall, cannons, archerTowers, mortars, wizardTowers, airDefenses, hiddenTeslas, xBows, infernoTowers,
+              "", "", "", "",
               goldMines, elixirCollectors, darkElixirDrills,
               goldStorages, elixirStorages, darkElixirStorages,
               builderCount, armyCamps, barracks, darkBarracks,

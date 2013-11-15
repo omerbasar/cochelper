@@ -33,7 +33,12 @@ public class VillageHelper {
       String airDefenses = "7,7,7,6";
       String hiddenTeslas = "7,7,7,7";
       String xBows = "3,2,1";
-      String infernoTowers = "1,0";
+      String infernoTowers = "1,1";
+
+      String bombs = "5,5,4,3,3,3";
+      String giantBombs = "3,3,3,2,2";
+      String airBombs = "3,3,3,3,3";
+      String seekingAirMines = "2,1,1,1,1";
 
       String goldMines = "11,11,11,11,11,11,11";
       String elixirCollectors = "11,11,11,11,11,11,11";
@@ -43,25 +48,26 @@ public class VillageHelper {
       String elixirStorages = "11,11,11,11";
       String darkElixirStorages = "6";
       int builders = 5;
-      String armyCamps = "7,7,7,7";
+      String armyCamps = "8,8,7,7";
       String barracks = "10,10,10,10";
       String darkBarracks = "5,5";
       int laboratory = 8;
       int spellFactory = 5;
       int clanCastle = 4;
-      int barbarKing = 18;
-      int archerQuenn = 13;
+      int barbarKing = 19;
+      int archerQuenn = 16;
       int townHall = 10;
 
       String elixirTroopLevels = "6,6,5,6,5,5,5,4,3,3";
       String spellLevels = "5,4,5,2,1";
-      String darkElixirTroopLevels = "1,1,1,1,1";
+      String darkElixirTroopLevels = "1,2,1,1,1";
 
-      wallMap.put(6, 110);
-      wallMap.put(7, 135);
-      wallMap.put(8, 5);
+      wallMap.put(6, 67);
+      wallMap.put(7, 173);
+      wallMap.put(8, 10);
 
       return new Village(townHall, cannonCS, archersCS, mortars, wizardTowers, airDefenses, hiddenTeslas, xBows, infernoTowers,
+              bombs, giantBombs, airBombs, seekingAirMines,
               goldMines, elixirCollectors, darkElixirDrills,
               goldStorages, elixirStorages, darkElixirStorages, builders, armyCamps, barracks, darkBarracks, laboratory, spellFactory,
               clanCastle, barbarKing, archerQuenn, categories, upgradeCategories, wallMap, spellLevels, elixirTroopLevels, darkElixirTroopLevels,
@@ -97,6 +103,11 @@ public class VillageHelper {
       String xBows = "1,1";
       String infernoTowers = "0";
 
+      String bombs = "1,1,1,1,1,1";
+      String giantBombs = "1,1,1,1,1";
+      String airBombs = "1,1,1,1,1";
+      String seekingAirMines = "1,1,1,1,1";
+
       String goldMines = "11,11,11,11,11,11";
       String elixirCollectors = "11,11,11,11,11,11";
       String darkElixirDrills = "3,3";
@@ -125,6 +136,7 @@ public class VillageHelper {
       wallMap.put(8, 3);
 
       return new Village(townHall, cannonCS, archersCS, mortars, wizardTowers, airDefenses, hiddenTeslas, xBows, infernoTowers,
+              bombs, giantBombs, airBombs, seekingAirMines,
               goldMines, elixirCollectors, darkElixirDrills,
               goldStorages, elixirStorages, darkElixirStorages, builders, armyCamps, barracks, darkBarracks, laboratory, spellFactory,
               clanCastle, barbarKing, archerQuenn, categories, upgradeCategories, wallMap, spellLevels, elixirTroopLevels, darkElixirTroopLevels,

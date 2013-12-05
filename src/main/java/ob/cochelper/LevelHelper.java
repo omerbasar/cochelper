@@ -18,7 +18,7 @@ public class LevelHelper {
    private static final List<Level> airDefenseLevels = new ArrayList<Level>(8);
    private static final List<Level> hiddenTeslaLevels = new ArrayList<Level>(7);
    private static final List<Level> xBowLevels = new ArrayList<Level>(4);
-   private static final List<Level> infernoTowerLevels = new ArrayList<Level>(2);
+   private static final List<Level> infernoTowerLevels = new ArrayList<Level>(3);
 
    private static final List<Level> bombLevels = new ArrayList<Level>(5);
    private static final List<Level> giantBombLevels = new ArrayList<Level>(4);
@@ -136,7 +136,8 @@ public class LevelHelper {
       xBowLevels.add(Level.createNewBuildingLevel(4, 2800, 8000000, (int)TimeUnit.DAYS.toMinutes(14), 10));
 
       infernoTowerLevels.add(Level.createNewBuildingLevel(1, 1500, 5000000, (int)TimeUnit.DAYS.toMinutes(7), 10));
-      infernoTowerLevels.add(Level.createNewBuildingLevel(2, 1900, 8000000, (int)TimeUnit.DAYS.toMinutes(10), 10));
+      infernoTowerLevels.add(Level.createNewBuildingLevel(2, 1900, 6500000, (int)TimeUnit.DAYS.toMinutes(10), 10));
+      infernoTowerLevels.add(Level.createNewBuildingLevel(3, 2200, 8000000, (int)TimeUnit.DAYS.toMinutes(14), 10));
 
       bombLevels.add(Level.createNewBuildingLevel(1, 0, 400, 0, 2));
       bombLevels.add(Level.createNewBuildingLevel(2, 0, 1000, (int)TimeUnit.MINUTES.toMinutes(15), 3));
@@ -406,7 +407,7 @@ public class LevelHelper {
       giantLevels.add(Level.createNewTroopLevel(3, 430, 250000, (int)TimeUnit.DAYS.toMinutes(2), 4));
       giantLevels.add(Level.createNewTroopLevel(4, 520, 750000, (int)TimeUnit.DAYS.toMinutes(3), 5));
       giantLevels.add(Level.createNewTroopLevel(5, 670, 2250000, (int)TimeUnit.DAYS.toMinutes(5), 6));
-      giantLevels.add(Level.createNewTroopLevel(6, 920, 6000000, (int)TimeUnit.DAYS.toMinutes(10), 7));
+      giantLevels.add(Level.createNewTroopLevel(6, 940, 6000000, (int)TimeUnit.DAYS.toMinutes(10), 7));
 
       wallBreakerLevels.add(Level.createNewTroopLevel(1, 20, 0, 0, 0));
       wallBreakerLevels.add(Level.createNewTroopLevel(2, 24, 100000, (int)TimeUnit.DAYS.toMinutes(1), 2));
@@ -437,7 +438,7 @@ public class LevelHelper {
       dragonLevels.add(Level.createNewTroopLevel(1, 1900, 0, 0, 0));
       dragonLevels.add(Level.createNewTroopLevel(2, 2100, 2000000, (int)TimeUnit.DAYS.toMinutes(7), 5));
       dragonLevels.add(Level.createNewTroopLevel(3, 2300, 3000000, (int)TimeUnit.DAYS.toMinutes(10), 6));
-      dragonLevels.add(Level.createNewTroopLevel(4, 2500, 4000000, (int)TimeUnit.DAYS.toMinutes(12), 8));
+      dragonLevels.add(Level.createNewTroopLevel(4, 2500, 8000000, (int)TimeUnit.DAYS.toMinutes(14), 8));
 
       pekkaLevels.add(Level.createNewTroopLevel(1, 2800, 0, 0, 0));
       pekkaLevels.add(Level.createNewTroopLevel(2, 3100, 3000000, (int)TimeUnit.DAYS.toMinutes(10), 6));

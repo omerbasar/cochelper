@@ -27,14 +27,14 @@ public class VillageHelper {
 
       Map<Integer, Integer> wallMap = new TreeMap<Integer, Integer>();
 
-      String cannonCS = "11,11,11,11,11,11";
+      String cannonCS = "12,11,11,11,11,11";
       String archersCS = "10,10,10,10,10,10,10";
-      String mortars = "7,7,7";
-      String wizardTowers = "7,6,6,6";
+      String mortars = "8,8,7";
+      String wizardTowers = "7,7,7,7";
       String airDefenses = "7,7,7,6";
       String hiddenTeslas = "7,7,7,7";
-      String xBows = "3,3,2";
-      String infernoTowers = "2,1";
+      String xBows = "3,3,3";
+      String infernoTowers = "3,3";
 
       String bombs = "5,5,5,5,5,5";
       String giantBombs = "4,4,4,3,3";
@@ -56,16 +56,16 @@ public class VillageHelper {
       int spellFactory = 5;
       int clanCastle = 5;
       int barbarKing = 22;
-      int archerQuenn = 20;
+      int archerQuenn = 25;
       int townHall = 10;
 
-      String elixirTroopLevels = "6,6,5,6,6,5,5,4,3,4";
-      String spellLevels = "5,5,5,2,2";
-      String darkElixirTroopLevels = "1,4,1,1,1";
+      String elixirTroopLevels = "6,6,6,6,6,5,5,4,3,4";
+      String spellLevels = "6,5,5,2,3";
+      String darkElixirTroopLevels = "3,5,1,1,1";
 
-      wallMap.put(6, 60);
-      wallMap.put(7, 176);
-      wallMap.put(8, 14);
+      wallMap.put(6, 55);
+      wallMap.put(7, 177);
+      wallMap.put(8, 18);
 
       return new Village(townHall, cannonCS, archersCS, mortars, wizardTowers, airDefenses, hiddenTeslas, xBows, infernoTowers,
               bombs, giantBombs, airBombs, seekingAirMines,

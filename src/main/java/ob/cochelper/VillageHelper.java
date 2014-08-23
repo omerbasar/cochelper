@@ -56,7 +56,7 @@ public class VillageHelper {
       int spellFactory = 5;
       int clanCastle = 6;
       int barbarKing = 25;
-      int archerQuenn = 27;
+      int archerQuenn = 28;
       int townHall = 10;
 
       String elixirTroopLevels = "6,6,6,6,6,6,6,4,3,5";

@@ -31,7 +31,7 @@ public class VillageHelper {
       String archersCS = "11,11,10,10,10,10,10";
       String mortars = "8,8,7";
       String wizardTowers = "8,7,7,7";
-      String airDefenses = "8,7,7,6";
+      String airDefenses = "8,7,7,7";
       String hiddenTeslas = "7,7,7,7";
       String xBows = "4,4,4";
       String infernoTowers = "3,3";

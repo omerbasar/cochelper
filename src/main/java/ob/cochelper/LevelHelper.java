@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class LevelHelper {
    
    private static final List<Level> cannonLevels = new ArrayList<Level>(12);
-   private static final List<Level> archerTowerLevels = new ArrayList<Level>(12);
+   private static final List<Level> archerTowerLevels = new ArrayList<Level>(13);
    private static final List<Level> mortarLevels = new ArrayList<Level>(8);
    private static final List<Level> wizardTowerLevels = new ArrayList<Level>(8);
    private static final List<Level> airDefenseLevels = new ArrayList<Level>(8);
@@ -34,7 +34,7 @@ public class LevelHelper {
    private static final List<Level> buildersHutLevels = new ArrayList<Level>(1);
    private static final List<Level> armyCampLevels = new ArrayList<Level>(8);
    private static final List<Level> barrackLevels = new ArrayList<Level>(10);
-   private static final List<Level> darkBarrackLevels = new ArrayList<Level>(4);
+   private static final List<Level> darkBarrackLevels = new ArrayList<Level>(6);
    private static final List<Level> laboratoryLevels = new ArrayList<Level>(8);
    private static final List<Level> spellFactoryLevels = new ArrayList<Level>(5);
    private static final List<Level> townHallLevels = new ArrayList<Level>(10);
@@ -44,8 +44,8 @@ public class LevelHelper {
    private static final List<Level> barbarKingLevels = new ArrayList<Level>(40);
    private static final List<Level> archerQueenLevels = new ArrayList<Level>(40);
 
-   private static final List<Level> barbarianLevels = new ArrayList<Level>(6);
-   private static final List<Level> archerLevels = new ArrayList<Level>(6);
+   private static final List<Level> barbarianLevels = new ArrayList<Level>(7);
+   private static final List<Level> archerLevels = new ArrayList<Level>(7);
    private static final List<Level> goblinLevels = new ArrayList<Level>(6);
    private static final List<Level> giantLevels = new ArrayList<Level>(6);
    private static final List<Level> wallBreakerLevels = new ArrayList<Level>(6);
@@ -67,6 +67,7 @@ public class LevelHelper {
    private static final List<Level> valkyrieLevels = new ArrayList<Level>(4);
    private static final List<Level> golemLevels = new ArrayList<Level>(5);
    private static final List<Level> witchLevels = new ArrayList<Level>(2);
+   private static final List<Level> lavaHoundLevels = new ArrayList<Level>(3);
 
    static{
       cannonLevels.add(Level.createNewBuildingLevel(1, 400, 250, (int)TimeUnit.MINUTES.toMinutes(1), 1));
@@ -92,8 +93,9 @@ public class LevelHelper {
       archerTowerLevels.add(Level.createNewBuildingLevel(8, 660, 720000, (int)TimeUnit.DAYS.toMinutes(3), 7));
       archerTowerLevels.add(Level.createNewBuildingLevel(9, 690, 1500000, (int)TimeUnit.DAYS.toMinutes(4), 8));
       archerTowerLevels.add(Level.createNewBuildingLevel(10, 720, 2500000, (int)TimeUnit.DAYS.toMinutes(5), 8));
-      archerTowerLevels.add(Level.createNewBuildingLevel(11, 750, 5000000, (int)TimeUnit.DAYS.toMinutes(6), 9));
-      archerTowerLevels.add(Level.createNewBuildingLevel(12, 790, 7500000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      archerTowerLevels.add(Level.createNewBuildingLevel(11, 750, 4500000, (int)TimeUnit.DAYS.toMinutes(6), 9));
+      archerTowerLevels.add(Level.createNewBuildingLevel(12, 790, 6500000, (int)TimeUnit.DAYS.toMinutes(7), 10));
+      archerTowerLevels.add(Level.createNewBuildingLevel(13, 840, 7500000, (int)TimeUnit.DAYS.toMinutes(8), 10));
 
       mortarLevels.add(Level.createNewBuildingLevel(1, 400, 8000, (int)TimeUnit.HOURS.toMinutes(8), 3));
       mortarLevels.add(Level.createNewBuildingLevel(2, 450, 32000, (int)TimeUnit.HOURS.toMinutes(12), 4));
@@ -253,7 +255,8 @@ public class LevelHelper {
       darkBarrackLevels.add(Level.createNewBuildingLevel(2, 300, 1250000, (int)TimeUnit.DAYS.toMinutes(5), 7));
       darkBarrackLevels.add(Level.createNewBuildingLevel(3, 350, 1750000, (int)TimeUnit.DAYS.toMinutes(6), 8));
       darkBarrackLevels.add(Level.createNewBuildingLevel(4, 400, 2250000, (int)TimeUnit.DAYS.toMinutes(7), 8));
-      darkBarrackLevels.add(Level.createNewBuildingLevel(5, 400, 2750000, (int)TimeUnit.DAYS.toMinutes(8), 9));
+      darkBarrackLevels.add(Level.createNewBuildingLevel(5, 450, 2750000, (int)TimeUnit.DAYS.toMinutes(8), 9));
+      darkBarrackLevels.add(Level.createNewBuildingLevel(6, 500, 3500000, (int)TimeUnit.DAYS.toMinutes(9), 9));
 
       laboratoryLevels.add(Level.createNewBuildingLevel(1, 250, 25000, (int)TimeUnit.MINUTES.toMinutes(30), 3));
       laboratoryLevels.add(Level.createNewBuildingLevel(2, 271, 50000, (int)TimeUnit.HOURS.toMinutes(5), 4));
@@ -390,14 +393,16 @@ public class LevelHelper {
       barbarianLevels.add(Level.createNewTroopLevel(4, 78, 500000, (int)TimeUnit.DAYS.toMinutes(3), 5));
       barbarianLevels.add(Level.createNewTroopLevel(5, 95, 1500000, (int)TimeUnit.DAYS.toMinutes(5), 6));
       barbarianLevels.add(Level.createNewTroopLevel(6, 110, 4500000, (int)TimeUnit.DAYS.toMinutes(10), 7));
-      
+      barbarianLevels.add(Level.createNewTroopLevel(7, 125, 6000000, (int)TimeUnit.DAYS.toMinutes(14), 8));
+
       archerLevels.add(Level.createNewTroopLevel(1, 20, 0, 0, 0));
       archerLevels.add(Level.createNewTroopLevel(2, 23, 50000, (int)TimeUnit.HOURS.toMinutes(12), 1));
       archerLevels.add(Level.createNewTroopLevel(3, 28, 250000, (int)TimeUnit.DAYS.toMinutes(2), 3));
       archerLevels.add(Level.createNewTroopLevel(4, 33, 750000, (int)TimeUnit.DAYS.toMinutes(3), 5));
       archerLevels.add(Level.createNewTroopLevel(5, 40, 2250000, (int)TimeUnit.DAYS.toMinutes(5), 6));
-      archerLevels.add(Level.createNewTroopLevel(6, 44, 7500000, (int)TimeUnit.DAYS.toMinutes(14), 7));
-      
+      archerLevels.add(Level.createNewTroopLevel(6, 44, 6000000, (int)TimeUnit.DAYS.toMinutes(10), 7));
+      archerLevels.add(Level.createNewTroopLevel(7, 48, 7500000, (int)TimeUnit.DAYS.toMinutes(14), 8));
+
       goblinLevels.add(Level.createNewTroopLevel(1, 25, 0, 0, 0));
       goblinLevels.add(Level.createNewTroopLevel(2, 30, 50000, (int)TimeUnit.HOURS.toMinutes(12), 1));
       goblinLevels.add(Level.createNewTroopLevel(3, 36, 250000, (int)TimeUnit.DAYS.toMinutes(2), 3));
@@ -510,6 +515,10 @@ public class LevelHelper {
 
       witchLevels.add(Level.createNewTroopLevel(1, 75, 0, 0, 0));
       witchLevels.add(Level.createNewTroopLevel(2, 100, 75000, (int)TimeUnit.DAYS.toMinutes(10), 7));
+
+      lavaHoundLevels.add(Level.createNewTroopLevel(1, 5700, 0, 0, 0));
+      lavaHoundLevels.add(Level.createNewTroopLevel(2, 6200, 60000, (int)TimeUnit.DAYS.toMinutes(10), 7));
+      lavaHoundLevels.add(Level.createNewTroopLevel(2, 6700, 70000, (int)TimeUnit.DAYS.toMinutes(12), 8));
    }
 
    public static Integer getMaxAvailable(BuildingType type, Integer villageLevel){
@@ -642,6 +651,7 @@ public class LevelHelper {
          case VALKYRIE: return valkyrieLevels;
          case GOLEM: return golemLevels;
          case WITCH: return witchLevels;
+         case LAVA_HOUND: return lavaHoundLevels;
          default : throw new IllegalArgumentException(type + " tipinde bozukluk var.");
       }
    }

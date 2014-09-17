@@ -27,7 +27,8 @@ public enum UpgradeType {
    HOG_RIDER(Resource.DARK_ELIXIR),
    VALKYRIE(Resource.DARK_ELIXIR),
    GOLEM(Resource.DARK_ELIXIR),
-   WITCH(Resource.DARK_ELIXIR)
+   WITCH(Resource.DARK_ELIXIR),
+   LAVA_HOUND(Resource.DARK_ELIXIR)
    ;
 
    private Resource resource;

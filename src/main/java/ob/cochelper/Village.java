@@ -97,6 +97,8 @@ public class Village {
       create(UpgradeType.HOG_RIDER, UpgradeCategory.DARK_ELIXIR_TROOP, Integer.parseInt(darkElixirTroopLevelArray[1]));
       create(UpgradeType.VALKYRIE, UpgradeCategory.DARK_ELIXIR_TROOP, Integer.parseInt(darkElixirTroopLevelArray[2]));
       create(UpgradeType.GOLEM, UpgradeCategory.DARK_ELIXIR_TROOP, Integer.parseInt(darkElixirTroopLevelArray[3]));
+      create(UpgradeType.WITCH, UpgradeCategory.DARK_ELIXIR_TROOP, Integer.parseInt(darkElixirTroopLevelArray[4]));
+      create(UpgradeType.LAVA_HOUND, UpgradeCategory.DARK_ELIXIR_TROOP, Integer.parseInt(darkElixirTroopLevelArray[5]));
 
       String[] spellLevelArray = spellLevels.split(",");
 

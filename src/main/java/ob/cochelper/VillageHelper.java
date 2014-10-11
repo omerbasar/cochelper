@@ -28,11 +28,11 @@ public class VillageHelper {
       Map<Integer, Integer> wallMap = new TreeMap<Integer, Integer>();
 
       String cannonCS = "12,11,11,11,11,11";
-      String archersCS = "11,11,10,10,10,10,10";
-      String mortars = "8,8,7";
+      String archersCS = "11,11,11,10,10,10,10";
+      String mortars = "8,8,8";
       String wizardTowers = "8,8,7,7";
-      String airDefenses = "8,8,8,7";
-      String hiddenTeslas = "7,7,7,7";
+      String airDefenses = "8,8,8,8";
+      String hiddenTeslas = "8,8,7,7";
       String xBows = "4,4,4";
       String infernoTowers = "3,3";
 
@@ -55,11 +55,11 @@ public class VillageHelper {
       int laboratory = 8;
       int spellFactory = 5;
       int clanCastle = 6;
-      int barbarKing = 25;
-      int archerQuenn = 30;
+      int barbarKing = 27;
+      int archerQuenn = 31;
       int townHall = 10;
 
-      String elixirTroopLevels = "6,6,6,6,6,6,6,4,3,5";
+      String elixirTroopLevels = "6,7,6,6,6,6,6,4,3,5";
       String spellLevels = "6,6,5,2,5";
       String darkElixirTroopLevels = "5,5,1,5,2,1,1";
 

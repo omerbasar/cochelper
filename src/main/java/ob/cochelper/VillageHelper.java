@@ -27,19 +27,12 @@ public class VillageHelper {
 
       Map<Integer, Integer> wallMap = new TreeMap<Integer, Integer>();
 
-      String cannonCS = "12,11,11,11,11,11";
-      String archersCS = "11,11,11,10,10,10,10";
+      // finished
       String mortars = "8,8,8";
-      String wizardTowers = "8,8,7,7";
+      String wizardTowers = "8,8,8,8";
       String airDefenses = "8,8,8,8";
-      String hiddenTeslas = "8,8,7,7";
       String xBows = "4,4,4";
       String infernoTowers = "3,3";
-
-      String bombs = "6,6,6,5,5,5";
-      String giantBombs = "4,4,4,4,3";
-      String airBombs = "4,4,4,4,3";
-      String seekingAirMines = "2,2,2,2,2";
 
       String goldMines = "11,11,11,11,11,11,11";
       String elixirCollectors = "11,11,11,11,11,11,11";
@@ -51,21 +44,34 @@ public class VillageHelper {
       int builders = 5;
       String armyCamps = "8,8,8,8";
       String barracks = "10,10,10,10";
-      String darkBarracks = "5,5";
+
       int laboratory = 8;
       int spellFactory = 5;
       int clanCastle = 6;
-      int barbarKing = 27;
-      int archerQuenn = 31;
       int townHall = 10;
+
+      // remaining
+
+      String cannonCS = "12,11,11,11,11,11";
+      String archersCS = "11,11,11,10,10,10,10";
+      String hiddenTeslas = "8,8,7,7";
+
+      String bombs = "6,6,6,5,5,5";
+      String giantBombs = "4,4,4,4,3";
+      String airBombs = "4,4,4,4,3";
+      String seekingAirMines = "2,2,2,2,2";
+
+      String darkBarracks = "5,5";
+      int barbarKing = 27;
+      int archerQuenn = 32;
 
       String elixirTroopLevels = "6,7,6,6,6,6,6,4,3,5";
       String spellLevels = "6,6,5,2,5";
       String darkElixirTroopLevels = "5,5,1,5,2,1,1";
 
-      wallMap.put(6, 48);
-      wallMap.put(7, 147);
-      wallMap.put(8, 55);
+      wallMap.put(6, 47);
+      wallMap.put(7, 142);
+      wallMap.put(8, 61);
 
       return new Village(townHall, cannonCS, archersCS, mortars, wizardTowers, airDefenses, hiddenTeslas, xBows, infernoTowers,
               bombs, giantBombs, airBombs, seekingAirMines,

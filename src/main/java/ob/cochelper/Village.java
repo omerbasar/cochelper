@@ -26,7 +26,7 @@ public class Village {
    private Map<Resource, Long> dailyProduction = new HashMap<Resource, Long>();
 
    public Village(Integer townHall, String cannonCS, String archersCS, String mortars, String wizardTowers, String airDefenses, String hiddenTeslas, String xBows, String infernoTowers,
-                  String bombs, String giantBombs, String airBombs, String seekingAirMines,
+                  String bombs, String giantBombs, String airBombs, String seekingAirMines, String skeletonTraps,
                   String goldMines, String elixirCollectors, String darkElixirDrills,
                   String goldStorages, String elixirStorages, String darkElixirStorages,
                   Integer builderCount, String armyCamps, String barracks, String darkBarracks,
@@ -58,6 +58,7 @@ public class Village {
       create(BuildingType.GIANT_BOMB, BuildingCategory.DEFENSE, giantBombs);
       create(BuildingType.AIR_BOMB, BuildingCategory.DEFENSE, airBombs);
       create(BuildingType.SEEKING_AIR_MINE, BuildingCategory.DEFENSE, seekingAirMines);
+      create(BuildingType.SKELETON_TRAP, BuildingCategory.DEFENSE, skeletonTraps);
 
       create(BuildingType.GOLD_MINE, BuildingCategory.RESOURCE, goldMines);
       create(BuildingType.ELIXIR_COLLECTOR, BuildingCategory.RESOURCE, elixirCollectors);
@@ -134,7 +135,7 @@ public class Village {
          }
       }
 
-      for(int i = totalWallCount ; i < LevelHelper.getMaxAvailable(BuildingType.WALL, untilTownHallLevel) ; i ++){
+      for(int i = totalWallCount ; i < BuildingType.WALL.getMaxAvailable() ; i ++){
          builder.append(0).append(",");
       }
 
@@ -150,7 +151,7 @@ public class Village {
       ArrayList<String> parts = new ArrayList<String>();
       Collections.addAll(parts, commaSeparated.split(","));
 
-      for(int i = parts.size() ; i < LevelHelper.getMaxAvailable(type, untilTownHallLevel); i ++){
+      for(int i = parts.size() ; i < type.getMaxAvailable(); i ++){
          parts.add("0");
       }
       for (String level : parts) {

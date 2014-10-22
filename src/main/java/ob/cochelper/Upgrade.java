@@ -86,7 +86,7 @@ public class Upgrade {
    }
 
    public List<? extends Level> getLevels(){
-      return LevelHelper.getLevels(type);
+      return type.getLevels();
    }
 
    @Override

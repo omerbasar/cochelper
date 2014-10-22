@@ -11,63 +11,64 @@ import java.util.concurrent.TimeUnit;
  */
 public class LevelHelper {
    
-   private static final List<Level> cannonLevels = new ArrayList<Level>(12);
-   private static final List<Level> archerTowerLevels = new ArrayList<Level>(13);
-   private static final List<Level> mortarLevels = new ArrayList<Level>(8);
-   private static final List<Level> wizardTowerLevels = new ArrayList<Level>(8);
-   private static final List<Level> airDefenseLevels = new ArrayList<Level>(8);
-   private static final List<Level> hiddenTeslaLevels = new ArrayList<Level>(8);
-   private static final List<Level> xBowLevels = new ArrayList<Level>(4);
-   private static final List<Level> infernoTowerLevels = new ArrayList<Level>(3);
+   protected static final List<Level> cannonLevels = new ArrayList<Level>(12);
+   protected static final List<Level> archerTowerLevels = new ArrayList<Level>(13);
+   protected static final List<Level> mortarLevels = new ArrayList<Level>(8);
+   protected static final List<Level> wizardTowerLevels = new ArrayList<Level>(8);
+   protected static final List<Level> airDefenseLevels = new ArrayList<Level>(8);
+   protected static final List<Level> hiddenTeslaLevels = new ArrayList<Level>(8);
+   protected static final List<Level> xBowLevels = new ArrayList<Level>(4);
+   protected static final List<Level> infernoTowerLevels = new ArrayList<Level>(3);
 
-   private static final List<Level> bombLevels = new ArrayList<Level>(6);
-   private static final List<Level> giantBombLevels = new ArrayList<Level>(4);
-   private static final List<Level> airBombLevels = new ArrayList<Level>(4);
-   private static final List<Level> seekingAirMineLevels = new ArrayList<Level>(3);
+   protected static final List<Level> bombLevels = new ArrayList<Level>(6);
+   protected static final List<Level> giantBombLevels = new ArrayList<Level>(4);
+   protected static final List<Level> airBombLevels = new ArrayList<Level>(4);
+   protected static final List<Level> seekingAirMineLevels = new ArrayList<Level>(3);
+   protected static final List<Level> skeletonTrapLevels = new ArrayList<Level>(3);
 
-   private static final List<Level> elixirCollectorLevels = new ArrayList<Level>(11);
-   private static final List<Level> goldMineLevels = new ArrayList<Level>(11);
-   private static final List<Level> darkElixirDrillLevels = new ArrayList<Level>(6);
-   private static final List<Level> goldStorageLevels = new ArrayList<Level>(11);
-   private static final List<Level> elixirStorageLevels = new ArrayList<Level>(11);
-   private static final List<Level> darkElixirStorageLevels = new ArrayList<Level>(6);
-   private static final List<Level> buildersHutLevels = new ArrayList<Level>(1);
-   private static final List<Level> armyCampLevels = new ArrayList<Level>(8);
-   private static final List<Level> barrackLevels = new ArrayList<Level>(10);
-   private static final List<Level> darkBarrackLevels = new ArrayList<Level>(6);
-   private static final List<Level> laboratoryLevels = new ArrayList<Level>(8);
-   private static final List<Level> spellFactoryLevels = new ArrayList<Level>(5);
-   private static final List<Level> townHallLevels = new ArrayList<Level>(10);
-   private static final List<Level> clanCastleLevels = new ArrayList<Level>(6);
-   private static final List<Level> wallLevels = new ArrayList<Level>(11);
+   protected static final List<Level> elixirCollectorLevels = new ArrayList<Level>(11);
+   protected static final List<Level> goldMineLevels = new ArrayList<Level>(11);
+   protected static final List<Level> darkElixirDrillLevels = new ArrayList<Level>(6);
+   protected static final List<Level> goldStorageLevels = new ArrayList<Level>(11);
+   protected static final List<Level> elixirStorageLevels = new ArrayList<Level>(11);
+   protected static final List<Level> darkElixirStorageLevels = new ArrayList<Level>(6);
+   protected static final List<Level> buildersHutLevels = new ArrayList<Level>(1);
+   protected static final List<Level> armyCampLevels = new ArrayList<Level>(8);
+   protected static final List<Level> barrackLevels = new ArrayList<Level>(10);
+   protected static final List<Level> darkBarrackLevels = new ArrayList<Level>(6);
+   protected static final List<Level> laboratoryLevels = new ArrayList<Level>(8);
+   protected static final List<Level> spellFactoryLevels = new ArrayList<Level>(5);
+   protected static final List<Level> townHallLevels = new ArrayList<Level>(10);
+   protected static final List<Level> clanCastleLevels = new ArrayList<Level>(6);
+   protected static final List<Level> wallLevels = new ArrayList<Level>(11);
 
-   private static final List<Level> barbarKingLevels = new ArrayList<Level>(40);
-   private static final List<Level> archerQueenLevels = new ArrayList<Level>(40);
+   protected static final List<Level> barbarKingLevels = new ArrayList<Level>(40);
+   protected static final List<Level> archerQueenLevels = new ArrayList<Level>(40);
 
-   private static final List<Level> barbarianLevels = new ArrayList<Level>(7);
-   private static final List<Level> archerLevels = new ArrayList<Level>(7);
-   private static final List<Level> goblinLevels = new ArrayList<Level>(6);
-   private static final List<Level> giantLevels = new ArrayList<Level>(6);
-   private static final List<Level> wallBreakerLevels = new ArrayList<Level>(6);
-   private static final List<Level> balloonLevels = new ArrayList<Level>(6);
-   private static final List<Level> wizardLevels = new ArrayList<Level>(6);
-   private static final List<Level> healerLevels = new ArrayList<Level>(4);
-   private static final List<Level> dragonLevels = new ArrayList<Level>(4);
-   private static final List<Level> pekkaLevels = new ArrayList<Level>(5);
+   protected static final List<Level> barbarianLevels = new ArrayList<Level>(7);
+   protected static final List<Level> archerLevels = new ArrayList<Level>(7);
+   protected static final List<Level> goblinLevels = new ArrayList<Level>(6);
+   protected static final List<Level> giantLevels = new ArrayList<Level>(6);
+   protected static final List<Level> wallBreakerLevels = new ArrayList<Level>(6);
+   protected static final List<Level> balloonLevels = new ArrayList<Level>(6);
+   protected static final List<Level> wizardLevels = new ArrayList<Level>(6);
+   protected static final List<Level> healerLevels = new ArrayList<Level>(4);
+   protected static final List<Level> dragonLevels = new ArrayList<Level>(4);
+   protected static final List<Level> pekkaLevels = new ArrayList<Level>(5);
 
-   private static final List<Level> lighteningSpellLevels = new ArrayList<Level>(6);
-   private static final List<Level> healingSpellLevels = new ArrayList<Level>(6);
-   private static final List<Level> rageSpellLevels = new ArrayList<Level>(5);
-   private static final List<Level> jumpSpellLevels = new ArrayList<Level>(3);
-   private static final List<Level> santasSupriseSpellLevels = new ArrayList<Level>(1);
-   private static final List<Level> freezeSpellLevels = new ArrayList<Level>(5);
+   protected static final List<Level> lighteningSpellLevels = new ArrayList<Level>(6);
+   protected static final List<Level> healingSpellLevels = new ArrayList<Level>(6);
+   protected static final List<Level> rageSpellLevels = new ArrayList<Level>(5);
+   protected static final List<Level> jumpSpellLevels = new ArrayList<Level>(3);
+   protected static final List<Level> santasSupriseSpellLevels = new ArrayList<Level>(1);
+   protected static final List<Level> freezeSpellLevels = new ArrayList<Level>(5);
 
-   private static final List<Level> minionLevels = new ArrayList<Level>(6);
-   private static final List<Level> hogRiderLevels = new ArrayList<Level>(5);
-   private static final List<Level> valkyrieLevels = new ArrayList<Level>(4);
-   private static final List<Level> golemLevels = new ArrayList<Level>(5);
-   private static final List<Level> witchLevels = new ArrayList<Level>(2);
-   private static final List<Level> lavaHoundLevels = new ArrayList<Level>(3);
+   protected static final List<Level> minionLevels = new ArrayList<Level>(6);
+   protected static final List<Level> hogRiderLevels = new ArrayList<Level>(5);
+   protected static final List<Level> valkyrieLevels = new ArrayList<Level>(4);
+   protected static final List<Level> golemLevels = new ArrayList<Level>(5);
+   protected static final List<Level> witchLevels = new ArrayList<Level>(2);
+   protected static final List<Level> lavaHoundLevels = new ArrayList<Level>(3);
 
    static{
       cannonLevels.add(Level.createNewBuildingLevel(1, 400, 250, (int)TimeUnit.MINUTES.toMinutes(1), 1));
@@ -162,6 +163,10 @@ public class LevelHelper {
       seekingAirMineLevels.add(Level.createNewBuildingLevel(1, 0, 150000, 0, 7));
       seekingAirMineLevels.add(Level.createNewBuildingLevel(2, 0, 2000000, (int)TimeUnit.DAYS.toMinutes(1), 9));
       seekingAirMineLevels.add(Level.createNewBuildingLevel(3, 0, 4000000, (int)TimeUnit.DAYS.toMinutes(3), 10));
+
+      skeletonTrapLevels.add(Level.createNewBuildingLevel(1, 0, 6000, 0, 8));
+      skeletonTrapLevels.add(Level.createNewBuildingLevel(2, 0, 600000, (int)TimeUnit.HOURS.toMinutes(6), 8));
+      skeletonTrapLevels.add(Level.createNewBuildingLevel(3, 0, 1300000, (int)TimeUnit.DAYS.toMinutes(1), 9));
 
       elixirCollectorLevels.add(Level.createNewResourceLevel(1, 400, 150, (int)TimeUnit.MINUTES.toMinutes(1), 1, 500, 200));
       elixirCollectorLevels.add(Level.createNewResourceLevel(2, 450, 300, (int)TimeUnit.MINUTES.toMinutes(5), 1, 1000, 400));
@@ -520,140 +525,4 @@ public class LevelHelper {
       lavaHoundLevels.add(Level.createNewTroopLevel(2, 6200, 60000, (int)TimeUnit.DAYS.toMinutes(10), 7));
       lavaHoundLevels.add(Level.createNewTroopLevel(2, 6700, 70000, (int)TimeUnit.DAYS.toMinutes(12), 8));
    }
-
-   public static Integer getMaxAvailable(BuildingType type, Integer villageLevel){
-      switch (villageLevel){
-         case 9:
-            switch (type){
-               case CANNON: return 5;
-               case ARCHER_TOWER: return 6;
-               case MORTAR: return 3;
-               case WIZARD_TOWER: return 4;
-               case AIR_DEFENSE: return 4;
-               case HIDDEN_TESLA: return 4;
-               case XBOW: return 2;
-               case INFERNO_TOWER: return 0;
-               case BOMB: return 6;
-               case GIANT_BOMB: return 4;
-               case AIR_BOMB: return 4;
-               case SEEKING_AIR_MINE: return 4;
-               case ELIXIR_COLLECTOR: return 6;
-               case GOLD_MINE: return 6;
-               case DARK_ELIXIR_DRILL: return 2;
-               case GOLD_STORAGE: return 4;
-               case ELIXIR_STORAGE: return 4;
-               case DARK_ELIXIR_STORAGE: return 1;
-               case BUILDERS_HUT: return 5;
-               case ARMY_CAMP: return 4;
-               case BARRACK: return 4;
-               case DARK_BARRACK: return 2;
-               case LABORATORY: return 1;
-               case SPELL_FACTORY: return 1;
-               case TOWN_HALL: return 1;
-               case CLAN_CASTLE: return 1;
-               case WALL: return 250;
-               case BARBAR_KING: return 1;
-               case ARCHER_QUENN: return 1;
-               default : throw new IllegalArgumentException(type + " tipinde bozukluk var.");
-            }
-         case 10:
-            switch (type){
-               case CANNON: return 6;
-               case ARCHER_TOWER: return 7;
-               case MORTAR: return 3;
-               case WIZARD_TOWER: return 4;
-               case AIR_DEFENSE: return 4;
-               case HIDDEN_TESLA: return 4;
-               case XBOW: return 3;
-               case INFERNO_TOWER: return 2;
-               case BOMB: return 6;
-               case GIANT_BOMB: return 5;
-               case AIR_BOMB: return 5;
-               case SEEKING_AIR_MINE: return 5;
-               case ELIXIR_COLLECTOR: return 7;
-               case GOLD_MINE: return 7;
-               case DARK_ELIXIR_DRILL: return 3;
-               case GOLD_STORAGE: return 4;
-               case ELIXIR_STORAGE: return 4;
-               case DARK_ELIXIR_STORAGE: return 1;
-               case BUILDERS_HUT: return 5;
-               case ARMY_CAMP: return 4;
-               case BARRACK: return 4;
-               case DARK_BARRACK: return 2;
-               case LABORATORY: return 1;
-               case SPELL_FACTORY: return 1;
-               case TOWN_HALL: return 1;
-               case CLAN_CASTLE: return 1;
-               case WALL: return 250;
-               case BARBAR_KING: return 1;
-               case ARCHER_QUENN: return 1;
-               default : throw new IllegalArgumentException(type + " tipinde bozukluk var.");
-            }
-      }
-      return 0;
-   }
-
-   public static List<? extends Level> getLevels(BuildingType type) {
-      switch (type){
-         case CANNON: return cannonLevels;
-         case ARCHER_TOWER: return archerTowerLevels;
-         case MORTAR: return mortarLevels;
-         case WIZARD_TOWER: return wizardTowerLevels;
-         case AIR_DEFENSE: return airDefenseLevels;
-         case HIDDEN_TESLA: return hiddenTeslaLevels;
-         case XBOW: return xBowLevels;
-         case INFERNO_TOWER: return infernoTowerLevels;
-         case BOMB: return bombLevels;
-         case GIANT_BOMB: return giantBombLevels;
-         case AIR_BOMB: return airBombLevels;
-         case SEEKING_AIR_MINE: return seekingAirMineLevels;
-         case GOLD_MINE: return goldMineLevels;
-         case ELIXIR_COLLECTOR: return elixirCollectorLevels;
-         case DARK_ELIXIR_DRILL: return darkElixirDrillLevels;
-         case GOLD_STORAGE: return goldStorageLevels;
-         case ELIXIR_STORAGE: return elixirStorageLevels;
-         case DARK_ELIXIR_STORAGE: return darkElixirStorageLevels;
-         case BUILDERS_HUT: return buildersHutLevels;
-         case ARMY_CAMP: return armyCampLevels;
-         case BARRACK: return barrackLevels;
-         case DARK_BARRACK: return darkBarrackLevels;
-         case LABORATORY: return laboratoryLevels;
-         case SPELL_FACTORY: return spellFactoryLevels;
-         case TOWN_HALL: return townHallLevels;
-         case CLAN_CASTLE: return clanCastleLevels;
-         case WALL: return wallLevels;
-         case BARBAR_KING: return barbarKingLevels;
-         case ARCHER_QUENN: return archerQueenLevels;
-         default : throw new IllegalArgumentException(type + " tipinde bozukluk var.");
-      }
-   }
-
-   public static List<? extends Level> getLevels(UpgradeType type) {
-      switch (type){
-         case BARBARIAN: return barbarianLevels;
-         case ARCHER: return archerLevels;
-         case GOBLIN: return goblinLevels;
-         case GIANT: return giantLevels;
-         case WALL_BREAKER: return wallBreakerLevels;
-         case BALLOON: return balloonLevels;
-         case WIZARD: return wizardLevels;
-         case HEALER: return healerLevels;
-         case DRAGON: return dragonLevels;
-         case PEKKA: return pekkaLevels;
-         case LIGHTENING_SPELL: return lighteningSpellLevels;
-         case HEALING_SPELL: return healingSpellLevels;
-         case RAGE_SPELL: return rageSpellLevels;
-         case JUMP_SPELL: return jumpSpellLevels;
-         case SANTAS_SURPRISE_SPELL: return santasSupriseSpellLevels;
-         case FREEZE_SPELL: return freezeSpellLevels;
-         case MINION: return minionLevels;
-         case HOG_RIDER: return hogRiderLevels;
-         case VALKYRIE: return valkyrieLevels;
-         case GOLEM: return golemLevels;
-         case WITCH: return witchLevels;
-         case LAVA_HOUND: return lavaHoundLevels;
-         default : throw new IllegalArgumentException(type + " tipinde bozukluk var.");
-      }
-   }
-
 }

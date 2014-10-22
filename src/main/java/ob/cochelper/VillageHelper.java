@@ -28,7 +28,6 @@ public class VillageHelper {
       Map<Integer, Integer> wallMap = new TreeMap<Integer, Integer>();
 
       // finished
-      String mortars = "8,8,8";
       String wizardTowers = "8,8,8,8";
       String airDefenses = "8,8,8,8";
       String xBows = "4,4,4";
@@ -52,6 +51,7 @@ public class VillageHelper {
 
       // remaining
 
+      String mortars = "8,8,8,1";
       String cannonCS = "12,11,11,11,11,11";
       String archersCS = "11,11,11,10,10,10,10";
       String hiddenTeslas = "8,8,7,7";
@@ -60,6 +60,7 @@ public class VillageHelper {
       String giantBombs = "4,4,4,4,3";
       String airBombs = "4,4,4,4,3";
       String seekingAirMines = "2,2,2,2,2";
+      String skeletonTraps = "1,1,1";
 
       String darkBarracks = "5,5";
       int barbarKing = 27;
@@ -74,7 +75,7 @@ public class VillageHelper {
       wallMap.put(8, 61);
 
       return new Village(townHall, cannonCS, archersCS, mortars, wizardTowers, airDefenses, hiddenTeslas, xBows, infernoTowers,
-              bombs, giantBombs, airBombs, seekingAirMines,
+              bombs, giantBombs, airBombs, seekingAirMines, skeletonTraps,
               goldMines, elixirCollectors, darkElixirDrills,
               goldStorages, elixirStorages, darkElixirStorages, builders, armyCamps, barracks, darkBarracks, laboratory, spellFactory,
               clanCastle, barbarKing, archerQuenn, categories, upgradeCategories, wallMap, spellLevels, elixirTroopLevels, darkElixirTroopLevels,

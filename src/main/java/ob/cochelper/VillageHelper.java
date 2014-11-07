@@ -49,30 +49,31 @@ public class VillageHelper {
       int clanCastle = 6;
       int townHall = 10;
 
+      String giantBombs = "4,4,4,4,4";
+
       // remaining
 
-      String mortars = "8,8,8,1";
+      String mortars = "8,8,8,5";
       String cannonCS = "12,11,11,11,11,11";
       String archersCS = "11,11,11,10,10,10,10";
-      String hiddenTeslas = "8,8,7,7";
+      String hiddenTeslas = "8,8,8,7";
 
       String bombs = "6,6,6,5,5,5";
-      String giantBombs = "4,4,4,4,3";
       String airBombs = "4,4,4,4,3";
-      String seekingAirMines = "2,2,2,2,2";
-      String skeletonTraps = "1,1,1";
+      String seekingAirMines = "3,2,2,2,2";
+      String skeletonTraps = "2,2,2";
 
       String darkBarracks = "5,5";
       int barbarKing = 27;
       int archerQuenn = 32;
 
-      String elixirTroopLevels = "6,7,6,6,6,6,6,4,3,5";
+      String elixirTroopLevels = "7,7,6,6,6,6,6,4,3,5";
       String spellLevels = "6,6,5,2,5";
       String darkElixirTroopLevels = "5,5,1,5,2,1,1";
 
-      wallMap.put(6, 47);
+      wallMap.put(6, 46);
       wallMap.put(7, 142);
-      wallMap.put(8, 61);
+      wallMap.put(8, 62);
 
       return new Village(townHall, cannonCS, archersCS, mortars, wizardTowers, airDefenses, hiddenTeslas, xBows, infernoTowers,
               bombs, giantBombs, airBombs, seekingAirMines, skeletonTraps,

@@ -12,7 +12,7 @@ public class VillageHelper {
       int untilTownHallLevel = 10;
       int untilLaboratoryLevel = 8;
 
-      Set<BuildingCategory> categories = new HashSet<BuildingCategory>();
+      Set<BuildingCategory> categories = new HashSet<>();
       //categories.add(BuildingCategory.DEFENSE);
 
       for (BuildingCategory buildingCategory : BuildingCategory.values()) {
@@ -22,14 +22,15 @@ public class VillageHelper {
          categories.add(buildingCategory);
       }
 
-      Set<UpgradeCategory> upgradeCategories = new HashSet<UpgradeCategory>();
+      Set<UpgradeCategory> upgradeCategories = new HashSet<>();
       Collections.addAll(upgradeCategories, UpgradeCategory.values());
 
-      Map<Integer, Integer> wallMap = new TreeMap<Integer, Integer>();
+      Map<Integer, Integer> wallMap = new TreeMap<>();
 
       // finished
       String wizardTowers = "8,8,8,8";
       String airDefenses = "8,8,8,8";
+      String hiddenTeslas = "8,8,8,8";
       String xBows = "4,4,4";
       String infernoTowers = "3,3";
 
@@ -56,7 +57,6 @@ public class VillageHelper {
       String mortars = "8,8,8,5";
       String cannonCS = "12,11,11,11,11,11";
       String archersCS = "11,11,11,10,10,10,10";
-      String hiddenTeslas = "8,8,8,7";
 
       String bombs = "6,6,6,5,5,5";
       String airBombs = "4,4,4,4,3";
@@ -65,7 +65,7 @@ public class VillageHelper {
 
       String darkBarracks = "5,5";
       int barbarKing = 27;
-      int archerQuenn = 32;
+      int archerQuenn = 33;
 
       String elixirTroopLevels = "7,7,6,6,6,6,6,4,3,5";
       String spellLevels = "6,6,5,2,5";

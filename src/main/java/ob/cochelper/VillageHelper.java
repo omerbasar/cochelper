@@ -50,22 +50,22 @@ public class VillageHelper {
       int clanCastle = 6;
       int townHall = 10;
 
+      String bombs = "6,6,6,6,6,6";
       String giantBombs = "4,4,4,4,4";
-	  String airBombs = "4,4,4,4,4";
-	  String skeletonTraps = "3,3,3";
+      String airBombs = "4,4,4,4,4";
+      String skeletonTraps = "3,3,3";
 
       // remaining
 
-      String mortars = "8,8,8,5";
+      String mortars = "8,8,8,6";
       String cannonCS = "12,12,11,11,11,11";
       String archersCS = "11,11,11,10,10,10,10";
 
-      String bombs = "6,6,6,6,5,5";
       String seekingAirMines = "3,2,2,2,2";
 
       String darkBarracks = "5,5";
-      int barbarKing = 27;
-      int archerQuenn = 34;
+      int barbarKing = 26;
+      int archerQuenn = 35;
 
       String elixirTroopLevels = "7,7,6,6,6,6,6,4,3,5";
       String spellLevels = "6,6,5,2,5";

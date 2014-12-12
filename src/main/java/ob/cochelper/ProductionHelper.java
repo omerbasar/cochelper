@@ -33,6 +33,7 @@ public class ProductionHelper {
                case 9: return 2200 * 24;
                case 10: return 2500 * 24;
                case 11: return 3000 * 24;
+               case 12: return 3500 * 24;
                default: throw new IllegalArgumentException(" hatali bilgi : " + type + ", level : " + level);
             }
          case ELIXIR_COLLECTOR:
@@ -48,6 +49,7 @@ public class ProductionHelper {
                case 9: return 2200 * 24;
                case 10: return 2500 * 24;
                case 11: return 3000 * 24;
+               case 12: return 3500 * 24;
                default: throw new IllegalArgumentException(" hatali bilgi : " + type + ", level : " + level);
             }
          case DARK_ELIXIR_DRILL:

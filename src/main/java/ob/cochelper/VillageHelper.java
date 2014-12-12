@@ -35,7 +35,6 @@ public class VillageHelper {
       String xBows = "4,4,4";
       String infernoTowers = "3,3";
 
-      String goldMines = "11,11,11,11,11,11,11";
       String elixirCollectors = "11,11,11,11,11,11,11";
       String darkElixirDrills = "6,6,6";
 
@@ -58,16 +57,17 @@ public class VillageHelper {
 
       // remaining
 
+      String goldMines = "12,12,11,11,11,11,11";
       String cannonCS = "12,12,11,11,11,11";
-      String archersCS = "11,11,11,10,10,10,10";
+      String archersCS = "11,11,11,11,10,10,10";
 
       String seekingAirMines = "3,2,2,2,2";
 
       String darkBarracks = "5,5";
-      int barbarKing = 27;
+      int barbarKing = 28;
       int archerQuenn = 35;
 
-      String elixirTroopLevels = "7,7,6,6,6,6,6,4,3,5";
+      String elixirTroopLevels = "7,7,6,6,6,6,6,4,4,5";
       String spellLevels = "6,6,5,2,5";
       String darkElixirTroopLevels = "5,5,1,5,2,1,1";
 

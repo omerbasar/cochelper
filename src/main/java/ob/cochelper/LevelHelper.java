@@ -26,8 +26,8 @@ public class LevelHelper {
    protected static final List<Level> seekingAirMineLevels = new ArrayList<Level>(3);
    protected static final List<Level> skeletonTrapLevels = new ArrayList<Level>(3);
 
-   protected static final List<Level> elixirCollectorLevels = new ArrayList<Level>(11);
-   protected static final List<Level> goldMineLevels = new ArrayList<Level>(11);
+   protected static final List<Level> elixirCollectorLevels = new ArrayList<Level>(12);
+   protected static final List<Level> goldMineLevels = new ArrayList<Level>(12);
    protected static final List<Level> darkElixirDrillLevels = new ArrayList<Level>(6);
    protected static final List<Level> goldStorageLevels = new ArrayList<Level>(11);
    protected static final List<Level> elixirStorageLevels = new ArrayList<Level>(11);
@@ -48,7 +48,7 @@ public class LevelHelper {
    protected static final List<Level> barbarianLevels = new ArrayList<Level>(7);
    protected static final List<Level> archerLevels = new ArrayList<Level>(7);
    protected static final List<Level> goblinLevels = new ArrayList<Level>(6);
-   protected static final List<Level> giantLevels = new ArrayList<Level>(6);
+   protected static final List<Level> giantLevels = new ArrayList<Level>(7);
    protected static final List<Level> wallBreakerLevels = new ArrayList<Level>(6);
    protected static final List<Level> balloonLevels = new ArrayList<Level>(6);
    protected static final List<Level> wizardLevels = new ArrayList<Level>(6);
@@ -178,8 +178,9 @@ public class LevelHelper {
       elixirCollectorLevels.add(Level.createNewResourceLevel(8, 660, 28000, (int)TimeUnit.DAYS.toMinutes(2), 4, 50000, 1900));
       elixirCollectorLevels.add(Level.createNewResourceLevel(9, 680, 56000, (int)TimeUnit.DAYS.toMinutes(3), 5, 75000, 2200));
       elixirCollectorLevels.add(Level.createNewResourceLevel(10, 710, 84000, (int)TimeUnit.DAYS.toMinutes(4), 5, 100000, 2500));
-      elixirCollectorLevels.add(Level.createNewResourceLevel(11, 750, 168000, (int)TimeUnit.DAYS.toMinutes(5), 7, 150000, 3000));
-      
+      elixirCollectorLevels.add(Level.createNewResourceLevel(11, 800, 168000, (int)TimeUnit.DAYS.toMinutes(5), 7, 150000, 3000));
+      elixirCollectorLevels.add(Level.createNewResourceLevel(12, 840, 336000, (int)TimeUnit.DAYS.toMinutes(5), 7, 200000, 3500));
+
       goldMineLevels.add(Level.createNewResourceLevel(1, 400, 150, (int)TimeUnit.MINUTES.toMinutes(1), 1, 500, 200));
       goldMineLevels.add(Level.createNewResourceLevel(2, 450, 300, (int)TimeUnit.MINUTES.toMinutes(5), 1, 1000, 400));
       goldMineLevels.add(Level.createNewResourceLevel(3, 500, 700, (int)TimeUnit.MINUTES.toMinutes(15), 2, 1500, 600));
@@ -191,6 +192,7 @@ public class LevelHelper {
       goldMineLevels.add(Level.createNewResourceLevel(9, 680, 56000, (int)TimeUnit.DAYS.toMinutes(3), 5, 75000, 2200));
       goldMineLevels.add(Level.createNewResourceLevel(10, 710, 84000, (int)TimeUnit.DAYS.toMinutes(4), 5, 100000, 2500));
       goldMineLevels.add(Level.createNewResourceLevel(11, 750, 168000, (int)TimeUnit.DAYS.toMinutes(5), 7, 150000, 3000));
+      goldMineLevels.add(Level.createNewResourceLevel(12, 840, 336000, (int)TimeUnit.DAYS.toMinutes(5), 7, 200000, 3500));
 
       darkElixirDrillLevels.add(Level.createNewResourceLevel(1, 400, 1000000, (int)TimeUnit.DAYS.toMinutes(1), 8, 120, 20));
       darkElixirDrillLevels.add(Level.createNewResourceLevel(2, 480, 1500000, (int)TimeUnit.DAYS.toMinutes(2), 8, 240, 30));
@@ -421,6 +423,7 @@ public class LevelHelper {
       giantLevels.add(Level.createNewTroopLevel(4, 520, 750000, (int)TimeUnit.DAYS.toMinutes(3), 5));
       giantLevels.add(Level.createNewTroopLevel(5, 670, 2250000, (int)TimeUnit.DAYS.toMinutes(5), 6));
       giantLevels.add(Level.createNewTroopLevel(6, 940, 6000000, (int)TimeUnit.DAYS.toMinutes(10), 7));
+      giantLevels.add(Level.createNewTroopLevel(7, 1100, 7000000, (int)TimeUnit.DAYS.toMinutes(14), 7));
 
       wallBreakerLevels.add(Level.createNewTroopLevel(1, 20, 0, 0, 0));
       wallBreakerLevels.add(Level.createNewTroopLevel(2, 24, 100000, (int)TimeUnit.DAYS.toMinutes(1), 2));

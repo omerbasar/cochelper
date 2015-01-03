@@ -83,8 +83,8 @@ public class Village {
 
       create(UpgradeType.BARBARIAN, UpgradeCategory.ELIXIR_TROOP, Integer.parseInt(elixirTroopLevelArray[0]));
       create(UpgradeType.ARCHER, UpgradeCategory.ELIXIR_TROOP, Integer.parseInt(elixirTroopLevelArray[1]));
-      create(UpgradeType.GOBLIN, UpgradeCategory.ELIXIR_TROOP, Integer.parseInt(elixirTroopLevelArray[2]));
-      create(UpgradeType.GIANT, UpgradeCategory.ELIXIR_TROOP, Integer.parseInt(elixirTroopLevelArray[3]));
+      create(UpgradeType.GIANT, UpgradeCategory.ELIXIR_TROOP, Integer.parseInt(elixirTroopLevelArray[2]));
+      create(UpgradeType.GOBLIN, UpgradeCategory.ELIXIR_TROOP, Integer.parseInt(elixirTroopLevelArray[3]));
       create(UpgradeType.WALL_BREAKER, UpgradeCategory.ELIXIR_TROOP, Integer.parseInt(elixirTroopLevelArray[4]));
       create(UpgradeType.BALLOON, UpgradeCategory.ELIXIR_TROOP, Integer.parseInt(elixirTroopLevelArray[5]));
       create(UpgradeType.WIZARD, UpgradeCategory.ELIXIR_TROOP, Integer.parseInt(elixirTroopLevelArray[6]));

@@ -57,19 +57,19 @@ public class VillageHelper {
       String skeletonTraps = "3,3,3";
 
       String elixirTroopLevels = "7,7,7,6,6,6,6,4,4,5";
+      String spellLevels = "6,6,5,3,5";
 
       // remaining
 
       String cannonCS = "12,12,11,11,11,11";
-      String archersCS = "13,13,11,11,11,11,10";
+      String archersCS = "13,13,12,12,11,11,10";
 
       String seekingAirMines = "3,2,2,2,2";
 
-      String darkBarracks = "5,5";
+      String darkBarracks = "6,5";
       int barbarKing = 30;
       int archerQuenn = 35;
 
-      String spellLevels = "6,6,5,2,5";
       String darkElixirTroopLevels = "5,5,1,5,2,1,1";
 
       wallMap.put(6, 45);

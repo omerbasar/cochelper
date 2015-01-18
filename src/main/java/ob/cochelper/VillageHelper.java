@@ -62,7 +62,7 @@ public class VillageHelper {
       // remaining
 
       String cannonCS = "12,12,11,11,11,11";
-      String archersCS = "13,13,13,12,11,11,10";
+      String archersCS = "13,13,13,13,11,11,10";
 
       String seekingAirMines = "3,2,2,2,2";
 
@@ -70,12 +70,12 @@ public class VillageHelper {
       int barbarKing = 30;
       int archerQuenn = 36;
 
-      String darkElixirTroopLevels = "5,5,1,5,2,1,1";
+      String darkElixirTroopLevels = "5,5,1,5,2,2";
 
       wallMap.put(6, 45);
       wallMap.put(7, 142);
-      wallMap.put(8, 53);
-      wallMap.put(9, 10);
+      wallMap.put(8, 51);
+      wallMap.put(9, 12);
 
       return new Village(townHall, cannonCS, archersCS, mortars, wizardTowers, airDefenses, hiddenTeslas, xBows, infernoTowers,
               bombs, giantBombs, airBombs, seekingAirMines, skeletonTraps,

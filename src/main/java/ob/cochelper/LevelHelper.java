@@ -526,6 +526,6 @@ public class LevelHelper {
 
       lavaHoundLevels.add(Level.createNewTroopLevel(1, 5700, 0, 0, 0));
       lavaHoundLevels.add(Level.createNewTroopLevel(2, 6200, 60000, (int)TimeUnit.DAYS.toMinutes(10), 7));
-      lavaHoundLevels.add(Level.createNewTroopLevel(2, 6700, 70000, (int)TimeUnit.DAYS.toMinutes(12), 8));
+      lavaHoundLevels.add(Level.createNewTroopLevel(3, 6700, 70000, (int)TimeUnit.DAYS.toMinutes(12), 8));
    }
 }

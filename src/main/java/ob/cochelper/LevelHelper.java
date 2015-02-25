@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class LevelHelper {
    
-   protected static final List<Level> cannonLevels = new ArrayList<Level>(12);
+   protected static final List<Level> cannonLevels = new ArrayList<Level>(13);
    protected static final List<Level> archerTowerLevels = new ArrayList<Level>(13);
    protected static final List<Level> mortarLevels = new ArrayList<Level>(8);
    protected static final List<Level> wizardTowerLevels = new ArrayList<Level>(8);
@@ -83,6 +83,7 @@ public class LevelHelper {
       cannonLevels.add(Level.createNewBuildingLevel(10, 750, 1600000, (int)TimeUnit.DAYS.toMinutes(4), 8));
       cannonLevels.add(Level.createNewBuildingLevel(11, 900, 3200000, (int)TimeUnit.DAYS.toMinutes(5), 9));
       cannonLevels.add(Level.createNewBuildingLevel(12, 1080, 6400000, (int)TimeUnit.DAYS.toMinutes(6), 10));
+      cannonLevels.add(Level.createNewBuildingLevel(13, 1200, 7500000, (int)TimeUnit.DAYS.toMinutes(7), 10));
 
       archerTowerLevels.add(Level.createNewBuildingLevel(1, 400, 1000, (int)TimeUnit.MINUTES.toMinutes(15), 2));
       archerTowerLevels.add(Level.createNewBuildingLevel(2, 450, 2000, (int)TimeUnit.MINUTES.toMinutes(30), 2));

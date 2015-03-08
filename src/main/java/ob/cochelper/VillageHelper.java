@@ -63,7 +63,7 @@ public class VillageHelper {
 
       // remaining
 
-      String cannonCS = "12,12,11,11,11,11";
+      String cannonCS = "13,12,11,11,11,11";
 
       String seekingAirMines = "3,3,2,2,2";
 
@@ -74,8 +74,8 @@ public class VillageHelper {
 
       wallMap.put(6, 34);
       wallMap.put(7, 137);
-      wallMap.put(8, 29);
-      wallMap.put(9, 50);
+      wallMap.put(8, 27);
+      wallMap.put(9, 52);
 
       return new Village(townHall, cannonCS, archersCS, mortars, wizardTowers, airDefenses, hiddenTeslas, xBows, infernoTowers,
               bombs, giantBombs, airBombs, seekingAirMines, skeletonTraps,

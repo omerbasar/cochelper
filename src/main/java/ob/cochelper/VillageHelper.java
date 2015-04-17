@@ -64,14 +64,14 @@ public class VillageHelper {
 
       // remaining
 
-      String cannonCS = "13,13,13,12,12,11";
-      String seekingAirMines = "3,3,3,2,2";
-      int barbarKing = 31;
+      String cannonCS = "13,13,13,13,12,12";
+      String seekingAirMines = "3,3,3,3,2";
+      int barbarKing = 32;
       String darkElixirTroopLevels = "6,5,1,5,2,3";
 
-      wallMap.put(6, 29);
-      wallMap.put(7, 138);
-      wallMap.put(9, 83);
+      wallMap.put(6, 25);
+      wallMap.put(7, 130);
+      wallMap.put(9, 95);
 
       return new Village(townHall, cannonCS, archersCS, mortars, wizardTowers, airDefenses, hiddenTeslas, xBows, infernoTowers,
               bombs, giantBombs, airBombs, seekingAirMines, skeletonTraps,

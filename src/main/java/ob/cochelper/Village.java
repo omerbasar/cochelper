@@ -25,7 +25,7 @@ public class Village {
     */
    private Map<Resource, Long> dailyProduction = new HashMap<Resource, Long>();
 
-   public Village(Integer townHall, String cannonCS, String archersCS, String mortars, String wizardTowers, String airDefenses, String hiddenTeslas, String xBows, String infernoTowers,
+   public Village(Integer townHall, String cannonCS, String archersCS, String mortars, String wizardTowers, String airDefenses, String airSweepers, String hiddenTeslas, String xBows, String infernoTowers,
                   String bombs, String giantBombs, String airBombs, String seekingAirMines, String skeletonTraps,
                   String goldMines, String elixirCollectors, String darkElixirDrills,
                   String goldStorages, String elixirStorages, String darkElixirStorages,
@@ -50,6 +50,7 @@ public class Village {
       create(BuildingType.MORTAR, BuildingCategory.DEFENSE, mortars);
       create(BuildingType.WIZARD_TOWER, BuildingCategory.DEFENSE, wizardTowers);
       create(BuildingType.AIR_DEFENSE, BuildingCategory.DEFENSE, airDefenses);
+      create(BuildingType.AIR_SWEEPER, BuildingCategory.DEFENSE, airSweepers);
       create(BuildingType.HIDDEN_TESLA, BuildingCategory.DEFENSE, hiddenTeslas);
       create(BuildingType.XBOW, BuildingCategory.DEFENSE, xBows);
       create(BuildingType.INFERNO_TOWER, BuildingCategory.DEFENSE, infernoTowers);

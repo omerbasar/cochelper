@@ -15,6 +15,7 @@ public enum BuildingType {
    MORTAR(Resource.GOLD, mortarLevels, 4),
    WIZARD_TOWER(Resource.GOLD, wizardTowerLevels, 4),
    AIR_DEFENSE(Resource.GOLD, airDefenseLevels, 4),
+   AIR_SWEEPER(Resource.GOLD, airSweeperLevels, 1),
    HIDDEN_TESLA(Resource.GOLD, hiddenTeslaLevels, 4),
    XBOW(Resource.GOLD, xBowLevels, 3),
    INFERNO_TOWER(Resource.GOLD, infernoTowerLevels, 2),

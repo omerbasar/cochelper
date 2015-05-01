@@ -11,64 +11,65 @@ import java.util.concurrent.TimeUnit;
  */
 public class LevelHelper {
    
-   protected static final List<Level> cannonLevels = new ArrayList<Level>(13);
-   protected static final List<Level> archerTowerLevels = new ArrayList<Level>(13);
-   protected static final List<Level> mortarLevels = new ArrayList<Level>(8);
-   protected static final List<Level> wizardTowerLevels = new ArrayList<Level>(8);
-   protected static final List<Level> airDefenseLevels = new ArrayList<Level>(8);
-   protected static final List<Level> hiddenTeslaLevels = new ArrayList<Level>(8);
-   protected static final List<Level> xBowLevels = new ArrayList<Level>(4);
-   protected static final List<Level> infernoTowerLevels = new ArrayList<Level>(3);
+   protected static final List<Level> cannonLevels = new ArrayList<>(13);
+   protected static final List<Level> archerTowerLevels = new ArrayList<>(13);
+   protected static final List<Level> mortarLevels = new ArrayList<>(8);
+   protected static final List<Level> wizardTowerLevels = new ArrayList<>(8);
+   protected static final List<Level> airDefenseLevels = new ArrayList<>(8);
+   protected static final List<Level> airSweeperLevels = new ArrayList<>(6);
+   protected static final List<Level> hiddenTeslaLevels = new ArrayList<>(8);
+   protected static final List<Level> xBowLevels = new ArrayList<>(4);
+   protected static final List<Level> infernoTowerLevels = new ArrayList<>(3);
 
-   protected static final List<Level> bombLevels = new ArrayList<Level>(6);
-   protected static final List<Level> giantBombLevels = new ArrayList<Level>(4);
-   protected static final List<Level> airBombLevels = new ArrayList<Level>(4);
-   protected static final List<Level> seekingAirMineLevels = new ArrayList<Level>(3);
-   protected static final List<Level> skeletonTrapLevels = new ArrayList<Level>(3);
+   protected static final List<Level> bombLevels = new ArrayList<>(6);
+   protected static final List<Level> giantBombLevels = new ArrayList<>(4);
+   protected static final List<Level> airBombLevels = new ArrayList<>(4);
+   protected static final List<Level> seekingAirMineLevels = new ArrayList<>(3);
+   protected static final List<Level> skeletonTrapLevels = new ArrayList<>(3);
 
-   protected static final List<Level> elixirCollectorLevels = new ArrayList<Level>(12);
-   protected static final List<Level> goldMineLevels = new ArrayList<Level>(12);
-   protected static final List<Level> darkElixirDrillLevels = new ArrayList<Level>(6);
-   protected static final List<Level> goldStorageLevels = new ArrayList<Level>(11);
-   protected static final List<Level> elixirStorageLevels = new ArrayList<Level>(11);
-   protected static final List<Level> darkElixirStorageLevels = new ArrayList<Level>(6);
-   protected static final List<Level> buildersHutLevels = new ArrayList<Level>(1);
-   protected static final List<Level> armyCampLevels = new ArrayList<Level>(8);
-   protected static final List<Level> barrackLevels = new ArrayList<Level>(10);
-   protected static final List<Level> darkBarrackLevels = new ArrayList<Level>(6);
-   protected static final List<Level> laboratoryLevels = new ArrayList<Level>(8);
-   protected static final List<Level> spellFactoryLevels = new ArrayList<Level>(5);
-   protected static final List<Level> townHallLevels = new ArrayList<Level>(10);
-   protected static final List<Level> clanCastleLevels = new ArrayList<Level>(6);
-   protected static final List<Level> wallLevels = new ArrayList<Level>(11);
+   protected static final List<Level> elixirCollectorLevels = new ArrayList<>(12);
+   protected static final List<Level> goldMineLevels = new ArrayList<>(12);
+   protected static final List<Level> darkElixirDrillLevels = new ArrayList<>(6);
+   protected static final List<Level> goldStorageLevels = new ArrayList<>(11);
+   protected static final List<Level> elixirStorageLevels = new ArrayList<>(11);
+   protected static final List<Level> darkElixirStorageLevels = new ArrayList<>(6);
+   protected static final List<Level> buildersHutLevels = new ArrayList<>(1);
+   protected static final List<Level> armyCampLevels = new ArrayList<>(8);
+   protected static final List<Level> barrackLevels = new ArrayList<>(10);
+   protected static final List<Level> darkBarrackLevels = new ArrayList<>(6);
+   protected static final List<Level> laboratoryLevels = new ArrayList<>(8);
+   protected static final List<Level> spellFactoryLevels = new ArrayList<>(5);
+   protected static final List<Level> townHallLevels = new ArrayList<>(10);
+   protected static final List<Level> clanCastleLevels = new ArrayList<>(6);
+   protected static final List<Level> wallLevels = new ArrayList<>(11);
 
-   protected static final List<Level> barbarKingLevels = new ArrayList<Level>(40);
-   protected static final List<Level> archerQueenLevels = new ArrayList<Level>(40);
+   protected static final List<Level> barbarKingLevels = new ArrayList<>(40);
+   protected static final List<Level> archerQueenLevels = new ArrayList<>(40);
 
-   protected static final List<Level> barbarianLevels = new ArrayList<Level>(7);
-   protected static final List<Level> archerLevels = new ArrayList<Level>(7);
-   protected static final List<Level> goblinLevels = new ArrayList<Level>(6);
-   protected static final List<Level> giantLevels = new ArrayList<Level>(7);
-   protected static final List<Level> wallBreakerLevels = new ArrayList<Level>(6);
-   protected static final List<Level> balloonLevels = new ArrayList<Level>(6);
-   protected static final List<Level> wizardLevels = new ArrayList<Level>(6);
-   protected static final List<Level> healerLevels = new ArrayList<Level>(4);
-   protected static final List<Level> dragonLevels = new ArrayList<Level>(4);
-   protected static final List<Level> pekkaLevels = new ArrayList<Level>(5);
+   protected static final List<Level> barbarianLevels = new ArrayList<>(7);
+   protected static final List<Level> archerLevels = new ArrayList<>(7);
+   protected static final List<Level> goblinLevels = new ArrayList<>(6);
+   protected static final List<Level> giantLevels = new ArrayList<>(7);
+   protected static final List<Level> wallBreakerLevels = new ArrayList<>(6);
+   protected static final List<Level> balloonLevels = new ArrayList<>(6);
+   protected static final List<Level> wizardLevels = new ArrayList<>(6);
+   protected static final List<Level> healerLevels = new ArrayList<>(4);
+   protected static final List<Level> dragonLevels = new ArrayList<>(4);
+   protected static final List<Level> pekkaLevels = new ArrayList<>(5);
 
-   protected static final List<Level> lighteningSpellLevels = new ArrayList<Level>(6);
-   protected static final List<Level> healingSpellLevels = new ArrayList<Level>(6);
-   protected static final List<Level> rageSpellLevels = new ArrayList<Level>(5);
-   protected static final List<Level> jumpSpellLevels = new ArrayList<Level>(3);
-   protected static final List<Level> santasSupriseSpellLevels = new ArrayList<Level>(1);
-   protected static final List<Level> freezeSpellLevels = new ArrayList<Level>(5);
+   protected static final List<Level> lighteningSpellLevels = new ArrayList<>(6);
+   protected static final List<Level> healingSpellLevels = new ArrayList<>(6);
+   protected static final List<Level> rageSpellLevels = new ArrayList<>(5);
+   protected static final List<Level> jumpSpellLevels = new ArrayList<>(3);
+   protected static final List<Level> santasSupriseSpellLevels = new ArrayList<>(1);
+   protected static final List<Level> freezeSpellLevels = new ArrayList<>(5);
 
-   protected static final List<Level> minionLevels = new ArrayList<Level>(6);
-   protected static final List<Level> hogRiderLevels = new ArrayList<Level>(5);
-   protected static final List<Level> valkyrieLevels = new ArrayList<Level>(4);
-   protected static final List<Level> golemLevels = new ArrayList<Level>(5);
-   protected static final List<Level> witchLevels = new ArrayList<Level>(2);
-   protected static final List<Level> lavaHoundLevels = new ArrayList<Level>(3);
+   protected static final List<Level> minionLevels = new ArrayList<>(6);
+   protected static final List<Level> hogRiderLevels = new ArrayList<>(5);
+   protected static final List<Level> valkyrieLevels = new ArrayList<>(4);
+   protected static final List<Level> golemLevels = new ArrayList<>(5);
+   protected static final List<Level> witchLevels = new ArrayList<>(2);
+   protected static final List<Level> lavaHoundLevels = new ArrayList<>(3);
 
    static{
       cannonLevels.add(Level.createNewBuildingLevel(1, 400, 250, (int)TimeUnit.MINUTES.toMinutes(1), 1));
@@ -125,6 +126,13 @@ public class LevelHelper {
       airDefenseLevels.add(Level.createNewBuildingLevel(6, 1040, 2160000, (int)TimeUnit.DAYS.toMinutes(8), 8));
       airDefenseLevels.add(Level.createNewBuildingLevel(7, 1100, 4320000, (int)TimeUnit.DAYS.toMinutes(10), 9));
       airDefenseLevels.add(Level.createNewBuildingLevel(8, 1160, 7560000, (int)TimeUnit.DAYS.toMinutes(12), 10));
+
+      airSweeperLevels.add(Level.createNewBuildingLevel(1, 750, 500000, (int)TimeUnit.DAYS.toMinutes(1), 6));
+      airSweeperLevels.add(Level.createNewBuildingLevel(2, 800, 750000, (int)TimeUnit.DAYS.toMinutes(3), 6));
+      airSweeperLevels.add(Level.createNewBuildingLevel(3, 850, 1250000, (int)TimeUnit.DAYS.toMinutes(5), 7));
+      airSweeperLevels.add(Level.createNewBuildingLevel(4, 900, 2400000, (int)TimeUnit.DAYS.toMinutes(7), 8));
+      airSweeperLevels.add(Level.createNewBuildingLevel(5, 950, 4800000, (int)TimeUnit.DAYS.toMinutes(8), 9));
+      airSweeperLevels.add(Level.createNewBuildingLevel(6, 1000, 7200000, (int)TimeUnit.DAYS.toMinutes(9), 10));
 
       hiddenTeslaLevels.add(Level.createNewBuildingLevel(1, 600, 1000000, (int)TimeUnit.DAYS.toMinutes(2), 7));
       hiddenTeslaLevels.add(Level.createNewBuildingLevel(2, 630, 1250000, (int)TimeUnit.DAYS.toMinutes(4), 7));

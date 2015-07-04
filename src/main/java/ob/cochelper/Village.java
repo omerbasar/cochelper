@@ -30,7 +30,7 @@ public class Village {
                   String goldMines, String elixirCollectors, String darkElixirDrills,
                   String goldStorages, String elixirStorages, String darkElixirStorages,
                   Integer builderCount, String armyCamps, String barracks, String darkBarracks,
-                  Integer laboratory, Integer spellFactory, Integer clanCastle,
+                  Integer laboratory, Integer spellFactory, Integer darkSpellFactory, Integer clanCastle,
                   Integer barbarKing, Integer archerQuenn, Set<BuildingCategory> categories, Set<UpgradeCategory> upgradeCategories, Map<Integer, Integer> wallMap,
                   String spellLevels, String elixirTroopLevels, String darkElixirTroopLevels,
                   int untilTownHallLevel, int untilLaboratoryLevel
@@ -74,6 +74,7 @@ public class Village {
       create(BuildingType.DARK_BARRACK, BuildingCategory.ARMY, darkBarracks);
       create(BuildingType.LABORATORY, BuildingCategory.ARMY, laboratory);
       create(BuildingType.SPELL_FACTORY, BuildingCategory.ARMY, spellFactory);
+      create(BuildingType.DARK_SPELL_FACTORY, BuildingCategory.ARMY, darkSpellFactory);
 
       create(BuildingType.BARBAR_KING, BuildingCategory.HERO, barbarKing);
       create(BuildingType.ARCHER_QUENN, BuildingCategory.HERO, archerQuenn);

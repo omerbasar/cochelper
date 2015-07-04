@@ -39,6 +39,7 @@ public class LevelHelper {
    protected static final List<Level> darkBarrackLevels = new ArrayList<>(6);
    protected static final List<Level> laboratoryLevels = new ArrayList<>(8);
    protected static final List<Level> spellFactoryLevels = new ArrayList<>(5);
+   protected static final List<Level> darkSpellFactoryLevels = new ArrayList<>(3);
    protected static final List<Level> townHallLevels = new ArrayList<>(10);
    protected static final List<Level> clanCastleLevels = new ArrayList<>(6);
    protected static final List<Level> wallLevels = new ArrayList<>(11);
@@ -54,7 +55,7 @@ public class LevelHelper {
    protected static final List<Level> balloonLevels = new ArrayList<>(6);
    protected static final List<Level> wizardLevels = new ArrayList<>(6);
    protected static final List<Level> healerLevels = new ArrayList<>(4);
-   protected static final List<Level> dragonLevels = new ArrayList<>(4);
+   protected static final List<Level> dragonLevels = new ArrayList<>(5);
    protected static final List<Level> pekkaLevels = new ArrayList<>(5);
 
    protected static final List<Level> lighteningSpellLevels = new ArrayList<>(6);
@@ -289,6 +290,10 @@ public class LevelHelper {
       spellFactoryLevels.add(Level.createNewBuildingLevel(4, 500, 1600000, (int)TimeUnit.DAYS.toMinutes(5), 9));
       spellFactoryLevels.add(Level.createNewBuildingLevel(5, 600, 3200000, (int)TimeUnit.DAYS.toMinutes(6), 10));
 
+      darkSpellFactoryLevels.add(Level.createNewBuildingLevel(1, 600, 1500000, (int)TimeUnit.DAYS.toMinutes(4), 8));
+      darkSpellFactoryLevels.add(Level.createNewBuildingLevel(2, 660, 2500000, (int)TimeUnit.DAYS.toMinutes(6), 8));
+      darkSpellFactoryLevels.add(Level.createNewBuildingLevel(3, 700, 3500000, (int)TimeUnit.DAYS.toMinutes(8), 9));
+
       townHallLevels.add(Level.createNewBuildingLevel(1, 1500, 0, 0, 0));
       townHallLevels.add(Level.createNewBuildingLevel(2, 1600, 1000, (int)TimeUnit.MINUTES.toMinutes(5), 1));
       townHallLevels.add(Level.createNewBuildingLevel(3, 1850, 4000, (int)TimeUnit.HOURS.toMinutes(3), 2));
@@ -464,6 +469,7 @@ public class LevelHelper {
       dragonLevels.add(Level.createNewTroopLevel(2, 2100, 2000000, (int)TimeUnit.DAYS.toMinutes(7), 5));
       dragonLevels.add(Level.createNewTroopLevel(3, 2300, 3000000, (int)TimeUnit.DAYS.toMinutes(10), 6));
       dragonLevels.add(Level.createNewTroopLevel(4, 2500, 8000000, (int)TimeUnit.DAYS.toMinutes(14), 8));
+      dragonLevels.add(Level.createNewTroopLevel(5, 2700, 8000000, (int)TimeUnit.DAYS.toMinutes(14), 8));
 
       pekkaLevels.add(Level.createNewTroopLevel(1, 2800, 0, 0, 0));
       pekkaLevels.add(Level.createNewTroopLevel(2, 3100, 3000000, (int)TimeUnit.DAYS.toMinutes(10), 6));

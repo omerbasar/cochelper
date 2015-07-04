@@ -107,7 +107,7 @@ public class Level {
    @Override
    public String toString() {
       return "Level{" +
-              "index=" + index + ",cost=" + (cost >= 1000000  ? cost / 1000000d + "M" : cost / 1000 + "K") +
+              "index=" + index + ", cost=" + (cost >= 1000000  ? cost / 1000000d + "M" : cost / 1000 + "K") + ", time=" + upgradeTime/24/60 + "d" +
               '}';
    }
 }

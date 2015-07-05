@@ -20,12 +20,18 @@ public enum UpgradeType {
    HEALER(Resource.ELIXIR, healerLevels),
    DRAGON(Resource.ELIXIR, dragonLevels),
    PEKKA(Resource.ELIXIR, pekkaLevels),
+
    LIGHTENING_SPELL(Resource.ELIXIR, lighteningSpellLevels),
    HEALING_SPELL(Resource.ELIXIR, healingSpellLevels),
    RAGE_SPELL(Resource.ELIXIR, rageSpellLevels),
    JUMP_SPELL(Resource.ELIXIR, jumpSpellLevels),
    SANTAS_SURPRISE_SPELL(Resource.ELIXIR, santasSupriseSpellLevels),
    FREEZE_SPELL(Resource.ELIXIR, freezeSpellLevels),
+
+   POISON_SPELL(Resource.DARK_ELIXIR, poisonSpellLevels),
+   EARTH_QUAKE_SPELL(Resource.DARK_ELIXIR, earthQuakeSpellLevels),
+   HASTE_SPELL(Resource.DARK_ELIXIR, hasteSpellLevels),
+
    MINION(Resource.DARK_ELIXIR, minionLevels),
    HOG_RIDER(Resource.DARK_ELIXIR, hogRiderLevels),
    VALKYRIE(Resource.DARK_ELIXIR, valkyrieLevels),

@@ -35,7 +35,6 @@ public class VillageHelper {
       String hiddenTeslas = "8,8,8,8";
       String xBows = "4,4,4";
       String infernoTowers = "3,3";
-      String airSweepers = "6,2";
 
       String goldMines = "12,12,12,12,12,12,12";
       String elixirCollectors = "12,12,12,12,12,12,12";
@@ -63,17 +62,19 @@ public class VillageHelper {
       String skeletonTraps = "3,3,3";
       String seekingAirMines = "3,3,3,3,3";
 
-      String spellLevels = "6,6,5,3,5";
+      String spellLevels = "6,6,5,3,1,5";
+      String darkSpellLevels = "1,1,1";
 
       // remaining
 
-      String elixirTroopLevels = "7,7,7,6,6,6,6,4,4,5";
+      String airSweepers = "6,3";
       int barbarKing = 39;
+      String elixirTroopLevels = "7,7,7,6,6,6,6,4,4,5";
       String darkElixirTroopLevels = "6,5,1,5,2,3";
 
-      wallMap.put(7, 41);
-      wallMap.put(8, 3);
-      wallMap.put(9, 201);
+      wallMap.put(7, 39);
+      wallMap.put(8, 1);
+      wallMap.put(9, 205);
       wallMap.put(10, 4);
       wallMap.put(11, 1);
 
@@ -81,7 +82,7 @@ public class VillageHelper {
               bombs, giantBombs, airBombs, seekingAirMines, skeletonTraps,
               goldMines, elixirCollectors, darkElixirDrills,
               goldStorages, elixirStorages, darkElixirStorages, builders, armyCamps, barracks, darkBarracks, laboratory, spellFactory, darkSpellFactory,
-              clanCastle, barbarKing, archerQuenn, categories, upgradeCategories, wallMap, spellLevels, elixirTroopLevels, darkElixirTroopLevels,
+              clanCastle, barbarKing, archerQuenn, categories, upgradeCategories, wallMap, spellLevels, darkSpellLevels, elixirTroopLevels, darkElixirTroopLevels,
               untilTownHallLevel, untilLaboratoryLevel
               );
    }

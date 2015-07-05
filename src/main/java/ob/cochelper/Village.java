@@ -32,7 +32,7 @@ public class Village {
                   Integer builderCount, String armyCamps, String barracks, String darkBarracks,
                   Integer laboratory, Integer spellFactory, Integer darkSpellFactory, Integer clanCastle,
                   Integer barbarKing, Integer archerQuenn, Set<BuildingCategory> categories, Set<UpgradeCategory> upgradeCategories, Map<Integer, Integer> wallMap,
-                  String spellLevels, String elixirTroopLevels, String darkElixirTroopLevels,
+                  String spellLevels, String darkSpellLevels, String elixirTroopLevels, String darkElixirTroopLevels,
                   int untilTownHallLevel, int untilLaboratoryLevel
                   ) {
 
@@ -110,6 +110,13 @@ public class Village {
       create(UpgradeType.RAGE_SPELL, UpgradeCategory.SPELL, Integer.parseInt(spellLevelArray[2]));
       create(UpgradeType.JUMP_SPELL, UpgradeCategory.SPELL, Integer.parseInt(spellLevelArray[3]));
       create(UpgradeType.SANTAS_SURPRISE_SPELL, UpgradeCategory.SPELL, Integer.parseInt(spellLevelArray[4]));
+      create(UpgradeType.FREEZE_SPELL, UpgradeCategory.SPELL, Integer.parseInt(spellLevelArray[5]));
+
+      String[] darkSpellLevelArray = darkSpellLevels.split(",");
+
+      create(UpgradeType.POISON_SPELL, UpgradeCategory.DARK_SPELL, Integer.parseInt(darkSpellLevelArray[0]));
+      create(UpgradeType.EARTH_QUAKE_SPELL, UpgradeCategory.DARK_SPELL, Integer.parseInt(darkSpellLevelArray[1]));
+      create(UpgradeType.HASTE_SPELL, UpgradeCategory.DARK_SPELL, Integer.parseInt(darkSpellLevelArray[2]));
 
       // uretimleri hesapla
       for (Resource resource : Resource.values()) {

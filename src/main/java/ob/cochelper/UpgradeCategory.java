@@ -8,5 +8,6 @@ package ob.cochelper;
 public enum UpgradeCategory {
    ELIXIR_TROOP,
    DARK_ELIXIR_TROOP,
-   SPELL
+   SPELL,
+   DARK_SPELL
 }

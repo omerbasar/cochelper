@@ -62,8 +62,12 @@ public class LevelHelper {
    protected static final List<Level> healingSpellLevels = new ArrayList<>(6);
    protected static final List<Level> rageSpellLevels = new ArrayList<>(5);
    protected static final List<Level> jumpSpellLevels = new ArrayList<>(3);
-   protected static final List<Level> santasSupriseSpellLevels = new ArrayList<>(1);
    protected static final List<Level> freezeSpellLevels = new ArrayList<>(5);
+   protected static final List<Level> santasSupriseSpellLevels = new ArrayList<>(1);
+
+   protected static final List<Level> poisonSpellLevels = new ArrayList<>(4);
+   protected static final List<Level> earthQuakeSpellLevels = new ArrayList<>(4);
+   protected static final List<Level> hasteSpellLevels = new ArrayList<>(4);
 
    protected static final List<Level> minionLevels = new ArrayList<>(6);
    protected static final List<Level> hogRiderLevels = new ArrayList<>(5);
@@ -509,6 +513,23 @@ public class LevelHelper {
       freezeSpellLevels.add(Level.createNewSpellLevel(3, 6000000, (int)TimeUnit.DAYS.toMinutes(10), 8));
       freezeSpellLevels.add(Level.createNewSpellLevel(4, 8000000, (int)TimeUnit.DAYS.toMinutes(14), 8));
       freezeSpellLevels.add(Level.createNewSpellLevel(5, 8000000, (int)TimeUnit.DAYS.toMinutes(14), 8));
+   }
+
+   static{
+      poisonSpellLevels.add(Level.createNewSpellLevel(1, 0, 0, 0));
+      poisonSpellLevels.add(Level.createNewSpellLevel(2, 25000, (int)TimeUnit.DAYS.toMinutes(4), 6));
+      poisonSpellLevels.add(Level.createNewSpellLevel(3, 50000, (int)TimeUnit.DAYS.toMinutes(6), 7));
+      poisonSpellLevels.add(Level.createNewSpellLevel(4, 75000, (int)TimeUnit.DAYS.toMinutes(8), 8));
+
+      earthQuakeSpellLevels.add(Level.createNewSpellLevel(1, 0, 0, 0));
+      earthQuakeSpellLevels.add(Level.createNewSpellLevel(2, 30000, (int)TimeUnit.DAYS.toMinutes(6), 6));
+      earthQuakeSpellLevels.add(Level.createNewSpellLevel(3, 60000, (int)TimeUnit.DAYS.toMinutes(8), 7));
+      earthQuakeSpellLevels.add(Level.createNewSpellLevel(4, 90000, (int)TimeUnit.DAYS.toMinutes(12), 8));
+
+      hasteSpellLevels.add(Level.createNewSpellLevel(1, 0, 0, 0));
+      hasteSpellLevels.add(Level.createNewSpellLevel(2, 40000, (int)TimeUnit.DAYS.toMinutes(8), 7));
+      hasteSpellLevels.add(Level.createNewSpellLevel(3, 80000, (int)TimeUnit.DAYS.toMinutes(10), 8));
+      hasteSpellLevels.add(Level.createNewSpellLevel(4, 100000, (int)TimeUnit.DAYS.toMinutes(14), 8));
    }
 
    static{

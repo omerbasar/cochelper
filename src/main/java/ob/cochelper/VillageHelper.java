@@ -54,6 +54,7 @@ public class VillageHelper {
       int darkSpellFactory = 1;
       int clanCastle = 6;
       int townHall = 10;
+      int barbarKing = 40;
       int archerQuenn = 40;
 
       String bombs = "6,6,6,6,6,6";
@@ -67,14 +68,13 @@ public class VillageHelper {
 
       // remaining
 
-      String airSweepers = "6,3";
-      int barbarKing = 39;
+      String airSweepers = "6,4";
       String elixirTroopLevels = "7,7,7,6,6,6,6,4,4,5";
       String darkElixirTroopLevels = "6,5,1,5,2,3";
 
-      wallMap.put(7, 39);
+      wallMap.put(7, 32);
       wallMap.put(8, 1);
-      wallMap.put(9, 205);
+      wallMap.put(9, 212);
       wallMap.put(10, 4);
       wallMap.put(11, 1);
 
@@ -93,11 +93,13 @@ public class VillageHelper {
       village.calculate();
       village.calculateUpgrade();
 
+      /*
       System.out.println("\n---- daily production ------\n");
       Map<Resource, Long> prod = village.getDailyProduction();
       for (Resource resource : prod.keySet()) {
          System.out.println(resource + " production per day = " + StringUtil.makeResourceReadable(prod.get(resource)));
       }
+      */
 
       System.out.println("\n-----  buildings -------\n");
       village.getProductionStat().print();

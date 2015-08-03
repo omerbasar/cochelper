@@ -51,6 +51,7 @@ public class VillageHelper {
 
       int laboratory = 8;
       int spellFactory = 5;
+      int darkSpellFactory = 3;
       int clanCastle = 6;
       int townHall = 10;
       int barbarKing = 40;
@@ -63,18 +64,17 @@ public class VillageHelper {
       String seekingAirMines = "3,3,3,3,3";
 
       String spellLevels = "6,6,5,3,1,5";
-      String darkSpellLevels = "2,1,1";
 
       // remaining
 
-      String airSweepers = "6,4";
-      int darkSpellFactory = 2;
+      String airSweepers = "6,5";
       String elixirTroopLevels = "7,7,7,6,6,6,6,4,4,5";
       String darkElixirTroopLevels = "6,5,1,5,2,3";
+      String darkSpellLevels = "3,1,1";
 
-      wallMap.put(7, 32);
-      wallMap.put(8, 1);
-      wallMap.put(9, 212);
+      wallMap.put(7, 18);
+      wallMap.put(8, 3);
+      wallMap.put(9, 224);
       wallMap.put(10, 3);
       wallMap.put(11, 2);
 

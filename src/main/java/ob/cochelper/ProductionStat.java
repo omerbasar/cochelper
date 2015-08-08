@@ -51,16 +51,20 @@ public class ProductionStat {
    }
 
    public void print() {
-      System.out.println("Time: {elapsed : " + StringUtil.makeTimeReadable(getBuildTimeStat().getElapsed())
-              + ", remaining: " + StringUtil.makeTimeReadable(getBuildTimeStat().getRemaining())
-              + ", total: " + StringUtil.makeTimeReadable(getBuildTimeStat().getTotal())
-              +"}");
+      if(getBuildTimeStat().getRemaining() > 0L){
+         System.out.println("Time: {elapsed : " + StringUtil.makeTimeReadable(getBuildTimeStat().getElapsed())
+                 + ", remaining: " + StringUtil.makeTimeReadable(getBuildTimeStat().getRemaining())
+                 + ", total: " + StringUtil.makeTimeReadable(getBuildTimeStat().getTotal())
+                 +"}");
+      }
 
       for (Resource resource : Resource.values()) {
-         System.out.println(resource +": {used: " + StringUtil.makeResourceReadable(getResourceSingleStat(resource).getElapsed())
-                 + ", remaining: " + StringUtil.makeResourceReadable(getResourceSingleStat(resource).getRemaining())
-                 + ", total: " + StringUtil.makeResourceReadable(getResourceSingleStat(resource).getTotal())
-                 +"}");
+         if(getResourceSingleStat(resource).getRemaining() > 0L){
+            System.out.println(resource +": {used: " + StringUtil.makeResourceReadable(getResourceSingleStat(resource).getElapsed())
+                    + ", remaining: " + StringUtil.makeResourceReadable(getResourceSingleStat(resource).getRemaining())
+                    + ", total: " + StringUtil.makeResourceReadable(getResourceSingleStat(resource).getTotal())
+                    +"}");
+         }
       }
    }
 

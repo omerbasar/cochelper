@@ -65,16 +65,16 @@ public class VillageHelper {
       String seekingAirMines = "3,3,3,3,3";
 
       String spellLevels = "6,6,5,3,1,5";
+      String elixirTroopLevels = "7,7,7,6,6,6,6,4,5,5";
 
       // remaining
 
-      String elixirTroopLevels = "7,7,7,6,6,6,6,4,4,5";
       String darkElixirTroopLevels = "6,5,1,5,2,3";
       String darkSpellLevels = "3,2,1";
 
-      wallMap.put(7, 13);
-      wallMap.put(8, 3);
-      wallMap.put(9, 229);
+      wallMap.put(7, 3);
+      wallMap.put(8, 2);
+      wallMap.put(9, 240);
       wallMap.put(10, 2);
       wallMap.put(11, 3);
 

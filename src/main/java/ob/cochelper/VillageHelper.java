@@ -67,16 +67,13 @@ public class VillageHelper {
       String spellLevels = "6,6,5,3,1,5";
       String elixirTroopLevels = "7,7,7,6,6,6,6,4,5,5";
 
+      wallMap.put(11, 9);
+
       // remaining
 
       String darkElixirTroopLevels = "6,5,1,5,2,3";
       String darkSpellLevels = "3,2,1";
-
-      wallMap.put(7, 3);
-      wallMap.put(8, 2);
-      wallMap.put(9, 240);
-      wallMap.put(10, 2);
-      wallMap.put(11, 3);
+      wallMap.put(9, 241);
 
       return new Village(townHall, cannonCS, archersCS, mortars, wizardTowers, airDefenses, airSweepers, hiddenTeslas, xBows, infernoTowers,
               bombs, giantBombs, airBombs, seekingAirMines, skeletonTraps,
